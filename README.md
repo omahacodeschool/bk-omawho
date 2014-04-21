@@ -1,7 +1,7 @@
 Omawho
 ======
 
-For Week 9 of the first class of Omaha Code School, the students are being split into two groups. One of the groups is responsible for this project - a complete rebuild of [Omahwho](http://omawho.com).
+For Week 9 of the first class of Omaha Code School, the students are being split into two groups. One of the groups is responsible for this project - a complete rebuild of [Omawho](http://omawho.com).
 
 The students in this group - and their roles for the project - are are follows:
 
