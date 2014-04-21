@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421201324) do
+ActiveRecord::Schema.define(:version => 20140421205510) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                           :null => false
@@ -24,6 +24,23 @@ ActiveRecord::Schema.define(:version => 20140421201324) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "admin"
+    t.text     "bio"
+    t.string   "website"
+    t.string   "company"
+    t.string   "company_site"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "pinterest"
+    t.string   "linkedin"
+    t.string   "github"
+    t.string   "googleplus"
+    t.string   "dribbble"
+    t.string   "instagram"
+    t.string   "tumblr"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
