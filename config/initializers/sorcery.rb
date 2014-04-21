@@ -32,12 +32,15 @@ Rails.application.config.sorcery.configure do |config|
   # Default: `3600`
   #
   # config.session_timeout =
+  seconds_in_a_year = 365*24*60*60
+  config.session_timeout = seconds_in_a_year
 
 
   # Use the last action as the beginning of session timeout.
   # Default: `false`
   #
   # config.session_timeout_from_last_action =
+  config.session_timeout_from_last_action = true
 
 
   # -- http_basic_auth --
@@ -147,12 +150,13 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `[:email]`
     #
     # user.username_attribute_names =
-
+    user.username_attribute_names = [:email]
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
     # Default: `:password`
     #
     # user.password_attribute_name =
+    
 
 
     # downcase the username before trying to authenticate, default is false
@@ -214,6 +218,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `false`
     #
     # user.subclasses_inherit_config =
+    user.subclasses_inherit_config = true
 
 
     # -- remember_me --
@@ -308,6 +313,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `nil`
     #
     # user.reset_password_mailer =
+    user.reset_password_mailer = UserMailer
 
 
     # reset password email method on your mailer class.
