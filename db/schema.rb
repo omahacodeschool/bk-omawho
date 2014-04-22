@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421235851) do
+ActiveRecord::Schema.define(:version => 20140422142004) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(:version => 20140421235851) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.boolean  "cancelled"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "approved",    :default => false
+    t.string   "slug"
   end
 
   create_table "events_users", :id => false, :force => true do |t|
