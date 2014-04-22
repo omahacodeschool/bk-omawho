@@ -22,5 +22,7 @@ Omawho::Application.routes.draw do
   get "rss_feed" => "site_pages#rss_feed", :as => :rss_feed
   
   root :to => 'users#index'
+  
+  get ':username' => 'users#show', :as => :view_profile
 
 end
