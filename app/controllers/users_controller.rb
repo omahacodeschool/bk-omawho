@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @images = Image.new # FIX THIS WITH THE USERS ACTUAL PROFILE PICTURE
 
     respond_to do |format|
       if @user.save
