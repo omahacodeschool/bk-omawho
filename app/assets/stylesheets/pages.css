@@ -55,12 +55,11 @@ body {
   background-position-y: 30px;
 }
 
-
 #menubar {
   background: #4c6262;
-  height: 60px;
+  height: 40px;
   color:white;
-  padding-top: 21px;
+  padding-top: 10px;
 }
 
 #mobilemenubar {
@@ -78,13 +77,13 @@ body {
   margin: 0 auto;
   width: 100%;
   position: relative;
-  top: 25px;
+  top: 15px;
 }
 
 .redbg {
   background: #ad3d32;
   color: white;
-  padding: 5px;
+  padding: 5px 10px;
   text-align: center;
   float: right;
 }
@@ -124,6 +123,12 @@ ul li {
   background-position: center;
   height: 150px;
   color: #fff;
+}
+
+#header_content {
+  position: relative;
+  top: 15px;
+  max-width:500px;
 }
 
 #skyline {
