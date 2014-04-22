@@ -84,10 +84,15 @@ body {
 .redbg {
   background: #ad3d32;
   color: white;
-  width: 58px;
-  padding: 9px;
+  padding: 5px;
   text-align: center;
+<<<<<<< HEAD
   float: right;
+=======
+
+
+
+>>>>>>> master
 }
 
 ul {
@@ -118,14 +123,15 @@ ul li {
 
 /* HOMEPAGE */
 
-#headerguy{
+#headerguy {
   background-image: url("/assets/omaha_skyline3.jpg");
   background-color: #000;
   background-repeat: no-repeat;
   background-position: center;
   height: 150px;
+  color: #fff;
 }
 
-#skyline{
+#skyline {
   width: 100%;
 }
