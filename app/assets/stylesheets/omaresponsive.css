@@ -95,7 +95,7 @@ select {
     margin-left: 0;
     margin-right: 0; }
   .row .row {
-    width: auto;
+    width: 100%;
     margin-left: -0.9375em;
     margin-right: -0.9375em;
     margin-top: 0;
@@ -249,8 +249,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
+    padding-left: 0;
+    padding-right: 0;
     float: left; }
 
   .small-1 {
