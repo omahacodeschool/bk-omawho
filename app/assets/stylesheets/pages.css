@@ -27,6 +27,7 @@ body{
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
   float:right;
+  margin-right: 5px;
 }
 
 #twitter_icon{
@@ -35,6 +36,7 @@ body{
   background-image: url("/assets/OmawhoFooterIcons.png");
   float:right;
   background-position-x: 60px;
+  margin-right: 5px;
 }
 
 #rss_icon{
@@ -43,6 +45,7 @@ body{
   background-image: url("/assets/OmawhoFooterIcons.png");
   float:right;
   background-position-x: 30px;
+  margin-right: 5px;
 }
 
 #contact_icon{
@@ -50,7 +53,7 @@ body{
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
   float:right;
-
+  margin-right: 5px;
   background-position-y: 30px;
 }
 
