@@ -9,8 +9,6 @@ class EventsController < ApplicationController
       @events = Event.approved.where('start_time > ?', DateTime.now).order("start_time ASC")
       @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC")
     end
-
-    # binding.pry
     
     if current_user
       @user_events = current_user.events
@@ -24,6 +22,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    # binding.pry
   end
   
   def new
