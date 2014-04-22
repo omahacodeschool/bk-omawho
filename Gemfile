@@ -40,3 +40,7 @@ gem 'unicorn'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'sorcery'
+
+gem 'fog'
+gem 'carrierwave'
+gem 'rmagick'
