@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20140421235851) do
     t.string   "venue"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.boolean  "cancelled", :default => false
+    t.boolean  "cancelled"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
