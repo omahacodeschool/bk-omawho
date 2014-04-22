@@ -1,28 +1,26 @@
-
-/*GENERAL*************************************************************/
-body{
+/* GENERAL */
+body {
   margin: 0;
 }
 
-#footer{
+#footer {
   background: #4c6262;
   color: white;
   padding-top: 50px;
-
 }
 
-.bottomtext{
+.bottomtext {
   font-size: 20px;
   position: relative;
   top: 3px;
 }
 
-.bottomlogo{
-  
+.bottomlogo {
   position:relative;
   top: 10px;
 }
-#about_icon{
+
+#about_icon {
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
@@ -30,7 +28,7 @@ body{
   margin-right: 5px;
 }
 
-#twitter_icon{
+#twitter_icon {
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
@@ -39,7 +37,7 @@ body{
   margin-right: 5px;
 }
 
-#rss_icon{
+#rss_icon {
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
@@ -48,7 +46,7 @@ body{
   margin-right: 5px;
 }
 
-#contact_icon{
+#contact_icon {
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
@@ -58,14 +56,14 @@ body{
 }
 
 
-#menubar{
+#menubar {
   background: #4c6262;
   height: 60px;
   color:white;
   padding-top: 21px;
 }
 
-#mobilemenubar{
+#mobilemenubar {
   background: #4c6262;
   height: 60px;
   text-align:center;
@@ -74,65 +72,60 @@ body{
   padding-top: 5px;
 }
 
-#omalogo{
-  max-width: 500px;
+#omalogo {
+  max-width: 300px;
   display:block;
   margin: 0 auto;
   width: 100%;
   position: relative;
-  top: 100px;
+  top: 25px;
 }
 
-.redbg{
+.redbg {
   background: #ad3d32;
   color: white;
   width: 58px;
   padding: 9px;
   text-align: center;
   float: right;
-
 }
 
-ul{
+ul {
   list-style: none;
   width: 50px;
   float: right;
 }
 
-ul li{
+ul li {
   background: #ad3d32;
   color: white;
   padding: 5px;
   width: 50px;
   margin-bottom: 10px;
 }
-.lefttimes{
-  float:right;
+
+.lefttimes {
+  float: right;
 }
 
-.righttimes{
-  float:left;
+.righttimes {
+  float: left;
 }
 
-#testimage{
+#testimage {
   width: 100%;
 }
-/*********************************************************************/
 
-/*HOMEPAGE*************************************************************/
+/* HOMEPAGE */
 
 #headerguy{
-  background-image: url("/assets/skyline.png");
-  background-size: cover;
-  height: 400px;
+  background-image: url("/assets/omaha_skyline3.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
 }
+
 #skyline{
-  
   width: 100%;
-
-  
 }
-
-
-/*********************************************************************/
-
