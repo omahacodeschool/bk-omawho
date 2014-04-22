@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @image = Image.new # FIX THIS WITH THE USERS ACTUAL PROFILE PICTURE
   end
 
   # POST /users
