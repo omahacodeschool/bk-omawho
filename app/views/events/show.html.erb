@@ -11,3 +11,23 @@
 
 <p><%= link_to "Edit Event", edit_event_path(@event) %></p>
 <p><%= link_to 'Delete this Event', @event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></p>
+
+<% if !current_user %>
+  <p><%= link_to "Log in to mark your attendance.", login_path(:return_to_url => event_path(@event)), :class => "" %></p>
+<% end %>
+
+<% if current_user && @event.is_current %>
+  <%= form_tag event_attend_path(@event.id) do %>
+    <% if @event.link.present? %>
+      <%= link_to "Event Website", @event.link, :class => "" %>
+    <% end %>&nbsp;
+    
+    <% if current_user.events.exists?(@event) %>
+      <%= button_tag "Cancel Your Attendance", :type => "submit", :class => "" %>
+    <% else %>
+      <%= button_tag "Attend", :type => "submit", :class => "" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<hr />

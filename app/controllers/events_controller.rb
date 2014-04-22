@@ -105,22 +105,23 @@ class EventsController < ApplicationController
   #   end
   # end
   # 
-  # def approve
-  #   if current_user.admin?
-  #     @event = Event.find(params[:event_id])
-  # 
-  #     respond_to do |format|
-  #       if @event.update_attribute(:approved, true)
-  #         format.html { redirect_to :events, notice: 'Event approved.' }
-  #         format.json { head :no_content }
-  #       else
-  #         format.html { redirect_to :events, alert: 'Error.' }
-  #         format.json { render json: @event.errors, status: :unprocessable_entity }
-  #       end
-  #     end
-  #   else
-  #     not_authenticated
-  #   end
-  # end
+  
+  def approve
+    if current_user && current_user.admin?
+      @event = Event.find(params[:event_id])
+  
+      respond_to do |format|
+        if @event.update_attribute(:approved, true)
+          format.html { redirect_to :events, notice: 'Event approved.' }
+          # format.json { head :no_content }
+        else
+          format.html { redirect_to :events, alert: 'Error.' }
+          # format.json { render json: @event.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      not_authenticated
+    end
+  end
   
 end
