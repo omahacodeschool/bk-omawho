@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   validates :website, :format => { :with => /^http/ }, :allow_blank => true
   validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
   validates_exclusion_of :username, :in => %w(category login logout add profile quiz beta)
-  validates_length_of :bio, :within => 0..140
+  validates_length_of :bio, :within => 0..400
   validates_length_of :password, :within => 4..99
   validates_length_of :tagline, :within => 0..30
   
