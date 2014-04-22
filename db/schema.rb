@@ -11,7 +11,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140421214932) do
+ActiveRecord::Schema.define(:version => 20140421235851) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories_users", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "user_id"
+  end
+
+  create_table "embeds", :force => true do |t|
+    t.string   "link"
+    t.integer  "user_id"
+    t.string   "description"
+    t.string   "type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "events", :force => true do |t|
+    t.text     "description"
+    t.string   "location"
+    t.string   "name"
+    t.string   "link"
+    t.string   "venue"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.boolean  "cancelled"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "events_users", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "file"
+    t.string   "file_cache"
+    t.integer  "user_id"
+    t.string   "description"
+    t.boolean  "profile_picture"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                           :null => false

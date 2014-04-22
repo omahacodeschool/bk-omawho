@@ -7,6 +7,6 @@ class JoinTableForCategoriesUsers < ActiveRecord::Migration
   end
 
   def down
-    drop_table: :categories_users
+    drop_table :categories_users
   end
 end

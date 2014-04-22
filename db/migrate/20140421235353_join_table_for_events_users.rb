@@ -7,6 +7,6 @@ class JoinTableForEventsUsers < ActiveRecord::Migration
   end
 
   def down
-    drop_table: :events_users
+    drop_table :events_users
   end
 end
