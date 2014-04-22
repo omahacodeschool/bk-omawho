@@ -6,6 +6,7 @@ Omawho::Application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :images
   resources :password_resets, only: [:create, :edit, :update]
   
   resources :events do
