@@ -3,6 +3,76 @@ body {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+  width: 50px;
+  float: right;
+}
+
+ul li {
+  background: #ad3d32;
+  color: white;
+  padding: 5px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* HEADER */
+
+#headerguy {
+  background-image: url("/assets/omaha_skyline3.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+  color: #fff;
+}
+
+#header_content {
+  position: relative;
+  top: 15px;
+  max-width:500px;
+}
+
+#skyline {
+  width: 100%;
+}
+
+#omalogo {
+  max-width: 300px;
+  display:block;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  top: 15px;
+}
+
+.redbg {
+  background: #ad3d32;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  float: right;
+}
+
+#menubar {
+  background: #4c6262;
+  height: 40px;
+  color:white;
+  padding-top: 10px;
+}
+
+#mobilemenubar {
+  background: #4c6262;
+  height: 60px;
+  text-align:center;
+  margin-top: -17px;
+  color: white;
+  padding-top: 5px;
+}
+
+/* FOOTER */
+
 #footer {
   background: #4c6262;
   color: white;
@@ -55,52 +125,7 @@ body {
   background-position-y: 30px;
 }
 
-#menubar {
-  background: #4c6262;
-  height: 40px;
-  color:white;
-  padding-top: 10px;
-}
-
-#mobilemenubar {
-  background: #4c6262;
-  height: 60px;
-  text-align:center;
-  margin-top: -17px;
-  color: white;
-  padding-top: 5px;
-}
-
-#omalogo {
-  max-width: 300px;
-  display:block;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  top: 15px;
-}
-
-.redbg {
-  background: #ad3d32;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  float: right;
-}
-
-ul {
-  list-style: none;
-  width: 50px;
-  float: right;
-}
-
-ul li {
-  background: #ad3d32;
-  color: white;
-  padding: 5px;
-  width: 50px;
-  margin-bottom: 10px;
-}
+/* MISCELLANEOUS */
 
 .lefttimes {
   float: right;
@@ -111,26 +136,5 @@ ul li {
 }
 
 #testimage {
-  width: 100%;
-}
-
-/* HOMEPAGE */
-
-#headerguy {
-  background-image: url("/assets/omaha_skyline3.jpg");
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 150px;
-  color: #fff;
-}
-
-#header_content {
-  position: relative;
-  top: 15px;
-  max-width:500px;
-}
-
-#skyline {
   width: 100%;
 }
