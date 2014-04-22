@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
   attr_accessible :username, :first_name, :last_name, :tagline
   attr_accessible :bio, :website, :company, :company_site
-  attr_accessible :facebook, :twitter, :pinterest, :linkedin, :github, :googleplus, :dribble, :instagram, :tumblr
+  attr_accessible :facebook, :twitter, :pinterest, :linkedin, :github, :googleplus, :dribbble, :instagram, :tumblr
   # Note: security encryption and administrative status items not included in
   #       attr_accessible lists
   
