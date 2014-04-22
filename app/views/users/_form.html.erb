@@ -1,0 +1,131 @@
+
+<!-- this is from sumeets code, doesnt actually associate the image eith the user yet. remove this comment when it works -->
+<%# form_for(@image, :html => {:multipart => true, :id => "upload_profile_photo"}, :remote => true) do |f| %>
+  <div id="upload_profile_photo_container">
+    <div class="pull-left">
+      <%#image_tag((@user.images.first ? @user.images.first : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
+    </div>
+    
+    <div class="pull-left">
+      <div id="profile_photo_before">
+        <%# f.file_field :file, :id => "profile_photo_field" %>
+        <%# f.submit "Upload", :style => "display: none" %>
+      </div>
+      <div id="profile_photo_after" style="display: none">
+        <%# image_tag("loading.gif", :alt => "Loading...") %>
+      </div>
+      <div id="profile_photo_success" style="display: none">
+        <i class="icon-ok"></i>
+      </div>
+    </div>
+  </div>
+<%# end %> 
+
+
+
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="profile_fields">
+    <div>
+      <%= f.text_field :first_name, :placeholder => "First Name", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :last_name, :placeholder => "Last Name", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :username, :placeholder => "Username", :class => "input-xlarge" %>
+    </div>
+
+    <div>
+      <%= f.text_field :email, :placeholder => "Email", :class => "input-xlarge" %>
+    </div>
+
+    <div>
+      <%= f.password_field :password, :placeholder => "Password", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <!-- replace this with categories from model -->
+      <% categorys =  [ 'some', 'categorys', 'goes', 'here', 'later' ]%>
+      <% categorys.each do |c| %>
+        <div>
+          <%= check_box_tag c.to_s %><%= c.to_s %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="company_fields">
+    <p> Where do you work?</p>
+    <div>
+      <%= f.text_field :company, :placeholder => "Company", :class => "input-xlarge" %>
+    </div>
+    <div>
+      <%= f.text_field :company_site, :placeholder => "Company Website", :class => "input-xlarge" %>
+    </div>
+  </div>
+  
+  <div class="profile_fields">
+    <p>Add your web presence and bio. All fields are optional.</p>
+    
+    <div>
+      <%= f.text_field :twitter, :placeholder => "Twitter", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :facebook, :placeholder => "Facebook", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :github, :placeholder => "Github", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :dribbble, :placeholder => "Dribbble", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :pinterest, :placeholder => "Pinterest", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :linkedin, :placeholder => "LinkedIn", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :googleplus, :placeholder => "Google Plus", :class => "input-xlarge" %>
+    </div>
+    
+    <div>
+      <%= f.text_field :instagram, :placeholder => "Instagram", :class => "input-xlarge" %>
+    </div>
+
+    <div>
+      <%= f.text_field :website, :placeholder => "Personal Website", :class => "input-xlarge" %>
+    </div>
+  </div>
+  
+  <div class="profile_fields">
+    <div>
+      <%= f.text_area :bio, :placeholder => "Bio (400 char max)", :class => "span4", :rows => 3, :maxlength => 400 %>
+    </div>
+  </div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
