@@ -17,6 +17,7 @@ Category.create(name: "Venture Capital")
 Category.create(name: "Community Connector")
 Category.create(name: "Non-Profit")
 
+
 @now = DateTime.now
 
 Event.create(name: "Test Event 1", location: "Loc 1", start_time: @now - 1.day, end_time: @now - 1.day + 1.hour)
@@ -28,3 +29,6 @@ Event.create(name: "Test Event 4", location: "Loc 4", start_time: @now + 1.month
 Event.all.each do |event|
   event.update_attribute(:approved, true)
 end
+
+User.create(:username => "admin_user", :email => "admin@example.com", :password => "jijijiji", :first_name => "Lawrence of ", :last_name => "Adminia")
+User.find_by_username("admin_user").update_attribute(:admin, true)

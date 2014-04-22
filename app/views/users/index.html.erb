@@ -1,1 +1,50 @@
-Test user index page 
+
+
+<div class="row" id="face-display">
+  <% @users.each do |user| %>
+    <div class="large-3 columns">
+      <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid")), user %>
+      
+      <div style="display: none;"><%= user.first_name %> <%= user.last_name %></div>
+      <div style="display: none;"><%= link_to 'Show', user %></div>
+    </div>
+  <% end %>
+
+
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+ <div class="large-3 columns">
+   <img id="testimage" src="/assets/500.jpg">
+ </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+ <div class="large-3 columns">
+   <img id="testimage" src="/assets/500.jpg">
+ </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+ <div class="large-3 columns">
+   <img id="testimage" src="/assets/500.jpg">
+ </div>
+  <div class="large-3 columns">
+    <img id="testimage" src="/assets/500.jpg">
+  </div>
+</div>
