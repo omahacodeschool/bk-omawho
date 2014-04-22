@@ -86,10 +86,10 @@ body{
 .redbg{
   background: #ad3d32;
   color: white;
-  width: 58px;
-  padding: 9px;
+  padding: 5px;
   text-align: center;
-  float: right;
+
+
 
 }
 
@@ -125,6 +125,7 @@ ul li{
   background-image: url("/assets/skyline.png");
   background-size: cover;
   height: 400px;
+  color: white;
 }
 #skyline{
   
