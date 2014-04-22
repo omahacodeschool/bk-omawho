@@ -6,6 +6,7 @@ Omawho::Application.routes.draw do
   resources :users
   resources :sessions
   resources :password_resets
+  resources :images
   
   root :to => 'users#index'
 
