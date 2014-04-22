@@ -16,3 +16,6 @@ Category.create(name: "Writing")
 Category.create(name: "Venture Capital")
 Category.create(name: "Community Connector")
 Category.create(name: "Non-Profit")
+
+User.create(:username => "admin_user", :email => "admin@example.com", :password => "jijijiji", :first_name => "Lawrence of ", :last_name => "Adminia")
+User.find_by_username("admin_user").update_attribute(:admin, true)
