@@ -9,9 +9,6 @@
   <span><%= @event.location %></span>
 </h5>
 
-<p><%= link_to "Edit Event", edit_event_path(@event) %></p>
-<p><%= link_to 'Delete this Event', @event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></p>
-
 <% if !current_user %>
   <p><%= link_to "Log in to mark your attendance.", login_path(:return_to_url => event_path(@event)), :class => "" %></p>
 <% end %>
@@ -31,3 +28,13 @@
 <% end %>
 
 <hr />
+<h5>Admin</h5>
+<%= link_to "Edit Event", edit_event_path(@event) %><br>
+<%= link_to 'Delete this Event', @event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %><br>
+
+<% if current_user && current_user.admin? %>
+  <%= form_tag event_approve_path(@event) do %>
+    <%= button_tag "Approve Event (Administrator)", :type => "submit", :class => "" %><br>
+  <% end %>
+<% end %>
+

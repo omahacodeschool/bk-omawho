@@ -87,26 +87,27 @@ class EventsController < ApplicationController
     end
   end
   
-  # def attend
-  #   @event = Event.find(params[:event_id])
-  #   
-  #   if current_user.events.exists?(@event)
-  #     current_user.events.delete(@event)
-  #   else
-  #     current_user.events << @event
-  #   end
-  #   
-  #   @user_events = current_user.events
-  #   
-  #   respond_to do |format|
-  #     format.html { redirect_to event_path(@event.slug), notice: 'Your attendance status was updated.' }
-  #     format.json { render json: @events }
-  #     format.js
-  #   end
-  # end
-  # 
+  def attend
+    @event = Event.find(params[:event_id])
+    
+    if current_user.events.exists?(@event)
+      current_user.events.delete(@event)
+    else
+      current_user.events << @event
+    end
+    
+    @user_events = current_user.events
+    
+    respond_to do |format|
+      format.html { redirect_to event_path(@event), notice: 'Your attendance status was updated.' }
+      # format.json { render json: @events }
+      # format.js
+    end
+  end
+  
   
   def approve
+    binding.pry
     if current_user && current_user.admin?
       @event = Event.find(params[:event_id])
   
