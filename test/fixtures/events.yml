@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  location: MyString
+  name: MyString
+  link: MyString
+  venue: MyString
+  start_time: 2014-04-21 18:27:36
+  end_time: 2014-04-21 18:27:36
+  cancelled: false
+
+two:
+  description: MyText
+  location: MyString
+  name: MyString
+  link: MyString
+  venue: MyString
+  start_time: 2014-04-21 18:27:36
+  end_time: 2014-04-21 18:27:36
+  cancelled: false
