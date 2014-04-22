@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
   
   def index
+    @users = User.order("RANDOM()").limit(12)
     
   end
   

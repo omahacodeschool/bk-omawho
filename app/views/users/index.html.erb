@@ -1,1 +1,10 @@
-Test user index page 
+<h1>Test user index page</h1>
+
+<% @users.each do |u| %>
+
+<%# Display user info here %>
+<h2>
+<%= u.email %>
+</h2>
+
+<% end %>

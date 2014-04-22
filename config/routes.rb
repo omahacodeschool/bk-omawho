@@ -5,6 +5,7 @@ Omawho::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
   resources :users
   resources :sessions
+  resources :password_resets
   
   root :to => 'users#index'
 
