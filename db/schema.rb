@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140422142004) do
+ActiveRecord::Schema.define(:version => 20140422150506) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20140422142004) do
     t.string   "link"
     t.integer  "user_id"
     t.string   "description"
-    t.string   "type"
+    t.string   "embed_type"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
