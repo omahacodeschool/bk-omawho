@@ -1,4 +1,4 @@
-<%= form_tag sessions_path do %>
+<%= form_tag sessions_path, :method => :post do %>
   <div class="field">
     <%= label_tag :email %>
     <%= text_field_tag :email, params[:email] %>
@@ -12,4 +12,12 @@
     <%= label_tag :remember_me %>
   </div>
   <div class="actions"><%= submit_tag "Log in" %></div>
+  
 <% end %>
+
+<div class="forgot_password">
+  <%= form_tag password_resets_path do %>
+    <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+    <%= submit_tag "Reset my password!", :class => "btn" %>
+  <% end %>
+</div>
