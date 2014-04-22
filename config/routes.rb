@@ -23,6 +23,6 @@ Omawho::Application.routes.draw do
   
   root :to => 'users#index'
   
-  match ':username' => 'users#show', :as => :view_profile
+  get ':username' => 'users#show', :as => :view_profile
 
 end
