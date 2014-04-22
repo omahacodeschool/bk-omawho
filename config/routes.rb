@@ -14,7 +14,7 @@ Omawho::Application.routes.draw do
   
   resources :events do
     post "attend" => "events#attend", :as => :attend
-    put "approve" => "events#approve", :as => :approve
+    post "approve" => "events#approve", :as => :approve
   end
   
   get "about" => "site_pages#about", :as => :about
