@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :venue
       t.datetime :start_time
       t.datetime :end_time
-      t.boolean :cancelled
+      t.boolean :cancelled, :default => false
 
       t.timestamps
     end
