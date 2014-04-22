@@ -9,6 +9,5 @@
   <span><%= @event.location %></span>
 </h5>
 
-<hr />
-    
-
+<p><%= link_to "Edit Event", edit_event_path(@event) %></p>
+<p><%= link_to 'Delete this Event', @event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></p>

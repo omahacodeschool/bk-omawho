@@ -33,8 +33,8 @@ class EventsController < ApplicationController
     # end
   end
 
-  def edit
-    if current_user.admin?
+  def edit    
+    if current_user && current_user.admin?
       @event = Event.find(params[:id])
     else
       not_authenticated
@@ -56,12 +56,12 @@ class EventsController < ApplicationController
   end
 
   def update
-    if current_user.admin?
+    if current_user && current_user.admin?
       @event = Event.find(params[:id])
 
       respond_to do |format|
         if @event.update_attributes(params[:event])
-          format.html { redirect_to event_path(@event.slug), notice: 'Event was successfully updated.' }
+          format.html { redirect_to event_path(@event), notice: 'Event was successfully updated.' }
 #          format.json { head :no_content }
         else
           format.html { render action: "edit" }
@@ -74,7 +74,7 @@ class EventsController < ApplicationController
   end
   
   def destroy
-    if current_user.admin?
+    if current_user && current_user.admin?
       @event = Event.find(params[:id])
       @event.destroy
 

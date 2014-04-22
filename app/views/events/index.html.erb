@@ -6,7 +6,7 @@
   <% @events.each do |event| %>
     <li>
       <%= "#{event.name}, #{event.location}, #{event.start_time}" %>
-      <%= link_to "Show Event", event_path(event.id) %>
+      <%= link_to "Show Event", event_path(event) %>
     </li>
   <% end %>
 </ul>   
