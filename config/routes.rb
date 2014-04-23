@@ -7,7 +7,9 @@ Omawho::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
-  resources :users
+  resources :users 
+  get "search_results" => "users#search", :as => :name_search  
+  
   resources :sessions
   resources :images
   resources :password_resets, only: [:create, :edit, :update]

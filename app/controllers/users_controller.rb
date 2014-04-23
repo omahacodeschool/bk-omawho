@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    puts(">>>>>> users#index params:  #{params} <<<<<<<<")
     @users = User.order("RANDOM()").limit(12)
 
     respond_to do |format|
