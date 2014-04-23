@@ -1,3 +1,75 @@
 // Place all the styles related to the site_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media only screen and (min-width: 600px) {
+  .about_page_photos {
+    padding: 6% 0% 0% 10%;
+  }
+
+  .about_page_photos img {
+    width: 100%;
+  }
+
+  #about_page_section {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #about_page {
+    color: #fff;
+    padding: 3% 5% 3% 5%;
+    max-width: 90%;
+  }
+
+  #about_page a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #about_page a:hover {
+    color: #ad3d32;
+  }
+  
+  #about_page_text h1 {
+    font-size: 2.5vw;
+  }
+  
+  #about_page_text h2 {
+    font-size: 2.3vw;
+  }
+
+  #backdrop {
+    background: #000;
+  }
+  
+  #mobile_image_heading {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  #about_page_photo img {
+    display: none;
+  }
+
+  #about_page_section {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #about_page {
+    padding: 5%;
+    color: #fff;
+    font-size: 3.2vw;
+  }
+
+  #about_page a {
+    color: #ad3d32;
+    text-decoration: none;
+  }
+
+  #backdrop {
+    background: #000;
+  }
+}
