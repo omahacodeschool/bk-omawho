@@ -42,10 +42,10 @@ class ImageAssetUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process :resize_to_fit => [50, 50]
   # end
-  # version :square do
-#     process :auto_orient
-#     process :resize_to_fill => [570, 570]
-#   end
+  version :square do
+     #process :auto_orient
+     process :resize_to_fill => [570, 570]
+   end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list

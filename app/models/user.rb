@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   
   
   def profile_image
-    self.profile_image_id ? Image.find(self.profile_image_id).file : nil
+    self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
   end
   
 end
