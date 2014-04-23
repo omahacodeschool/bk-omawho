@@ -2,7 +2,42 @@
 input{
   width: 100%;
   background: white;
-  padding: 20px;
+  padding-top: 25px;
+  padding-bottom: 24px;
+  border: none;
+}
+
+#searchthing{
+  margin-top: -10px;
+  height: 50px;
+  text-align: center;
+  border: none;
+  -webkit-appearance: none;
+  background-color:#ad3d32;
+  color:white;
+  font-weight:bold;
+  
+}
+.profilefields{
+  margin-left: 40px;
+  line-height: 5;
+}
+
+.row_1{
+  padding-right: 20px;
+  line-height: 5;
+  
+}
+.row_2{
+  padding-left: 20px;
+  line-height: 5;
+  
+}
+#searchfield{
+  -webkit-appearance: none;
+  margin-top: -10px;
+  border: none;
+  height: 50px;
 }
 
 
@@ -140,14 +175,6 @@ ul li {
 }
 
 /* MISCELLANEOUS */
-
-.lefttimes {
-  float: right;
-}
-
-.righttimes {
-  float: left;
-}
 
 #testimage {
   width: 100%;
@@ -369,6 +396,223 @@ color: #fff;
 #chooseface{
   padding: 20px;
   background: #ad3d32;
-  margin-top: 1px;
+  margin-top: 9px;
   color:white;
+  text-align:center;
+}
+
+#addingtitle{
+  color: #ad3d32;;
+  text-align:center;
+  font-weight: bold;
+  font-size: 40px;
+  
+}
+
+#optional{
+  color: #4c6262;
+  text-align: center;
+  font-size: 22px;
+  margin-top: -20px;
+}
+
+.span4{
+  width: 100%;
+  height: 175px;
+  margin-top:12px;
+  text-align:center;
+  padding-top: 40px;
+}
+
+.person{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -140px;
+  position: relative;
+  right: -15px;
+}
+
+.username{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -93px;
+  position: relative;
+  right: -15px;
+}
+
+.email{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -414px;
+  position: relative;
+  right: -15px;
+}
+
+.password{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -230px;
+  position: relative;
+  right: -15px;
+}
+
+.tag{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -230px;
+  position: relative;
+  right: -15px;
+}
+
+.whitebg{
+  background: white;
+  position:relative;
+  top:9px;
+}
+
+.whitebg2 {
+background: white;
+position: relative;
+top: 2px;
+}
+
+.nooutline{
+  outline: none;
+}
+
+.tag{
+  width: 31px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -368px;
+  position: relative;
+  right: -15px;
+  
+}
+
+.company{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: 0;
+  position: relative;
+  right: -15px;
+  
+}
+.twitter{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: 122px;
+  position: relative;
+  right: -15px;
+  
+}
+
+.facebook{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: 214px;
+  position: relative;
+  right: -15px;
+  
+}
+.github{
+width: 30px;
+height: 30px;
+background-image: url("sprites.png");
+background-position-x: 30px;
+position: relative;
+right: -15px;
+}
+.companywebsite{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -277px;
+  position: relative;
+  right: -15px;
+  
+  
+}
+.dribble{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: 76px;
+  position: relative;
+  right: -15px;
+}
+
+.pinterest{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -92px;
+  position: relative;
+  right: -15px;
+  background-position-y: -46px;
+}
+.gplus{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: 260px;
+  position: relative;
+  right: -15px;
+}
+
+.yowebsite{
+  width: 31px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -319px;
+  position: relative;
+  right: -15px;
+}
+.ln{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: -46px;
+  position: relative;
+  right: -15px;
+  background-position-y: -46px;
+}
+
+.instagram{
+  width: 30px;
+  height: 30px;
+  background-image: url("sprites.png");
+  background-position-x: 167px;
+  position: relative;
+  right: -15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .row_1{
+    padding:0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .row_2{
+    padding:0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .profilefields{
+    margin: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  #choosefacecol{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }

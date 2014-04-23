@@ -107,7 +107,6 @@ class EventsController < ApplicationController
   
   
   def approve
-    binding.pry
     if current_user && current_user.admin?
       @event = Event.find(params[:event_id])
   
