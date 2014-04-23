@@ -24,9 +24,9 @@
   the rows will stack and fill 100% width of the row.
 */
 
-/************/
-/* KEYWORDS */
-/************/
+/*****************/
+/* META KEYWORDS */
+/*****************/
 
 meta.omawho-version {
   font-family: "/5.2.2/";
@@ -65,9 +65,7 @@ meta.omawho-data-attribute-namespace {
 /* GENERAL */
 /***********/
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -260,16 +258,7 @@ select {
     width: 100%;
   }
 
-/*  [class*="column"] + [class*="column"]:last-child {
-    float: right;
-  }
-
-  [class*="column"] + [class*="column"].end {
-    float: left;
-  }*/
-
-  .small-reset-order,
-  .small-reset-order {
+  .small-reset-order, .small-reset-order {
     margin-left: 0;
     margin-right: 0;
     left: auto;
@@ -277,22 +266,19 @@ select {
     float: left;
   }
 
-  .column.small-centered,
-  .columns.small-centered {
+  .column.small-centered, .columns.small-centered {
     margin-left: auto;
     margin-right: auto;
     float: none;
   }
 
-  .column.small-uncentered,
-  .columns.small-uncentered {
+  .column.small-uncentered, .columns.small-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important;
   }
 
-  .column.small-uncentered.opposite,
-  .columns.small-uncentered.opposite {
+  .column.small-uncentered.opposite, .columns.small-uncentered.opposite {
     float: right;
   }
 }
@@ -359,17 +345,8 @@ for small and large */
   .medium-12 {
     width: 100%;
   }
-  
-/*  [class*="column"] + [class*="column"]:last-child {
-    float: right;
-  }
 
-  [class*="column"] + [class*="column"].end {
-    float: left;
-  }*/
-
-  .medium-reset-order,
-  .medium-reset-order {
+  .medium-reset-order, .medium-reset-order {
     margin-left: 0;
     margin-right: 0;
     left: auto;
@@ -377,22 +354,19 @@ for small and large */
     float: left;
   }
 
-  .column.medium-centered,
-  .columns.medium-centered {
+  .column.medium-centered, .columns.medium-centered {
     margin-left: auto;
     margin-right: auto;
     float: none;
   }
 
-  .column.medium-uncentered,
-  .columns.medium-uncentered {
+  .column.medium-uncentered, .columns.medium-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important;
   }
 
-  .column.medium-uncentered.opposite,
-  .columns.medium-uncentered.opposite {
+  .column.medium-uncentered.opposite, .columns.medium-uncentered.opposite {
     float: right;
   }
 }
@@ -457,18 +431,7 @@ for small and large */
     width: 100%;
   }
 
-/*
-  [class*="column"] + [class*="column"]:last-child {
-    float: right;
-  }
-
-  [class*="column"] + [class*="column"].end {
-    float: left;
-  }
-  */
-
-  .large-reset-order,
-  .large-reset-order {
+  .large-reset-order, .large-reset-order {
     margin-left: 0;
     margin-right: 0;
     left: auto;
@@ -476,22 +439,19 @@ for small and large */
     float: left;
   }
 
-  .column.large-centered,
-  .columns.large-centered {
+  .column.large-centered, .columns.large-centered {
     margin-left: auto;
     margin-right: auto;
     float: none;
   }
 
-  .column.large-uncentered,
-  .columns.large-uncentered {
+  .column.large-uncentered, .columns.large-uncentered {
     margin-left: 0;
     margin-right: 0;
     float: left !important;
   }
 
-  .column.large-uncentered.opposite,
-  .columns.large-uncentered.opposite {
+  .column.large-uncentered.opposite, .columns.large-uncentered.opposite {
     float: right;
   }
     
@@ -518,6 +478,8 @@ for small and large */
     padding: 0 0.625rem 1.25rem;
   }
 }
+
+/* Ask Kait what's going on with all the grids */
 
 @media only screen {
   .small-block-grid-1 > li {
@@ -810,7 +772,9 @@ for small and large */
     .large-block-grid-12 > li:nth-of-type(12n+1) {
       clear: both; } }
 
-/* small displays */
+/************************************/
+/* SHOW AND HIDE FOR SMALL DISPLAYS */
+/************************************/
 
 @media only screen {
   .show-for-small-only, .show-for-small-up, .show-for-small, .show-for-small-down, .hide-for-medium-only, .hide-for-medium-up, .hide-for-medium, .show-for-medium-down, .hide-for-large-only, .hide-for-large-up, .hide-for-large, .show-for-large-down {
@@ -842,7 +806,9 @@ for small and large */
   }
 }
 
-/* medium displays */
+/*************************************/
+/* SHOW AND HIDE FOR MEDIUM DISPLAYS */
+/*************************************/
 
 @media only screen and (min-width: 40.063em) {
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .show-for-medium-only, .show-for-medium-up, .show-for-medium, .show-for-medium-down, .hide-for-large-only, .hide-for-large-up, .hide-for-large, .show-for-large-down {
@@ -874,7 +840,9 @@ for small and large */
   }
 }
 
-/* large displays */
+/************************************/
+/* SHOW AND HIDE FOR LARGE DISPLAYS */
+/************************************/
 
 @media only screen and (min-width: 64.063em) {
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .hide-for-medium-only, .show-for-medium-up, .hide-for-medium, .hide-for-medium-down, .show-for-large-only, .show-for-large-up, .show-for-large, .show-for-large-down {
