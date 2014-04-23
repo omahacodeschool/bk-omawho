@@ -16,4 +16,6 @@ class UsersController < ApplicationController
     
   end
   
+  def responsivetemplate
+  end
 end

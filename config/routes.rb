@@ -6,6 +6,8 @@ Omawho::Application.routes.draw do
   resources :users
   resources :sessions
   
+  get "responsivetemplate" => "users#responsivetemplate"
+  
   root :to => 'users#index'
 
   # The priority is based upon order of creation:
