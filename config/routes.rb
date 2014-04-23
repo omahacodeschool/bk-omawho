@@ -23,6 +23,10 @@ Omawho::Application.routes.draw do
   get "contact" => "site_pages#contact", :as => :contact
   get "rss_feed" => "site_pages#rss_feed", :as => :rss_feed
   
+  get "responsivetemplate" => "users#responsivetemplate"
+  
   root :to => 'users#index'
+  
+  get ':username' => 'users#show', :as => :view_profile
 
 end
