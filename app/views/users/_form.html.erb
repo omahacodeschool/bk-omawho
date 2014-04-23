@@ -5,7 +5,7 @@
 <%= form_for(@image, :html => {:multipart => true, :id => "upload_profile_photo"}, :remote => true) do |f| %>
   <div id="upload_profile_photo_container">
     <div class="pull-left">
-      <%= image_tag((@user.images.first ? @user.images.first : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
+      <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
     </div>
     
     <div class="pull-left">
@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-<% end %> 
+<% end %>
 
 
 

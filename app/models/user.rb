@@ -31,4 +31,10 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :embeds
   
+  
+  
+  def profile_image
+    return false
+  end
+  
 end
