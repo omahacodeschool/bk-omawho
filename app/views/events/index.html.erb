@@ -1,5 +1,5 @@
-<div id="events_text">
-  <div class="row">
+<div id="events_container">
+  <div class="row" id="heading_row">
     <div class="large-4 columns">
       <p></p>
     </div>
@@ -7,41 +7,59 @@
       <h1>Upcoming Events</h1>
     </div>
     <div class="large-4 columns">
-      <%= link_to "submit a new event", :new_event, :class => "red_button" %>
+      <%= link_to "submit a new event", :new_event, :id => "event_button" %>
     </div>
   </div>
-</div>
-<div id="events_text">
   <% @events.each do |event| %>
   <div class="row upcoming_event_bar">
-    <div class="large-4 columns">
+    <div class="large-4 columns white_text">
       <%= "#{event_date(event.start_time)}" %>
     </div>
-    <div class="large-4 columns">
-      <%= "#{event.name}" %>
+    <div class="large-4 columns white_text">
+      <div id="event_name"><b><%= "#{event.name}" %></b></div>
     </div>
-    <div class="large-4 columns">
+    <div class="large-4 columns white_text">
       <%= "#{event.venue}" %>
     </div>
   </div>
-</div>
-<div class="row event_display">
-  <div class="large-4 columns">
-    <h3><div id="red_text">OMA</div>WHEN</h3>
-    <p>Starts at <%= "#{event_time(event.start_time)}" %><br/>
-    Ends around <%= "#{event_time(event.end_time)}" %></p>
+  <div class="row event_display">
+    <div class="large-4 columns">
+      <div id="event_column">
+        <h3><div id="red_text">OMA</div>WHEN</h3>
+        <p>Starts at <%= "#{event_time(event.start_time)}" %><br/>
+        Ends around <%= "#{event_time(event.end_time)}" %></p>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <div id="event_column">
+        <% @users = event.users %>
+        <% if current_user %>
+          <% if current_user.events.include?(event) %>
+            <h3><div id="red_text">OMA</div>WHO (<%= @users.length %>)<%= link_to "I'M NOT GOING", {:controller => "events", :action => "attend", :event_id => event.id }, :method => :post, :id => "attendance_button" %></h3>
+          <% else %>
+            <h3><div id="red_text">OMA</div>WHO (<%= @users.length %>)<%= link_to "I'M GOING", {:controller => "events", :action => "attend", :event_id => event.id }, :method => :post, :id => "attendance_button" %></h3>
+          <% end %>
+        <% end %>
+        <div id="event_attendees">
+          <% if @users == [] %>
+            <p>Be the first to mark your attendance.</p>
+          <% else %>
+            <% @users.each do |user| %>
+            <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <div id="event_column">
+        <h3><div id="red_text">OMA</div>WHERE</h3>
+        <%= "#{event.location}" %>
+      </div>
+    </div>
   </div>
-  <div class="large-4 columns">
-    <h3><div id="red_text">OMA</div>WHO</h3>
-  </div>
-  <div class="large-4 columns">
-    <h3><div id="red_text">OMA</div>WHERE</h3>
-    <%= "#{event.location}" %>
-  </div>
-</div>
-<% end %>
-<div id="events_text">
-  <div class="row">
+  <% end %>
+  <div class="row" id="heading_row">
     <div class="large-4 columns">
       <p></p>
     </div>
@@ -52,33 +70,41 @@
       <p></p>
     </div>
   </div>
-</div>
-<div id="events_text">
   <% @past_events.each do |event| %>
   <div class="row past_event_bar">
-    <div class="large-4 columns">
+    <div class="large-4 columns white_text">
       <%= "#{event_date(event.start_time)}" %>
     </div>
-    <div class="large-4 columns">
-      <%= "#{event.name}" %>
+    <div class="large-4 columns white_text">
+      <div id="event_name"><b><%= "#{event.name}" %></b></div>
     </div>
-    <div class="large-4 columns">
+    <div class="large-4 columns white_text">
       <%= "#{event.venue}" %>
     </div>
   </div>
-</div>
-<div class="row event_display">
-  <div class="large-4 columns">
-    <h3><div id="red_text">OMA</div>WHEN</h3>
-    <p>Started at <%= "#{event_time(event.start_time)}" %><br/>
-    Ended around <%= "#{event_time(event.end_time)}" %></p>
-  </div>
-  <div class="large-4 columns">
-    <h3><div id="red_text">OMA</div>WHO</h3>
-  </div>
-  <div class="large-4 columns">
-    <h3><div id="red_text">OMA</div>WHERE</h3>
-    <%= "#{event.location}" %>
-  </div>
-</div>  
+  <div class="row event_display">
+    <div class="large-4 columns" id="event_column">
+      <h3><div id="red_text">OMA</div>WHEN</h3>
+      <p>Started at <%= "#{event_time(event.start_time)}" %><br/>
+      Ended around <%= "#{event_time(event.end_time)}" %></p>
+    </div>
+    <div class="large-4 columns" id="event_column">
+      <h3><div id="red_text">OMA</div>WHO WAS THERE</h3>
+      <% @users = event.users %>
+      <div id="event_attendees">
+        <% if @users == [] %>
+          <p>No one marked their attendance.</p>
+        <% else %>
+          <% @users.each do |user| %>
+          <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="large-4 columns" id="event_column">
+      <h3><div id="red_text">OMA</div>WHERE</h3>
+      <%= "#{event.location}" %>
+    </div>
+  </div>  
 <% end %>
+</div>

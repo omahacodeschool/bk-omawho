@@ -10,10 +10,6 @@ class EventsController < ApplicationController
       @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC")
     end
     
-    # @events.each do |event|
-#       @users = User.random.where(:id => event.user_ids)
-#     end
-    
     if current_user
       @user_events = current_user.events
     end
@@ -103,7 +99,7 @@ class EventsController < ApplicationController
     @user_events = current_user.events
     
     respond_to do |format|
-      format.html { redirect_to event_path(@event), notice: 'Your attendance status was updated.' }
+      format.html { redirect_to events_url }
       # format.json { render json: @events }
       # format.js
     end

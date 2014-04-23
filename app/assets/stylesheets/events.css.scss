@@ -4,16 +4,19 @@ body {
 
 h1, h2, h4, h5 {
   color: #ad3d32;
+  text-align: center;
+}
+
+.event_attendee_image {
+  width: 23%;
+  margin: 2% 2% 0% 0%;
+  float: left;
 }
 
 .event_display {
   background: #fff;
-  padding: 0% 2%;
-}
-
-.past_event_bar {
-  background: #6d6d6d;
-  padding: 1.5%;
+  padding: 0% 2% 2% 2%;
+  display: none;
 }
 
 .red_button {
@@ -21,17 +24,39 @@ h1, h2, h4, h5 {
   text-decoration: none;
 }
 
-.upcoming_event_bar {
-  background: #ad3d32;
-  padding: 1.5%;
+.white_text {
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+}
+
+#event_column {
+  padding: 0% 5%;
+}
+
+#events_container {
+  padding: 20px 0 70px 0;
 }
 
 #events_text {
   color: #fff;
 }
 
+#heading_row {
+  margin-top: 15px;
+}
+
+.past_event_bar {
+  background: #6d6d6d;
+  padding: 1.5%;
+  margin-top: 15px !important;
+  cursor: pointer;
+}
+
 #past_events_heading {
-  color: #fff;
+  color: #6d6d6d;
+  text-align: center;
+  cursor: pointer;
 }
 
 #red_text {
@@ -39,10 +64,42 @@ h1, h2, h4, h5 {
   display: inline-block;
 }
 
+#event_button {
+  background: #ad3d32;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  float: left;
+  margin-top: 8%;
+  width: 100%;
+  text-decoration: none;
+}
+
+#attendance_button {
+  width: 98%;
+  text-decoration: none;
+  background: #ad3d32;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  float: left;
+  margin-top: 8%;
+}
+
+.upcoming_event_bar {
+  background: #ad3d32;
+  padding: 1.5%;
+  margin-top: 15px !important;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 600px) {
   
 }
 
 @media only screen and (max-width: 599px) {
-  
+  #event_name {
+    margin: 10px 0px;
+    font-size: 20px;
+  }
 }
