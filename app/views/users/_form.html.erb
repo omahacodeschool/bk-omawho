@@ -4,14 +4,12 @@
     <div class="pull-left">
       <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
     </div>
-    
-    <%= f.hidden_field :user_id, :value => "#{@user.id.to_s}" %>
-    <%= f.hidden_field :profile_picture, :value => true %>
+  
     
     <div class="pull-left">
       <div id="profile_photo_before">
         <%= f.file_field :file, :id => "profile_photo_field" %>
-        <%= f.submit "Upload" %>
+        <%= f.submit "Upload", :style => "display: none"  %>
       </div>
       <div id="profile_photo_after" style="display: none">
         <%= image_tag("loading.gif", :alt => "Loading...") %>
