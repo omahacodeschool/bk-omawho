@@ -31,10 +31,33 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :embeds
   
+  # Public: Utility to get full user name.
+  #
+  #
+  # Returns the user first/last names concatenated into a String.
   def full_name
     "#{first_name} #{last_name}"
   end
-  
+
+  # Class Method:
+  # Public: Search for users by name.
+  #
+  # query_str - The String containing the search query. Expectation is that the 
+  #             query will hold a first name, a last name, or a first & 
+  #             last name.
+  # 
+  #
+  # Examples
+  #
+  #   User.search_name("John Smith")
+  #   # => One or more User objects matching 
+  #          first_name == "John", last_name == "Smith"
+  #
+  #   User.search_name("Joe")
+  #   # => Array of User objects with first_name == "Joe"
+  #
+  # Returns an Array of 0 or more User model objects matching name_search query 
+  # parameter strings or nil if there are errors
   def self.search_name(query_str)
     # split the query into multiple strings
     splits = query_str.split
@@ -59,6 +82,7 @@ class User < ActiveRecord::Base
       
     end
     
+    # Return the found user(s)
     found_users
   end
   
