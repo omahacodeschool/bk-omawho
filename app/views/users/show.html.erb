@@ -33,6 +33,11 @@
     
     <div id="works">
       My Works here
+      <% @user.images.each do |image| %>
+        <%= image_tag(image.file) %>
+      <% end %>
+      
+      
     </div>
     
 <div>
