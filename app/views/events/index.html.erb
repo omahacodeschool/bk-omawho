@@ -4,7 +4,7 @@
       <p></p>
     </div>
     <div class="large-4 columns">
-      <h1>Upcoming Events</h1>
+      <div id="upcoming_events_heading"><h1>Upcoming Events</h1></div>
     </div>
     <div class="large-4 columns">
       <%= link_to "submit a new event", :new_event, :id => "event_button" %>
@@ -30,7 +30,7 @@
         Ends around <%= "#{event_time(event.end_time)}" %></p>
       </div>
     </div>
-    <div class="large-4 columns">
+    <div class="large-4 columns black_text">
       <div id="event_column">
         <% @users = event.users %>
         <% if current_user %>
@@ -82,7 +82,7 @@
         <%= "#{event.venue}" %>
       </div>
     </div>
-    <div class="row event_display">
+    <div class="row event_display black_text">
       <div class="large-4 columns" id="event_column">
         <h3><div id="red_text">OMA</div>WHEN</h3>
         <p>Started at <%= "#{event_time(event.start_time)}" %><br/>

@@ -1,3 +1,7 @@
+.black_text {
+  color: #000;
+}
+
 .event_attendee_image {
   width: 23%;
   margin: 2% 2% 0% 0%;
@@ -37,7 +41,10 @@
 #past_events_heading {
   color: #6d6d6d;
   text-align: center;
-  cursor: pointer;
+}
+
+#upcoming_events_heading {
+  text-align: center;
 }
 
 #red_text {
