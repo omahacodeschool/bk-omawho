@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @image = Image.new
+    puts @user.id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,12 +44,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @image = Image.new # FIX THIS WITH THE USERS ACTUAL PROFILE PICTURE
+    @user.images << Image.find(params[:user][:profile_image_id])
 
     respond_to do |format|
       if @user.save
         auto_login(@user)
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to view_profile_path(@user.username), notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -61,10 +62,11 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    @image = Image.new # FIX THIS WITH THE USERS ACTUAL PROFILE PICTURE
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to view_profile_path(@user.username), notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

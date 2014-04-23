@@ -13,7 +13,7 @@ gem 'pg'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  # gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -41,3 +41,10 @@ gem 'unicorn'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'sorcery'
+
+gem 'fog'
+gem 'carrierwave'
+gem 'rmagick', :require => 'RMagick'
+gem 'remotipart'
+gem 'quiet_assets', :group => :development
+gem 'pry', :group => :development
