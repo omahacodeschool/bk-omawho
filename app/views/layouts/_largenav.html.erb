@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="small-6 large-6 columns">
-        <%= form_tag name_search_path do %>
+        <%= form_tag name_search_path, :method => 'get' do %>
 
             <%= search_field_tag :name_query, params[:name_query] %>
             <%= submit_tag "Search", :name => nil %>

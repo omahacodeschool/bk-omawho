@@ -31,4 +31,35 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :embeds
   
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+  
+  def self.search_name(query_str)
+    # split the query into multiple strings
+    splits = query_str.split
+    found_users = []
+    
+    # if two or more parameter strings, use first two for searching against 
+    #   first and last name
+    if splits.count >= 2
+      fname = splits[0]
+      lname = splits[1]
+      found_users = User.find(:all, :conditions => ["lower(first_name) = ? and lower(last_name) = ?", fname.downcase, lname.downcase])
+      
+    # otherwise use single string and search against any name
+    elsif splits.count > 0
+      anyname = splits[0]  # default to first query string an
+      found_users = User.find(:all, :conditions => ["lower(first_name) = ?", anyname.downcase])
+      found_users += User.find(:all, :conditions => ["lower(last_name) = ?", anyname.downcase])
+
+    # catch-all for query string errors (send back nil results)
+    else
+      return nil
+      
+    end
+    
+    found_users
+  end
+  
 end
