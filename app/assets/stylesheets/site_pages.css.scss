@@ -3,40 +3,39 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media only screen and (min-width: 600px) {
-
-  .aboutpage_photos {
+  .about_page_photos {
     padding: 6% 0% 0% 10%;
   }
 
-  .aboutpage_photos img {
+  .about_page_photos img {
     width: 100%;
   }
 
-  #aboutpage_section {
+  #about_page_section {
     margin-left: auto;
     margin-right: auto;
   }
 
-  #aboutpage {
+  #about_page {
     color: #fff;
     padding: 3% 5% 3% 5%;
     max-width: 90%;
   }
 
-  #aboutpage a {
+  #about_page a {
     color: #fff;
     text-decoration: none;
   }
 
-  #aboutpage a:hover {
+  #about_page a:hover {
     color: #ad3d32;
   }
   
-  #aboutpage_text h1 {
+  #about_page_text h1 {
     font-size: 2.5vw;
   }
   
-  #aboutpage_text h2 {
+  #about_page_text h2 {
     font-size: 2.3vw;
   }
 
@@ -44,29 +43,28 @@
     background: #000;
   }
   
-  #mobileimage_heading {
+  #mobile_image_heading {
     display: none;
   }
 }
 
 @media only screen and (max-width: 599px) {
-
-  #aboutpage_photo img {
+  #about_page_photo img {
     display: none;
   }
 
-  #aboutpage_section {
+  #about_page_section {
     margin-left: auto;
     margin-right: auto;
   }
 
-  #aboutpage {
+  #about_page {
     padding: 5%;
     color: #fff;
     font-size: 3.2vw;
   }
 
-  #aboutpage a {
+  #about_page a {
     color: #ad3d32;
     text-decoration: none;
   }
