@@ -223,9 +223,9 @@ select {
   float: left;
 }
 
-/******************/
-/* MOBILE DISPLAY */
-/******************/
+/*****************/
+/* SMALL DISPLAY */
+/*****************/
 
 @media only screen {
   .column, .columns {
