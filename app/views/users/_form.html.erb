@@ -14,7 +14,7 @@
     <div class="pull-left">
       <div id="profile_photo_before">
         <%= f.file_field :file, :id => "profile_photo_field" %>
-        <%= f.submit "Upload", :style => "display: none" %>
+        <%= f.submit "Upload" %>
       </div>
       <div id="profile_photo_after" style="display: none">
         <%= image_tag("loading.gif", :alt => "Loading...") %>

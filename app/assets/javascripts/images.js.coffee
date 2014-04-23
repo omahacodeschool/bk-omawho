@@ -1,7 +1,7 @@
 jQuery ->
   # Submit the photo form automatically.
   $('#profile_photo_field').on 'change', () ->
-    $('#upload_profile_photo').submit()
+    $('#upload_profile_photo').trigger("submit")
     
   # Photo form: Hide field, show 'loading'.
   $('#upload_profile_photo').on 'submit', () ->
