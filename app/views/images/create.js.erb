@@ -1,4 +1,5 @@
 <% if @image.errors.empty? %>
+  alert("hits 1");
   $("#profile_photo_id").val("<%= @image.id %>");
   $('#profile_photo_preview').attr("src", "<%= @image.file.square %>");
   $("#user_form input[type=submit]").removeAttr("disabled");

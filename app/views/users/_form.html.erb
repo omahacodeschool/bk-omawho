@@ -1,12 +1,15 @@
+<!-- Users creation and edit form -->
 
 <!-- this is from sumeets code, doesnt actually associate the image eith the user yet. remove this comment when it works -->
-
 
 <%= form_for(@image, :html => {:multipart => true, :id => "upload_profile_photo"}, :remote => true) do |f| %>
   <div id="upload_profile_photo_container">
     <div class="pull-left">
       <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
     </div>
+    
+    <%= f.hidden_field :user_id, :value => "#{@user.id.to_s}" %>
+    <%= f.hidden_field :profile_picture, :value => true %>
     
     <div class="pull-left">
       <div id="profile_photo_before">

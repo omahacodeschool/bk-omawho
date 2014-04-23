@@ -44,6 +44,6 @@ gem 'sorcery'
 
 gem 'fog'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', :require => 'RMagick'
 
 gem 'quiet_assets', :group => :development

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140422150506) do
+ActiveRecord::Schema.define(:version => 20140423162533) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20140422150506) do
 
   create_table "images", :force => true do |t|
     t.string   "file"
-    t.string   "file_cache"
     t.integer  "user_id"
     t.string   "description"
     t.boolean  "profile_picture"

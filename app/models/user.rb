@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   
   
   def profile_image
-    return false
+    return Image.find(11).file
   end
   
 end
