@@ -1,11 +1,48 @@
+body {
+  background: #1d1e1e;
+}
+
+h1, h2, h4, h5 {
+  color: #ad3d32;
+}
+
+.event_display {
+  background: #fff;
+  padding: 0% 2%;
+}
+
+.past_event_bar {
+  background: #6d6d6d;
+  padding: 1.5%;
+}
+
+.red_button {
+  color: #fff;
+  text-decoration: none;
+}
+
+.upcoming_event_bar {
+  background: #ad3d32;
+  padding: 1.5%;
+}
+
+#events_text {
+  color: #fff;
+}
+
+#past_events_heading {
+  color: #fff;
+}
+
+#red_text {
+  color: #ad3d32;
+  display: inline-block;
+}
+
 @media only screen and (min-width: 600px) {
-  #events_text {
-    color: #fff;
-  }
+  
 }
 
 @media only screen and (max-width: 599px) {
-  #events_text {
-    color: #fff;
-  }
+  
 }
