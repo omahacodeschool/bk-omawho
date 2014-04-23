@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  background-color: #000;
+  background-color: #1d1e1e;
   color: #fff;
 }
 
@@ -20,6 +20,13 @@ ul li {
   margin-bottom: 10px;
 }
 
+/* TEXT */
+
+h1, h2, h4, h5 {
+  color: #ad3d32;
+  text-align: center;
+}
+
 /* HEADER */
 
 #headerguy {
@@ -29,17 +36,22 @@ ul li {
   background-position: center;
   height: 150px;
   color: #fff;
+  margin-top: 5px;
 }
 
 #header_content {
-  max-width: 700px;
+  max-width: 750px;
+  position: relative;
+  top: -5px;
 }
 
 #header_tagline {
   font-size: 0.75em;
-  text-shadow: 3px 3px 5px #000;
+  text-shadow: 3px 3px 2px #000;
   text-align: center;
   margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 #skyline {
@@ -107,6 +119,21 @@ ul li {
   padding-top: 50px;
 }
 
+#footer_content {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+#footer_content p {
+  padding-right: 10px;
+}
+
+.bottomlogo, #about_icon, #twitter_icon {
+  float: right;
+  padding-right: 10px;
+}
+
 .bottomtext {
   font-size: 20px;
   position: relative;
@@ -122,7 +149,6 @@ ul li {
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
   margin-right: 5px;
 }
 
@@ -130,27 +156,8 @@ ul li {
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
   background-position-x: 60px;
   margin-right: 5px;
-}
-
-#rss_icon {
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  background-position-x: 30px;
-  margin-right: 5px;
-}
-
-#contact_icon {
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  margin-right: 5px;
-  background-position-y: 30px;
 }
 
 /* MISCELLANEOUS */
