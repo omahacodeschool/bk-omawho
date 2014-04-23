@@ -2,6 +2,8 @@
 
 body {
   margin: 0;
+  background-color: #000;
+  color: #fff;
 }
 
 ul {
@@ -30,16 +32,21 @@ ul li {
 }
 
 #header_content {
-  position: relative;
-  top: 15px;
-  max-width:500px;
+  max-width: 700px;
+}
+
+#header_tagline {
+  font-size: 0.75em;
+  text-shadow: 3px 3px 5px #000;
+  text-align: center;
+  margin: 0;
 }
 
 #skyline {
   width: 100%;
 }
 
-#omalogo {
+#logo {
   max-width: 300px;
   display:block;
   margin: 0 auto;
@@ -51,9 +58,29 @@ ul li {
 .red_button {
   background: #ad3d32;
   color: white;
-  padding: 5px 10px;
+  padding: 5px 15px;
   text-align: center;
+  text-decoration: none;
+  margin: 10px 0;
+  position: relative;
+}
+
+.red_button:hover {
+  background: #fff;
+  color: #ad3d32;
+}
+
+#left_nav_buttons, #right_nav_buttons {
+  position: relative;
+  top: 30px;
+}
+
+#left_nav_buttons .red_button {
   float: right;
+}
+
+#right_nav_buttons .red_button {
+  float: left;
 }
 
 #menubar {

@@ -1,15 +1,16 @@
 <div id="headerguy"> 
   <div id="header_content" class="row">
-    <div class="small-1 large-1 columns hide-for-small-only">
-      <p class="red_button">about</p>
-      <p class="red_button">game</p>
+    <div id="left_nav_buttons" class="small-3 large-3 columns hide-for-small-only">
+      <%= link_to("about", :about, class: "red_button") %>
+      <a href="#" class="red_button">name game</a>
     </div>
-    <div class="small-10 large-10 columns hide-for-small-only">
-      <img id="omalogo" src="/assets/logo.png">
+    <div class="small-6 large-6 columns hide-for-small-only">
+      <%= link_to(image_tag("/assets/logo.png", id: "logo"), :root)%>
+      <p id="header_tagline">THE FACES OF OMAHA'S CREATIVE COMMUNITY.</p>
     </div>
-    <div class="small-1 large-1 columns hide-for-small-only">
-      <p class="red_button">login</p>
-      <p class="red_button">add</p>
+    <div id="right_nav_buttons" class="small-3 large-3 columns hide-for-small-only">
+      <%= link_to("login", :login, class: "red_button") %>
+      <%= link_to("add your face", :signup, class: "red_button") %>
     </div>
     <img class="show-for-small-only" id="omalogo" src="/assets/logo.png">
   </div>
