@@ -3,7 +3,7 @@
   <div class="row" id="face-display">
     <% @users.each do |user| %>
       <div class="large-3 columns">
-        <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid")), view_profile_path(user.username) %>
+        <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid")), view_profile_path(user.username) %>
       <div style="display: none;"><%= user.first_name %> <%= user.last_name %></div>
       <div style="display: none;"><%= link_to 'Show', user %></div>
     </div>

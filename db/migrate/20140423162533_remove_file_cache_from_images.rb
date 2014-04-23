@@ -4,6 +4,6 @@ class RemoveFileCacheFromImages < ActiveRecord::Migration
   end
 
   def down
-    add_column :images, :file_cache
+    add_column :images, :file_cache, :string
   end
 end

@@ -1,7 +1,4 @@
 <!-- Users creation and edit form -->
-
-<!-- this is from sumeets code, doesnt actually associate the image eith the user yet. remove this comment when it works -->
-
 <%= form_for(@image, :html => {:multipart => true, :id => "upload_profile_photo"}, :remote => true) do |f| %>
   <div id="upload_profile_photo_container">
     <div class="pull-left">
@@ -43,6 +40,9 @@
   <% end %>
   
   <div class="profile_fields">
+    
+    <%= f.hidden_field :profile_image_id%>
+    
     <div>
       <%= f.text_field :first_name, :placeholder => "First Name", :class => "input-xlarge" %>
     </div>

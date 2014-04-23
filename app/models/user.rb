@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :first_name, :last_name, :tagline
   attr_accessible :bio, :website, :company, :company_site
   attr_accessible :facebook, :twitter, :pinterest, :linkedin, :github, :googleplus, :dribbble, :instagram, :tumblr
+  attr_accessible :profile_image_id
   # Note: security encryption and administrative status items not included in
   #       attr_accessible lists
   
@@ -34,7 +35,7 @@ class User < ActiveRecord::Base
   
   
   def profile_image
-    return Image.find(11).file
+    self.profile_image_id ? Image.find(self.profile_image_id).file : nil
   end
   
 end

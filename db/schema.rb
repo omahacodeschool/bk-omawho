@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140423162533) do
+ActiveRecord::Schema.define(:version => 20140423211215) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20140423162533) do
     t.string   "instagram"
     t.string   "tumblr"
     t.string   "tagline"
+    t.string   "profile_image_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
