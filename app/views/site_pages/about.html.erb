@@ -1,4 +1,5 @@
 <div class="row" id="about_page">
+  
   <div class="large-6 columns" id="about_page_section">
     <h1>ABOUT OMAWHO</h1>
       <p><b>This is who we are.</b> So many different faces make up this active, brilliant and (surprisingly) small community. <%= @site_title %> is a proud announcement of membership in that community.</p>
@@ -9,6 +10,7 @@
       <h2>BUT HOW DO I USE IT?</h2>
       <p>So you're at Big Omaha, bumping into everyone you've ever shaken hands with. Forgot someone's name? It happens to all of us. Next time, skim Omawho in the parking lot beforehand.</p>
   </div>
+  
   <div class="large-6 columns">
     <div id="mobile_image_heading">
       <hr/>
@@ -18,11 +20,13 @@
       <% @users.each do |user| %>
         <div class="large-6 columns">
           <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid")), view_profile_path(user.username) %>
+        </div>
         <div style="display: none;"><%= user.first_name %> <%= user.last_name %></div>
         <div style="display: none;"><%= link_to 'Show', user %></div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+  
 </div>
 
-</div> <!-- End Container -->
+<!-- End Container -->

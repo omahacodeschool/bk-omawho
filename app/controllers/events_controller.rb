@@ -99,7 +99,7 @@ class EventsController < ApplicationController
     @user_events = current_user.events
     
     respond_to do |format|
-      format.html { redirect_to event_path(@event), notice: 'Your attendance status was updated.' }
+      format.html { redirect_to events_url }
       # format.json { render json: @events }
       # format.js
     end
@@ -107,7 +107,6 @@ class EventsController < ApplicationController
   
   
   def approve
-    binding.pry
     if current_user && current_user.admin?
       @event = Event.find(params[:event_id])
   

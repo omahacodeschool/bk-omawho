@@ -32,10 +32,66 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :embeds
   
+
   
   
   def profile_image
     self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
+  end
+  
+  # Public: Utility to get full user name.
+  #
+  #
+  # Returns the user first/last names concatenated into a String.
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  # Class Method:
+  # Public: Search for users by name.
+  #
+  # query_str - The String containing the search query. Expectation is that the 
+  #             query will hold a first name, a last name, or a first & 
+  #             last name.
+  # 
+  #
+  # Examples
+  #
+  #   User.search_name("John Smith")
+  #   # => One or more User objects matching 
+  #          first_name == "John", last_name == "Smith"
+  #
+  #   User.search_name("Joe")
+  #   # => Array of User objects with first_name == "Joe"
+  #
+  # Returns an Array of 0 or more User model objects matching name_search query 
+  # parameter strings or nil if there are errors
+  def self.search_name(query_str)
+    # split the query into multiple strings
+    splits = query_str.split
+    found_users = []
+    
+    # if two or more parameter strings, use first two for searching against 
+    #   first and last name
+    if splits.count >= 2
+      fname = splits[0]
+      lname = splits[1]
+      found_users = User.find(:all, :conditions => ["lower(first_name) = ? and lower(last_name) = ?", fname.downcase, lname.downcase])
+      
+    # otherwise use single string and search against any name
+    elsif splits.count > 0
+      anyname = splits[0]  # default to first query string an
+      found_users = User.find(:all, :conditions => ["lower(first_name) = ?", anyname.downcase])
+      found_users += User.find(:all, :conditions => ["lower(last_name) = ?", anyname.downcase])
+
+    # catch-all for query string errors (send back nil results)
+    else
+      return nil
+      
+    end
+    
+    # Return the found user(s)
+    found_users
   end
   
 end
