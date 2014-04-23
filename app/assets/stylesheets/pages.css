@@ -1,16 +1,69 @@
+/* GENERAL */
 
-/*GENERAL*************************************************************/
-body{
+body {
   margin: 0;
 }
-#menubar{
-  background: #4c6262;
-  height: 60px;
-  color:white;
-  padding-top: 21px;
+
+ul {
+  list-style: none;
+  width: 50px;
+  float: right;
 }
 
-#mobilemenubar{
+ul li {
+  background: #ad3d32;
+  color: white;
+  padding: 5px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* HEADER */
+
+#headerguy {
+  background-image: url("/assets/omaha_skyline3.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+  color: #fff;
+}
+
+#header_content {
+  position: relative;
+  top: 15px;
+  max-width:500px;
+}
+
+#skyline {
+  width: 100%;
+}
+
+#omalogo {
+  max-width: 300px;
+  display:block;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  top: 15px;
+}
+
+.red_button {
+  background: #ad3d32;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  float: right;
+}
+
+#menubar {
+  background: #4c6262;
+  height: 40px;
+  color:white;
+  padding-top: 10px;
+}
+
+#mobilemenubar {
   background: #4c6262;
   height: 60px;
   text-align:center;
@@ -19,60 +72,70 @@ body{
   padding-top: 5px;
 }
 
-#omalogo{
-  max-width: 500px;
-  display:block;
-  margin: 0 auto;
-  width: 100%;
+/* FOOTER */
+
+#footer {
+  background: #4c6262;
+  color: white;
+  padding-top: 50px;
+}
+
+.bottomtext {
+  font-size: 20px;
   position: relative;
-  top: 100px;
+  top: 3px;
 }
 
-.redbg{
-  background: #ad3d32;
-  color: white;
-  width: 58px;
-  padding: 9px;
-  text-align: center;
-  float: right;
-
+.bottomlogo {
+  position:relative;
+  top: 10px;
 }
 
-ul{
-  list-style: none;
-  width: 50px;
-  float: right;
-}
-
-ul li{
-  background: #ad3d32;
-  color: white;
-  padding: 5px;
-  width: 50px;
-  margin-bottom: 10px;
-}
-.lefttimes{
+#about_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
   float:right;
+  margin-right: 5px;
 }
 
-.righttimes{
-  float:left;
+#twitter_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
+  float:right;
+  background-position-x: 60px;
+  margin-right: 5px;
 }
-/*********************************************************************/
 
-/*HOMEPAGE*************************************************************/
-
-#headerguy{
-  background-image: url("/assets/skyline.png");
-  background-size: cover;
-  height: 400px;
+#rss_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
+  float:right;
+  background-position-x: 30px;
+  margin-right: 5px;
 }
-#skyline{
-  
+
+#contact_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
+  float:right;
+  margin-right: 5px;
+  background-position-y: 30px;
+}
+
+/* MISCELLANEOUS */
+
+.lefttimes {
+  float: right;
+}
+
+.righttimes {
+  float: left;
+}
+
+#testimage {
   width: 100%;
-
-  
 }
-
-
-/*********************************************************************/

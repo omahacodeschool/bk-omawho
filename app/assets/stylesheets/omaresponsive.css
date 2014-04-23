@@ -95,9 +95,9 @@ select {
     margin-left: 0;
     margin-right: 0; }
   .row .row {
-    width: auto;
-    margin-left: -0.9375em;
-    margin-right: -0.9375em;
+    width: 100%;
+/*    margin-left: -0.9375em;
+    margin-right: -0.9375em;*/
     margin-top: 0;
     margin-bottom: 0;
     max-width: none;
@@ -249,8 +249,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
+    padding-left: 0;
+    padding-right: 0;
     float: left; }
 
   .small-1 {
@@ -354,7 +354,7 @@ select {
   .column.small-uncentered.opposite,
   .columns.small-uncentered.opposite {
     float: right; } }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 600px) {
   .medium-push-0 {
     position: relative;
     left: 0%;
@@ -703,7 +703,7 @@ select {
     position: relative;
     right: 91.66667%;
     left: auto; } }
-@media only screen and (min-width: 64.063em) {
+@media only screen and (min-width:  600px) {
   .large-push-0 {
     position: relative;
     left: 0%;
@@ -827,8 +827,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     float: left; }
 
   .large-1 {
@@ -1164,7 +1164,7 @@ select {
       clear: none; }
     .small-block-grid-12 > li:nth-of-type(12n+1) {
       clear: both; } }
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 600px) {
   .medium-block-grid-1 > li {
     width: 100%;
     list-style: none; }
@@ -1260,7 +1260,7 @@ select {
       clear: none; }
     .medium-block-grid-12 > li:nth-of-type(12n+1) {
       clear: both; } }
-@media only screen and (min-width: 64.063em) {
+@media only screen and (min-width: 600px) {
   .large-block-grid-1 > li {
     width: 100%;
     list-style: none; }
