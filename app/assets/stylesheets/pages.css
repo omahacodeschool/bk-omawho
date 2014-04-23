@@ -1,71 +1,69 @@
+/* GENERAL */
 
-/*GENERAL*************************************************************/
-body{
+body {
   margin: 0;
 }
 
-#footer{
-  background: #4c6262;
+ul {
+  list-style: none;
+  width: 50px;
+  float: right;
+}
+
+ul li {
+  background: #ad3d32;
   color: white;
-  padding-top: 50px;
-
+  padding: 5px;
+  width: 50px;
+  margin-bottom: 10px;
 }
 
-.bottomtext{
-  font-size: 20px;
+/* HEADER */
+
+#headerguy {
+  background-image: url("/assets/omaha_skyline3.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+  color: #fff;
+}
+
+#header_content {
   position: relative;
-  top: 3px;
+  top: 15px;
+  max-width:500px;
 }
 
-.bottomlogo{
-  
-  position:relative;
-  top: 10px;
-}
-#about_icon{
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  margin-right: 5px;
+#skyline {
+  width: 100%;
 }
 
-#twitter_icon{
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  background-position-x: 60px;
-  margin-right: 5px;
+#omalogo {
+  max-width: 300px;
+  display:block;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  top: 15px;
 }
 
-#rss_icon{
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  background-position-x: 30px;
-  margin-right: 5px;
+.red_button {
+  background: #ad3d32;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  float: right;
 }
 
-#contact_icon{
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  margin-right: 5px;
-  background-position-y: 30px;
-}
-
-
-#menubar{
+#menubar {
   background: #4c6262;
-  height: 60px;
+  height: 40px;
   color:white;
-  padding-top: 21px;
+  padding-top: 10px;
 }
 
-#mobilemenubar{
+#mobilemenubar {
   background: #4c6262;
   height: 60px;
   text-align:center;
@@ -74,66 +72,70 @@ body{
   padding-top: 5px;
 }
 
-#omalogo{
-  max-width: 500px;
-  display:block;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  top: 100px;
-}
+/* FOOTER */
 
-.redbg{
-  background: #ad3d32;
+#footer {
+  background: #4c6262;
   color: white;
-  padding: 5px;
-  text-align: center;
-
-
-
+  padding-top: 50px;
 }
 
-ul{
-  list-style: none;
-  width: 50px;
+.bottomtext {
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+}
+
+.bottomlogo {
+  position:relative;
+  top: 10px;
+}
+
+#about_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
+  float:right;
+  margin-right: 5px;
+}
+
+#twitter_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
+  float:right;
+  background-position-x: 60px;
+  margin-right: 5px;
+}
+
+#rss_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
+  float:right;
+  background-position-x: 30px;
+  margin-right: 5px;
+}
+
+#contact_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/OmawhoFooterIcons.png");
+  float:right;
+  margin-right: 5px;
+  background-position-y: 30px;
+}
+
+/* MISCELLANEOUS */
+
+.lefttimes {
   float: right;
 }
 
-ul li{
-  background: #ad3d32;
-  color: white;
-  padding: 5px;
-  width: 50px;
-  margin-bottom: 10px;
-}
-.lefttimes{
-  float:right;
+.righttimes {
+  float: left;
 }
 
-.righttimes{
-  float:left;
-}
-
-#testimage{
+#testimage {
   width: 100%;
 }
-/*********************************************************************/
-
-/*HOMEPAGE*************************************************************/
-
-#headerguy{
-  background-image: url("/assets/skyline.png");
-  background-size: cover;
-  height: 400px;
-  color: white;
-}
-#skyline{
-  
-  width: 100%;
-
-  
-}
-
-
-/*********************************************************************/
-

@@ -1,0 +1,21 @@
+<h1>Upcoming Events</h1>
+
+<p><%= link_to "Submit Event", :new_event %></p>
+
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= "#{event.name}, #{event.location}, #{event.start_time}" %>
+      <%= link_to "Show Event", event_path(event) %>
+    </li>
+  <% end %>
+</ul>   
+
+<h1>Past Events</h1>
+
+<ul>
+  <% @past_events.each do |event| %>
+    <li><%= "#{event.name}, #{event.location}, #{event.start_time}" %></li>   
+  <% end %>
+</ul>
+
