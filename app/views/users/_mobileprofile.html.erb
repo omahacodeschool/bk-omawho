@@ -1,0 +1,54 @@
+<div class="row show-for-small-only" style="margin-top:55px;">
+  <div class="large-6 columns">
+    <img src="http://placekitten.com/600/600" style="width:100%;">
+  </div>
+  <div class="large-6 columns">
+    <div id="mobilename">
+      <%= @user.first_name %> <%= @user.last_name %>
+    </div>
+    
+    <div id="mobiletagline">
+      "Tagline here"
+      <%= @user.tagline %>
+    </div>
+    
+    <div id="mobilecompany">
+      <a href="<%= @user.company_site %>"><%= @user.company %> </a>
+    </div>
+      
+    
+    
+    
+    <div id="mobilecatagories">
+      Catagories here
+      <% @user.categories.each do |c| %>
+      <%= c.to_s %>
+      <% end %>
+    </div>
+    
+    <div id="mobilebio">
+      <%= @user.bio %>
+    </div>
+    
+    
+    <div id="mobilesocial">
+      <ul>
+        <li class="nobg"><a href="#"><div id="facebookicon"></div></a></li>
+        <li class="nobg"><a href="#"><div id="twittericon"></div></a></li>
+        <li class="nobg"><a href="#"><div id="dribbleicon"></div></a></li>
+        <li class="nobg"><a href="#"><div id="gicon"></div></a></li>
+        <li class="nobg"><a href="#"><div id="lnicon"></div></a></li>
+        <li class="nobg"><a href="#"><div id="instagramicon"></div></a></li>
+        <li class="nobg"><a href="#"><div id="githubicon"></div></a></li> 
+      </ul>
+    </div>
+    
+    
+  </div>
+</div>
+
+<div class="row show-for-small-only" style="margin-bottom:50px;">
+  <div class="large-5 columns"><hr></div>
+  <div id ="mywork" class="large-2 columns" style="padding:20px;"><strong>My Work</strong></div>
+  <div class="large-5 columns"><hr></div>
+</div>  
