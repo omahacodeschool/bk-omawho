@@ -9,9 +9,18 @@
       <p id="header_tagline">THE FACES OF OMAHA'S CREATIVE COMMUNITY.</p>
     </div>
     <div id="right_nav_buttons" class="small-3 large-3 columns hide-for-small-only">
-      <%= link_to("login", :login, class: "red_button") %>
-      <%= link_to("add your face", :signup, class: "red_button") %>
+      <% if current_user %>
+        <%= link_to("logout", logout_path, class: "red_button") %>
+        <%= link_to("your face", view_profile_path(current_user.username), class: "red_button") %>
+      <% else %>
+        <%= link_to("login", :login, class: "red_button") %>
+        <%= link_to("add your face", :signup, class: "red_button") %>
+      <% end %>
     </div>
-    <img class="show-for-small-only" id="omalogo" src="/assets/logo.png">
+
+    <div class="show-for-small-only">
+      <%= link_to(image_tag("/assets/logo.png", id: "logo"), :root)%>
+      <p id="header_tagline">THE FACES OF OMAHA'S CREATIVE COMMUNITY.</p>
+    </div>
   </div>
 </div>

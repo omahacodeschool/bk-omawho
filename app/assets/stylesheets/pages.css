@@ -75,6 +75,9 @@ h1, h2, h4, h5 {
   text-decoration: none;
   margin: 10px 0;
   position: relative;
+  transition-property: all;
+  transition-duration: 0.25s;
+  clear: both;
 }
 
 .red_button:hover {
@@ -104,11 +107,14 @@ h1, h2, h4, h5 {
 
 #mobilemenubar {
   background: #4c6262;
-  height: 60px;
+  height: 40px;
   text-align:center;
-  margin-top: -17px;
   color: white;
   padding-top: 5px;
+}
+
+#mobilemenubar p {
+  margin: 5px 0 0 0;
 }
 
 /* FOOTER */
@@ -126,11 +132,6 @@ h1, h2, h4, h5 {
 }
 
 #footer_content p {
-  padding-right: 10px;
-}
-
-.bottomlogo, #about_icon, #twitter_icon {
-  float: right;
   padding-right: 10px;
 }
 
@@ -158,6 +159,11 @@ h1, h2, h4, h5 {
   background-image: url("/assets/OmawhoFooterIcons.png");
   background-position-x: 60px;
   margin-right: 5px;
+}
+
+.bottomlogo, #about_icon, #twitter_icon {
+  float: right;
+  padding-right: 10px;
 }
 
 /* MISCELLANEOUS */
