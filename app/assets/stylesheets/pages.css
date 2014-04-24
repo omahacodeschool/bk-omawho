@@ -7,6 +7,10 @@ input{
   border: none;
 }
 
+#topnavtext {
+  margin-top: 5px;
+}
+
 #searchthing{
   margin-top: -10px;
   height: 50px;
@@ -21,6 +25,7 @@ input{
 .profilefields{
   margin-left: 40px;
   line-height: 5;
+  margin-top: -14px;
 }
 
 .row_1{
@@ -427,7 +432,7 @@ color: #fff;
 .person{
   width: 30px;
   height: 30px;
-  background-image: url("sprites.png");
+  background-image: url("SUPERSPRITES.png");
   background-position-x: -140px;
   position: relative;
   right: -15px;
@@ -435,26 +440,26 @@ color: #fff;
 
 .username{
   width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
   background-position-x: -93px;
   position: relative;
   right: -15px;
 }
 
 .email{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: -414px;
+  width: 34px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -412px;
   position: relative;
   right: -15px;
 }
 
 .password{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
+  width: 35px;
+  height: 35px;
+  background-image: url("SUPERSPRITES.png");
   background-position-x: -230px;
   position: relative;
   right: -15px;
@@ -463,16 +468,26 @@ color: #fff;
 .tag{
   width: 30px;
   height: 30px;
-  background-image: url("sprites.png");
+  background-image: url("SUPERSPRITES.png");
   background-position-x: -230px;
   position: relative;
   right: -15px;
+}
+
+.heightfix{
+  height:15px;
 }
 
 .whitebg{
   background: white;
   position:relative;
   top:9px;
+  height: 64px;
+}
+
+.fixtagheight{
+  height: 14px;
+  margin-top: 2px
 }
 
 .whitebg2 {
@@ -483,22 +498,24 @@ top: 2px;
 
 .nooutline{
   outline: none;
+  border: 1px solid white;
 }
 
 .tag{
-  width: 31px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: -368px;
+  width: 36px;
+  height: 31px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -365px;
   position: relative;
+  background-position-y: -2px;
   right: -15px;
   
 }
 
 .company{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
+  width: 37px;
+  height: 35px;
+  background-image: url("SUPERSPRITES.png");
   background-position-x: 0;
   position: relative;
   right: -15px;
@@ -507,7 +524,7 @@ top: 2px;
 .twitter{
   width: 30px;
   height: 30px;
-  background-image: url("sprites.png");
+  background-image: url("SUPERSPRITES.png");
   background-position-x: 122px;
   position: relative;
   right: -15px;
@@ -515,82 +532,82 @@ top: 2px;
 }
 
 .facebook{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: 214px;
+  width: 35px;
+  height: 35px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 215px;
   position: relative;
   right: -15px;
   
 }
 .github{
-width: 30px;
-height: 30px;
-background-image: url("sprites.png");
-background-position-x: 30px;
-position: relative;
-right: -15px;
+  width: 32px;
+  height: 33px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 32px;
+  position: relative;
+  right: -15px;
 }
 .companywebsite{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: -277px;
+  width: 37px;
+  height: 32px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -272px;
   position: relative;
   right: -15px;
   
   
 }
 .dribble{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: 76px;
+  width: 33px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 78px;
   position: relative;
   right: -15px;
 }
 
 .pinterest{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: -92px;
+  width: 33px;
+  height: 32px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -90px;
   position: relative;
   right: -15px;
-  background-position-y: -46px;
+  background-position-y: -44px;
 }
 .gplus{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: 260px;
+  width: 35px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 263px;
   position: relative;
   right: -15px;
 }
 
 .yowebsite{
   width: 31px;
-  height: 30px;
-  background-image: url("sprites.png");
+  height: 33px;
+  background-image: url("SUPERSPRITES.png");
   background-position-x: -319px;
   position: relative;
   right: -15px;
 }
 .ln{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
+  width: 33px;
+  height: 32px;
+  background-image: url("SUPERSPRITES.png");
   background-position-x: -46px;
   position: relative;
   right: -15px;
-  background-position-y: -46px;
+  background-position-y: -44px;
 }
 
 .instagram{
-  width: 30px;
-  height: 30px;
-  background-image: url("sprites.png");
-  background-position-x: 167px;
+  width: 33px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 170px;
   position: relative;
   right: -15px;
 }

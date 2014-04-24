@@ -15,6 +15,7 @@
     </ul>
   </div>
   <% end %>
+  
   <div class="row" style="max-width:800px;margin-top: 50px;">
     <div class="large-5 columns">
       <div id="choosefacecol">
@@ -40,172 +41,172 @@
         </div>
         <%# end %>
        
-        <div class="small-2 columns whitebg2" >
+        <div class="small-3 columns whitebg2" >
          
           <p class="tag"></p></div>
-        <div class="small-10 columns"> <%= f.text_field :tagline, :placeholder => "Tag Line" %></div>
+          <div class="small-9 columns">  <%= f.text_field :tagline, :placeholder => "Tag Line", :class => "fixtagheight" %></div>
+        </div>
       </div>
-    </div>
-    <div class="large-7 columns">
-      <div class="profilefields">
-        <div>
+      <div class="large-7 columns">
+        <div class="profilefields">
+          <div>
             <div class="small-2 columns whitebg" >
              
               <p class="person"></p></div>
-            <div class="small-10 columns"> <%= f.text_field :first_name, :placeholder => "First Name", :class => "nooutline" %></div>
-        </div>
+              <div class="small-10 columns"> <%= f.text_field :first_name, :placeholder => "First Name", :class => "nooutline" %></div>
+            </div>
     
-        <div>
-          <div class="small-2 columns whitebg" >
+            <div>
+              <div class="small-3 columns whitebg" >
            
-            <p class="person"></p></div>
-          <div class="small-10 columns"> <%= f.text_field :last_name, :placeholder => "Last Name", :class => "nooutline" %></div>
+                <p class="person"></p></div>
+                <div class="small-9 columns"> <%= f.text_field :last_name, :placeholder => "Last Name", :class => "nooutline" %></div>
           
-        </div>
+              </div>
     
-        <div>
-          <div class="small-2 columns whitebg" >
+              <div>
+                <div class="small-3 columns whitebg" >
            
-            <p class="username"></p></div>
-          <div class="small-10 columns"><%= f.text_field :username, :placeholder => "Username", :class => "nooutline" %></div>
-        </div>
+                  <p class="username"></p></div>
+                  <div class="small-9 columns"><%= f.text_field :username, :placeholder => "Username", :class => "nooutline" %></div>
+                </div>
 
-        <div>
-          <div class="small-2 columns whitebg" >
+                <div>
+                  <div class="small-3 columns whitebg" >
            
-            <p class="email"></p></div>
-          <div class="small-10 columns"><%= f.text_field :email, :placeholder => "Email", :class => "nooutline" %></div>
-        </div>
+                    <p class="email"></p></div>
+                    <div class="small-9 columns"><%= f.text_field :email, :placeholder => "Email", :class => "nooutline" %></div>
+                  </div>
 
-        <div>
-          <div class="small-2 columns whitebg" >
+                  <div>
+                    <div class="small-3 columns whitebg" >
            
-            <p class="password"></p></div>
-          <div class="small-10 columns"><%= f.password_field :password, :placeholder => "Password", :class => "nooutline" %></div>
+                      <p class="password"></p></div>
+                      <div class="small-9 columns"><%= f.password_field :password, :placeholder => "Password", :class => "nooutline" %></div>
 
-        </div>
+                    </div>
     
-        <div style="line-height:0;color:white;">
-          <!-- replace this with categories from model -->
-          <% categorys =  [ 'some', 'categorys', 'goes', 'here', 'later' ]%>
-          <% categorys.each do |c| %>
-          <div>
-            <p><%= check_box_tag c.to_s %></p>
-            <p><%= c.to_s %></p>
-          </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+                    <div style="line-height:0;color:white;">
+                      <!-- replace this with categories from model -->
+                      <% categorys =  [ 'some', 'categorys', 'goes', 'here', 'later' ]%>
+                      <% categorys.each do |c| %>
+                      <div>
+                        <p><%= check_box_tag c.to_s %></p>
+                        <p><%= c.to_s %></p>
+                      </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-  <p id="addingtitle"> Add your web presence and bio.</p>
-  <p id="optional">All fields below are optional</p>
+              <p id="addingtitle"> Add your web presence and bio.</p>
+              <p id="optional">All fields below are optional</p>
 
-  <div class="row" style="max-width:800px;">
-    <div class="large-6 columns">
-      <div class="row_1">
-        <div>
-          <div class="small-2 columns whitebg" >
+              <div class="row" style="max-width:800px;">
+                <div class="large-6 columns">
+                  <div class="row_1">
+                    <div>
+                      <div class="small-3 columns whitebg" >
            
-            <p class="company"></p></div>
-          <div class="small-10 columns"> <%= f.text_field :company, :placeholder => "Company", :class => "nooutline" %></div>
-        </div>
-        <div>
-          <div class="small-2 columns whitebg" >
+                        <p class="company"></p></div>
+                        <div class="small-9 columns"> <%= f.text_field :company, :placeholder => "Company", :class => "nooutline" %></div>
+                      </div>
+                      <div>
+                        <div class="small-3 columns whitebg" >
            
-            <p class="companywebsite"></p></div>
-          <div class="small-10 columns"> <%= f.text_field :company_site, :placeholder => "Company Website", :class => "nooutline" %></div>
-        </div>
-        <div>
-          <div class="small-2 columns whitebg" >
+                          <p class="companywebsite"></p></div>
+                          <div class="small-9 columns"> <%= f.text_field :company_site, :placeholder => "Company Website", :class => "nooutline" %></div>
+                        </div>
+                        <div>
+                          <div class="small-3 columns whitebg" >
            
-            <p class="twitter"></p></div>
-          <div class="small-10 columns"><%= f.text_field :twitter, :placeholder => "Twitter", :class => "nooutline" %></div>
+                            <p class="twitter"></p></div>
+                            <div class="small-9 columns"><%= f.text_field :twitter, :placeholder => "Twitter", :class => "nooutline" %></div>
           
-        </div>
+                          </div>
     
-        <div>
-          <div class="small-2 columns whitebg" >
+                          <div>
+                            <div class="small-3 columns whitebg" >
            
-            <p class="facebook"></p></div>
-          <div class="small-10 columns"><%= f.text_field :facebook, :placeholder => "Facebook", :class => "nooutline" %></div>
+                              <p class="facebook"></p></div>
+                              <div class="small-9 columns"><%= f.text_field :facebook, :placeholder => "Facebook", :class => "nooutline" %></div>
           
-        </div>
+                            </div>
     
-        <div>
-          <div class="small-2 columns whitebg" >
+                            <div>
+                              <div class="small-3 columns whitebg" >
            
-            <p class="github"></p></div>
-          <div class="small-10 columns"> <%= f.text_field :github, :placeholder => "Github", :class => "nooutline" %></div>
+                                <p class="github"></p></div>
+                                <div class="small-9 columns"> <%= f.text_field :github, :placeholder => "Github", :class => "nooutline" %></div>
          
-        </div>
+                              </div>
     
-        <div>
-          <div class="small-2 columns whitebg" >
+                              <div>
+                                <div class="small-3 columns whitebg" >
            
-            <p class="dribble"></p></div>
-          <div class="small-10 columns">  <%= f.text_field :dribbble, :placeholder => "Dribbble", :class => "nooutline" %></div>
+                                  <p class="dribble"></p></div>
+                                  <div class="small-9 columns">  <%= f.text_field :dribbble, :placeholder => "Dribbble", :class => "nooutline" %></div>
          
-        </div>
-        <div>
-          <div class="small-2 columns whitebg" >
+                                </div>
+                                <div>
+                                  <div class="small-3 columns whitebg" >
            
-            <p class="pinterest"></p></div>
-          <div class="small-10 columns">  <%= f.text_field :pinterest, :placeholder => "Pinterest", :class => "nooutline" %></div>
+                                    <p class="pinterest"></p></div>
+                                    <div class="small-9 columns">  <%= f.text_field :pinterest, :placeholder => "Pinterest", :class => "nooutline" %></div>
           
           
-        </div>
-      </div>
-    </div>
-    <div class="large-6 columns">
-      <div class="row_2">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="large-6 columns">
+                                <div class="row_2">
     
-        <div>
-          <div class="small-2 columns whitebg" >
+                                  <div>
+                                    <div class="small-3 columns whitebg" >
            
-            <p class="ln"></p></div>
-          <div class="small-10 columns">  <%= f.text_field :linkedin, :placeholder => "LinkedIn", :class => "nooutline" %></div>
+                                      <p class="ln"></p></div>
+                                      <div class="small-9 columns">  <%= f.text_field :linkedin, :placeholder => "LinkedIn", :class => "nooutline" %></div>
           
-        </div>
+                                    </div>
     
-        <div>
-          <div class="small-2 columns whitebg" >
+                                    <div>
+                                      <div class="small-3 columns whitebg" >
            
-            <p class="gplus"></p></div>
-          <div class="small-10 columns">  <%= f.text_field :googleplus, :placeholder => "Google Plus", :class => "nooutline" %></div>
+                                        <p class="gplus"></p></div>
+                                        <div class="small-9 columns">  <%= f.text_field :googleplus, :placeholder => "Google Plus", :class => "nooutline" %></div>
           
-        </div>
+                                      </div>
     
-        <div>
-          <div class="small-2 columns whitebg" >
+                                      <div>
+                                        <div class="small-3 columns whitebg" >
            
-            <p class="instagram"></p></div>
-          <div class="small-10 columns">  <%= f.text_field :instagram, :placeholder => "Instagram", :class => "nooutline" %></div>
+                                          <p class="instagram"></p></div>
+                                          <div class="small-9 columns">  <%= f.text_field :instagram, :placeholder => "Instagram", :class => "nooutline" %></div>
           
-        </div>
+                                        </div>
 
-        <div>
-          <div class="small-2 columns whitebg" >
+                                        <div>
+                                          <div class="small-3 columns whitebg" >
            
-            <p class="yowebsite"></p></div>
-          <div class="small-10 columns">  <%= f.text_field :website, :placeholder => "Personal Website", :class => "nooutline" %></div>
+                                            <p class="yowebsite"></p></div>
+                                            <div class="small-9 columns">  <%= f.text_field :website, :placeholder => "Personal Website", :class => "nooutline" %></div>
           
-        </div>
-        <div>
+                                          </div>
+                                          <div>
           
-          <%= f.text_area :bio, :placeholder => "Bio (400 char max)", :class => "span4 nooutline", :rows => 5, :maxlength => 400 %>
-        </div>
-      </div>
-    </div>
+                                            <%= f.text_area :bio, :placeholder => "Bio (400 char max)", :class => "span4 nooutline", :rows => 5, :maxlength => 400 %>
+                                          </div>
+                                        </div>
+                                      </div>
  
   
   
 
-    <div class="actions" style="margin-bottom:50px;">
-      <%= f.submit %>
-    </div>
-    <% end %>
-  </div>
-</div>
-</div>
+                                      <div class="actions" style="margin-bottom:50px;">
+                                        <%= f.submit %>
+                                      </div>
+                                      <% end %>
+                                    </div>
+                                  </div>
+                                </div>
