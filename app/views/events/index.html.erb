@@ -101,7 +101,7 @@
           <% end %>
         <% else %>
           <h3><div id="red_text">OMA</div>WHO (<div id="attendee_count"><%= @users_count.length %></div>)</h3>
-          <p><%= link_to "Log in to mark your attendance.", login_path %></p>
+          <p><%= link_to "Log in to mark your attendance.", login_path, :class => "black_text" %></p>
         <% end %>
         <div id="event_attendees">
           <% @users.each do |user| %>
