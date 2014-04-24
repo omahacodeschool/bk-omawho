@@ -1,0 +1,28 @@
+<h1>NAME GAME</h1>
+
+<div>
+  <%= image_tag(@profile_img, :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>  
+</div>
+
+<div>
+  <%= form_tag check_quiz_path do %>
+    <div>
+      <p>"What's my name?"</p>
+      <%= text_field_tag :name_guess, nil, :placeholder => "first and last name please" %>      
+    </div>
+    <div>
+      <p>Where do I work?</p>
+      <% @companies.each do |c| %>
+        <li>
+          <%= radio_button_tag(:company, c) %>
+          <%= label_tag :company, c %>
+        </li>
+      <% end %>  
+    </div>
+    <div>
+      <%= hidden_field_tag :user_id, @user.id %>
+      <%= submit_tag "TAKE A GUESS", :name => nil, class: "red_button" %>
+    </div>
+  <% end %>
+  
+</div>
