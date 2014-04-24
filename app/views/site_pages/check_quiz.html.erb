@@ -5,19 +5,19 @@
 
 <div>
     <div>
-      <%= label_tag "Hi! My name is #{@user.full_name}" %> <br/>
+      <p><%= "Hi! My name is #{@user.full_name.titleize}" %></p>
       <% if @name_guess_correct %>
-        <p><%= "You were right!" %></p>   
+        <p class="correct"><%= "You were right!" %></p>   
       <% else %>
-        <p><%= "You said it was #{@guessed_name}" %></p>   
+        <p class="incorrect"><%= "You said it was #{@guessed_name.downcase.titleize}" %></p>   
       <% end %>   
     </div>
     <div>
-      <%= label_tag "I work at #{@user.company}" %> <br/>
+      <p><%= "I work at #{@user.company.titleize}" %></p>
       <% if @co_guess_correct %>
-        <p><%= "You were right!" %></p>   
+        <p class="correct"><%= "You were right!" %></p>   
       <% else %>
-        <p><%= "You said it was #{@guessed_co}" %></p>   
+        <p class="incorrect"><%= "You said it was #{@guessed_co}" %></p>   
       <% end %>   
     </div>
     <hr>
