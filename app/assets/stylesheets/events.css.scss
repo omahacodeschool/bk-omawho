@@ -1,11 +1,143 @@
-@media only screen and (min-width: 600px) {
-  #events_text {
-    color: #fff;
-  }
+input:focus, select:focus {
+    outline: none !important;
+    box-shadow: 0 0 20px #ccc;
+}
+
+.upcoming_event_bar {
+  background: #ad3d32;
+  padding: 1.5%;
+  margin-top: 15px !important;
+  cursor: pointer;
+}
+
+.black_text {
+  color: #000;
+}
+
+.center {
+  text-align: center;
+}
+
+.event_attendee_image {
+  width: 23%;
+  margin: 2% 2% 0% 0%;
+  float: left;
+}
+
+.event_display {
+  background: #fff;
+  padding: 0% 2% 2% 2%;
+  display: none;
+}
+
+.event_bar_text {
+  display: inline-block;
+  text-align: center;
+}
+
+.past_event_bar {
+  background: #6d6d6d;
+  padding: 1.5%;
+  margin-top: 15px !important;
+  cursor: pointer;
+}
+
+.right_align {
+  text-align: right;
+}
+
+#attendance_button {
+  width: 98%;
+  text-decoration: none;
+  background: #ad3d32;
+  padding: 5px 10px;
+  text-align: center;
+  float: left;
+  margin-top: 2%;
+}
+
+#bottom_margin {
+  margin-bottom: 20px;
+}
+
+#event_button {
+  background: #ad3d32;
+  padding: 15px 10px;
+  text-align: center;
+  float: right;
+  margin-top: 5%;
+  width: 100%;
+  text-decoration: none;
+}
+
+#event_column {
+  padding: 0% 5%;
+}
+
+#events_container {
+  padding: 20px 0 70px 0;
+}
+
+#events_container input {
+  width: 100%;
+  padding: 25px;
+  border: none;
+  font-size: 25px;
+  margin: 15px 0px;
+  font-family: "museo-slab";
+}
+
+#events_container input[type="submit"] {
+  background: #ad3d32;
+  color: #fff;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#events_container select, input[type="color"][list] {
+  background-color: #fff;
+  border: 0px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+#events_container #event_start_time_1i, #events_container #event_start_time_2i, #events_container #event_start_time_3i {
+  width: 93%;
+}
+
+#events_container #event_start_time_4i, #events_container #event_start_time_5i {
+  width: 38%;
+}
+
+#events_container #event_end_time_1i, #events_container #event_end_time_2i, #events_container #event_end_time_3i {
+  width: 93%;
+}
+
+#events_container #event_end_time_4i, #events_container #event_end_time_5i {
+  width: 38%;
+}
+
+#heading_row {
+  margin-top: 15px;
+}
+
+#past_events_heading {
+  color: #6d6d6d;
+  text-align: center;
+}
+
+#red_text {
+  color: #ad3d32;
+  display: inline-block;
+}
+
+#upcoming_events_heading {
+  text-align: center;
 }
 
 @media only screen and (max-width: 599px) {
-  #events_text {
-    color: #fff;
+  #event_name {
+    margin: 10px 0px;
+    font-size: 20px;
   }
 }

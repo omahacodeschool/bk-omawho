@@ -1,212 +1,220 @@
 <div class="row">
-  <!-- this is from sumeets code, doesnt actually associate the image eith the user yet. remove this comment when it works -->
-  <%# form_for(@image, :html => {:multipart => true, :id => "upload_profile_photo"}, :remote => true) do |f| %>
-  
-  
   <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul class="error-list">
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="error-list-item"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   
-  <div class="row" style="max-width:800px;margin-top: 50px;">
-    <div class="large-5 columns">
-      <div id="choosefacecol">
-        <p id="chooseface">Choose your face</p>
-        <img src="http://placekitten.com/250/250" style="width: 100%;padding-top: 20px; padding-bottom:40px;">
-        <div id="upload_profile_photo_container">
-    
-          <%#image_tag((@user.images.first ? @user.images.first : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
-    
-    
-    
-          <div id="profile_photo_before">
-            <%# f.file_field :file, :id => "profile_photo_field" %>
-            <%# f.submit "Upload", :style => "display: none" %>
+    <div class="row profile_fields" style="max-width:800px;margin-top: 50px;">
+      <%= f.hidden_field :profile_image_id%>
+      <div class="large-5 columns">
+        <div id="choosefacecol">
+          <p id="chooseface">Choose your face</p>
+          <img src="http://placekitten.com/250/250" style="width: 100%;padding-top: 20px; padding-bottom:40px;">
+          <div id="upload_profile_photo_container">
+            <div id="profile_photo_before">
+              <%# f.file_field :file, :id => "profile_photo_field" %>
+              <%# f.submit "Upload", :style => "display: none" %>
+            </div>
+            <div id="profile_photo_after" style="display: none">
+              <%# image_tag("loading.gif", :alt => "Loading...") %>
+            </div>
+            <div id="profile_photo_success" style="display: none">
+              <i class="icon-ok"></i>
+            </div>
           </div>
-          <div id="profile_photo_after" style="display: none">
-            <%# image_tag("loading.gif", :alt => "Loading...") %>
+          <div class="small-3 columns whitebg2" >
+            <p class="tag"></p>
           </div>
-          <div id="profile_photo_success" style="display: none">
-            <i class="icon-ok"></i>
+          <div class="small-9 columns">
+            <%= f.text_field :tagline, :placeholder => "Tag Line", :class => "fixtagheight" %>
           </div>
-   
-        </div>
-        <%# end %>
-       
-        <div class="small-3 columns whitebg2" >
-         
-          <p class="tag"></p></div>
-          <div class="small-9 columns">  <%= f.text_field :tagline, :placeholder => "Tag Line", :class => "fixtagheight" %></div>
-        </div>
+        </div>  
       </div>
       <div class="large-7 columns">
         <div class="profilefields">
           <div>
-            <div class="small-2 columns whitebg" >
-             
-              <p class="person"></p></div>
-              <div class="small-10 columns"> <%= f.text_field :first_name, :placeholder => "First Name", :class => "nooutline" %></div>
+            <div class="small-2 columns whitebg">
+              <p class="person"></p>
             </div>
-    
-            <div>
-              <div class="small-3 columns whitebg" >
-           
-                <p class="person"></p></div>
-                <div class="small-9 columns"> <%= f.text_field :last_name, :placeholder => "Last Name", :class => "nooutline" %></div>
-          
-              </div>
-    
+            <div class="small-10 columns">
+              <%= f.text_field :first_name, :placeholder => "First Name", :class => "nooutline" %>
+            </div>
+          </div>
+  
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="person"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :last_name, :placeholder => "Last Name", :class => "nooutline" %>
+            </div>
+          </div>
+  
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="username"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :username, :placeholder => "Username", :class => "nooutline" %>
+            </div>
+          </div>
+
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="email"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :email, :placeholder => "Email", :class => "nooutline" %>
+            </div>
+          </div>
+
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="password"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.password_field :password, :placeholder => "Password", :class => "nooutline" %>
+            </div>
+          </div>
+  
+          <div style="line-height:0;color:white;">
+            <!-- replace this with categories from model -->
+            <% categorys =  [ 'some', 'categorys', 'goes', 'here', 'later' ]%>
+            <% categorys.each do |c| %>
               <div>
-                <div class="small-3 columns whitebg" >
-           
-                  <p class="username"></p></div>
-                  <div class="small-9 columns"><%= f.text_field :username, :placeholder => "Username", :class => "nooutline" %></div>
-                </div>
-
-                <div>
-                  <div class="small-3 columns whitebg" >
-           
-                    <p class="email"></p></div>
-                    <div class="small-9 columns"><%= f.text_field :email, :placeholder => "Email", :class => "nooutline" %></div>
-                  </div>
-
-                  <div>
-                    <div class="small-3 columns whitebg" >
-           
-                      <p class="password"></p></div>
-                      <div class="small-9 columns"><%= f.password_field :password, :placeholder => "Password", :class => "nooutline" %></div>
-
-                    </div>
-    
-                    <div style="line-height:0;color:white;">
-                      <!-- replace this with categories from model -->
-                      <% categorys =  [ 'some', 'categorys', 'goes', 'here', 'later' ]%>
-                      <% categorys.each do |c| %>
-                      <div>
-                        <p><%= check_box_tag c.to_s %></p>
-                        <p><%= c.to_s %></p>
-                      </div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
+                <p><%= check_box_tag c.to_s %></p>
+                <p><%= c.to_s %></p>
               </div>
+            <% end %>
+          </div>
+        
+        </div>
+      </div>
+    </div>
 
-              <p id="addingtitle"> Add your web presence and bio.</p>
-              <p id="optional">All fields below are optional</p>
+    <p id="addingtitle"> Add your web presence and bio.</p>
+    <p id="optional">All fields below are optional</p>
 
-              <div class="row" style="max-width:800px;">
-                <div class="large-6 columns">
-                  <div class="row_1">
-                    <div>
-                      <div class="small-3 columns whitebg" >
-           
-                        <p class="company"></p></div>
-                        <div class="small-9 columns"> <%= f.text_field :company, :placeholder => "Company", :class => "nooutline" %></div>
-                      </div>
-                      <div>
-                        <div class="small-3 columns whitebg" >
-           
-                          <p class="companywebsite"></p></div>
-                          <div class="small-9 columns"> <%= f.text_field :company_site, :placeholder => "Company Website", :class => "nooutline" %></div>
-                        </div>
-                        <div>
-                          <div class="small-3 columns whitebg" >
-           
-                            <p class="twitter"></p></div>
-                            <div class="small-9 columns"><%= f.text_field :twitter, :placeholder => "Twitter", :class => "nooutline" %></div>
+    <div class="row" style="max-width:800px;">
+      <div class="large-6 columns">
+        <div class="row_1">
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="company"></p>
+            </div>
           
-                          </div>
-    
-                          <div>
-                            <div class="small-3 columns whitebg" >
-           
-                              <p class="facebook"></p></div>
-                              <div class="small-9 columns"><%= f.text_field :facebook, :placeholder => "Facebook", :class => "nooutline" %></div>
-          
-                            </div>
-    
-                            <div>
-                              <div class="small-3 columns whitebg" >
-           
-                                <p class="github"></p></div>
-                                <div class="small-9 columns"> <%= f.text_field :github, :placeholder => "Github", :class => "nooutline" %></div>
-         
-                              </div>
-    
-                              <div>
-                                <div class="small-3 columns whitebg" >
-           
-                                  <p class="dribble"></p></div>
-                                  <div class="small-9 columns">  <%= f.text_field :dribbble, :placeholder => "Dribbble", :class => "nooutline" %></div>
-         
-                                </div>
-                                <div>
-                                  <div class="small-3 columns whitebg" >
-           
-                                    <p class="pinterest"></p></div>
-                                    <div class="small-9 columns">  <%= f.text_field :pinterest, :placeholder => "Pinterest", :class => "nooutline" %></div>
-          
-          
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="large-6 columns">
-                                <div class="row_2">
-    
-                                  <div>
-                                    <div class="small-3 columns whitebg" >
-           
-                                      <p class="ln"></p></div>
-                                      <div class="small-9 columns">  <%= f.text_field :linkedin, :placeholder => "LinkedIn", :class => "nooutline" %></div>
-          
-                                    </div>
-    
-                                    <div>
-                                      <div class="small-3 columns whitebg" >
-           
-                                        <p class="gplus"></p></div>
-                                        <div class="small-9 columns">  <%= f.text_field :googleplus, :placeholder => "Google Plus", :class => "nooutline" %></div>
-          
-                                      </div>
-    
-                                      <div>
-                                        <div class="small-3 columns whitebg" >
-           
-                                          <p class="instagram"></p></div>
-                                          <div class="small-9 columns">  <%= f.text_field :instagram, :placeholder => "Instagram", :class => "nooutline" %></div>
-          
-                                        </div>
+            <div class="small-9 columns"> <%= f.text_field :company, :placeholder => "Company", :class => "nooutline" %>
+            </div>
+          </div>
+        
+          <div>
+            <div class="small-3 columns whitebg">
+              <p class="companywebsite"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :company_site, :placeholder => "Company Website", :class => "nooutline" %>
+            </div>
+          </div>
+            
+          <div>
+            <div class="small-3 columns whitebg">
+              <p class="twitter"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :twitter, :placeholder => "Twitter", :class => "nooutline" %>
+            </div>
+          </div>
 
-                                        <div>
-                                          <div class="small-3 columns whitebg" >
-           
-                                            <p class="yowebsite"></p></div>
-                                            <div class="small-9 columns">  <%= f.text_field :website, :placeholder => "Personal Website", :class => "nooutline" %></div>
-          
-                                          </div>
-                                          <div>
-          
-                                            <%= f.text_area :bio, :placeholder => "Bio (400 char max)", :class => "span4 nooutline", :rows => 5, :maxlength => 400 %>
-                                          </div>
-                                        </div>
-                                      </div>
- 
-  
-  
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="facebook"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :facebook, :placeholder => "Facebook", :class => "nooutline" %>
+            </div>
+          </div>
 
-                                      <div class="actions" style="margin-bottom:50px;">
-                                        <%= f.submit %>
-                                      </div>
-                                      <% end %>
-                                    </div>
-                                  </div>
-                                </div>
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="github"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :github, :placeholder => "Github", :class => "nooutline" %>
+            </div>
+          </div>
+
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="dribble"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :dribbble, :placeholder => "Dribbble", :class => "nooutline" %>
+            </div>
+          </div>
+          
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="pinterest"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :pinterest, :placeholder => "Pinterest", :class => "nooutline" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="row_2">
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="ln"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :linkedin, :placeholder => "LinkedIn", :class => "nooutline" %>
+            </div>
+          </div>
+
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="gplus"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :googleplus, :placeholder => "Google Plus", :class => "nooutline" %>
+            </div>
+          </div>
+
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="instagram"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :instagram, :placeholder => "Instagram", :class => "nooutline" %>
+            </div>
+          </div>
+
+          <div>
+            <div class="small-3 columns whitebg" >
+              <p class="yowebsite"></p>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :website, :placeholder => "Personal Website", :class => "nooutline" %>
+            </div>
+          </div>
+        
+          <div>
+            <%= f.text_area :bio, :placeholder => "Bio (400 char max)", :class => "span4 nooutline", :rows => 5, :maxlength => 400 %>
+          </div>
+        </div>
+      </div>
+      <div class="actions" style="margin-bottom:50px;">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
