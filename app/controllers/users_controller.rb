@@ -44,7 +44,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @user.images << Image.find(params[:user][:profile_image_id])
+    @image =  Image.find(params[:user][:profile_image_id])
+    @user.images << @image 
 
     respond_to do |format|
       if @user.save

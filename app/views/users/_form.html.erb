@@ -31,7 +31,7 @@
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li class="error-list"><%= msg %></li>
       <% end %>
       </ul>
     </div>
