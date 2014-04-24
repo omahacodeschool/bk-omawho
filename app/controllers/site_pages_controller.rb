@@ -25,5 +25,18 @@ class SitePagesController < ApplicationController
       render "search_results"
     end
   end
+
+  # Public: Start the name game.
+  #
+  # Renders name_game quiz with random user.
+  def name_game
+    @user = User.order('RANDOM()').first
+    @companies = User.pluck(:company).uniq.select {|co| co != @user.company }
+    @companies = @companies.shuffle[0..2]
+    @companies << @user.company
+    @companies.shuffle!
+    @profile_img = @user.images.first ? @user.images.first : "user-avatar.jpg"
+    render :name_game
+  end
   
 end

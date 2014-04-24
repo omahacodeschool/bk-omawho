@@ -20,6 +20,7 @@ Omawho::Application.routes.draw do
   get "rss_feed" => "site_pages#rss_feed", :as => :rss_feed
   get "search_results" => "site_pages#search", :as => :name_search  
   get "name_game" => "site_pages#name_game", :as => :name_game
+  post "check_quiz" => "site_pages#name_game", :as => :check_quiz
   
   get "responsivetemplate" => "users#responsivetemplate"
   
