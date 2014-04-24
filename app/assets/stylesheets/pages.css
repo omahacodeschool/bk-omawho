@@ -185,6 +185,10 @@ ul li {
   width: 100%;
 }
 
+#testimage:hover {
+  opacity: .2;
+}
+
 
 /* PROFILE PAGE */
 #name{
