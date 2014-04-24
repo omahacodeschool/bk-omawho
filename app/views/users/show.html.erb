@@ -1,38 +1,17 @@
-<style>
-body{
-  background:#1d1e1e;
-}
-</style>
 <p id="notice"><%= notice %></p>
-    
-    
- <%= render :partial => '/users/desktopprofile' %>   
- <%= render :partial => '/users/mobileprofile' %>  
 
-    
-    
-    
+<%= render :partial => '/users/desktopprofile' %>   
+<%= render :partial => '/users/mobileprofile' %>
 
-  
 <div id="works">
   <div class="row">
-    <div class="large-3 columns">
-      <img id="testimage" src="/assets/500.jpg">
-    </div>
-    <div class="large-3 columns">
-      <img id="testimage" src="/assets/500.jpg">
-    </div>
-    <div class="large-3 columns">
-      <img id="testimage" src="/assets/500.jpg">
-    </div>
-    <div class="large-3 columns">
-      <img id="testimage" src="/assets/500.jpg">
-    </div>
+    <% @user.images.each do |image| %>
+      <div class="large-3 columns">
+        <%= image_tag(image.file, :style => "width: 100%;") %>
+      </div>
+    <% end %>
   </div>
-</div>
-    
-
-    
+</div> 
     
 <div>
   <%= link_to 'Edit', edit_user_path(@user) %> |

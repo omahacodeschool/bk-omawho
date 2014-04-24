@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :first_name, :last_name, :tagline
   attr_accessible :bio, :website, :company, :company_site
   attr_accessible :facebook, :twitter, :pinterest, :linkedin, :github, :googleplus, :dribbble, :instagram, :tumblr
+  attr_accessible :profile_image_id
   # Note: security encryption and administrative status items not included in
   #       attr_accessible lists
   
@@ -30,6 +31,13 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_many :images
   has_many :embeds
+  
+
+  
+  
+  def profile_image
+    self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
+  end
   
   # Public: Utility to get full user name.
   #

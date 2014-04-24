@@ -1,6 +1,6 @@
 <div class="row show-for-small-only" style="margin-top:55px;">
   <div class="large-6 columns">
-    <img src="http://placekitten.com/600/600" style="width:100%;">
+    <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid", :style => "width: 100%;") %>
   </div>
   <div class="large-6 columns">
     <div id="mobilename">
@@ -15,9 +15,6 @@
     <div id="mobilecompany">
       <a href="<%= @user.company_site %>"><%= @user.company %> </a>
     </div>
-      
-    
-    
     
     <div id="mobilecatagories">
       Catagories here
@@ -30,7 +27,6 @@
       <%= @user.bio %>
     </div>
     
-    
     <div id="mobilesocial">
       <ul>
         <li class="nobg"><a href="#"><div id="facebookicon"></div></a></li>
@@ -42,8 +38,6 @@
         <li class="nobg"><a href="#"><div id="githubicon"></div></a></li> 
       </ul>
     </div>
-    
-    
   </div>
 </div>
 
