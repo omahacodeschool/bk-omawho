@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @image = Image.new # FIX THIS WITH THE USERS ACTUAL PROFILE PICTURE
+    @image = @user.profile_image
   end
 
   # POST /users
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    @image = Image.new # FIX THIS WITH THE USERS ACTUAL PROFILE PICTURE
+    @image = @user.profile_image # FIX THIS WITH THE USERS ACTUAL PROFILE PICTURE
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
