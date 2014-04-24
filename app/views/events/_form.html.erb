@@ -1,4 +1,5 @@
 <%= form_for(@event) do |f| %>
+
   <%= form_errors @event, "Event" %>
 
   <%= f.text_field :name, :placeholder => "Event Name" %><br />
