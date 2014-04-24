@@ -2,8 +2,8 @@ if ( $(".the_one").text() == "I'M NOT GOING" ) {
   if ( $(".the_one").parent().next().children().length < 4 ) {
     $(".the_one").parent().next().prepend("<%= j render 'attend' %>");
   } else {
-    $(".the_one").parent().next().children().first.remove();
     $(".the_one").parent().next().prepend("<%= j render 'attend' %>");
+    $(".the_one").parent().next().children().eq(4).remove();
   }
 } else {
   $(".the_one").parent().next().find("a[href=\'/<%= current_user.username %>\']").remove();
