@@ -48,3 +48,4 @@ gem 'rmagick', :require => 'RMagick'
 gem 'remotipart'
 gem 'quiet_assets', :group => :development
 gem 'pry', :group => :development
+gem 'nokogiri'

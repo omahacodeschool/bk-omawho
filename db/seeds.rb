@@ -30,5 +30,8 @@ Event.all.each do |event|
   event.update_attribute(:approved, true)
 end
 
-User.create(:username => "admin_user", :email => "admin@example.com", :password => "jijijiji", :first_name => "Lawrence of ", :last_name => "Adminia")
+Image.create(:file => "/user-avatar.jpg")
+
+User.create(:username => "admin_user", :email => "admin@example.com", :password => "jijijiji", :first_name => "Lawrence of ", :last_name => "Adminia", :profile_image_id => 1)
 User.find_by_username("admin_user").update_attribute(:admin, true)
+
