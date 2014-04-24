@@ -20,6 +20,7 @@
       <% end %>  
     </div>
     <div>
+      <%= hidden_field_tag :user_id, @user.id %>
       <%= submit_tag "Take a Guess", :name => nil %>
     </div>
   <% end %>

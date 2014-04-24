@@ -39,4 +39,9 @@ class SitePagesController < ApplicationController
     render :name_game
   end
   
+  def check_quiz
+    @values = params.to_s
+    
+  end
+  
 end
