@@ -1,10 +1,69 @@
 <div id="events_container">
+  <% if current_user && current_user.admin? && @unapproved != [] %>
   <div class="row" id="heading_row">
     <div class="large-4 columns">
       <p></p>
     </div>
     <div class="large-4 columns">
+      <div id="upcoming_events_heading"><h1>Unapproved Events</h1></div>
+    </div>
+    <div class="large-4 columns">
+      <p></p>
+    </div>
+  </div>
+  <% @unapproved.each do |event| %>
+  <div class="row upcoming_event_bar">
+    <div class="large-4 columns event_bar_text">
+      <%= "#{event_date(event.start_time)}" %>
+    </div>
+    <div class="large-4 columns event_bar_text">
+      <div id="event_name"><b><%= "#{event.name}" %></b></div>
+    </div>
+    <div class="large-4 columns event_bar_text">
+      <%= "#{event.venue}" %>
+    </div>
+  </div>
+  <div class="row event_display black_text">
+    <div class="large-4 columns">
+      <div id="event_column">
+        <h3><div id="red_text">OMA</div>WHEN</h3>
+        <p>Starts at <%= "#{event_time(event.start_time)}" %><br/>
+        Ends around <%= "#{event_time(event.end_time)}" %></p>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <div id="event_column">
+        <% @users = event.users %>
+          <h3><div id="red_text">OMA</div>WHO ADDED ME</h3>
+          <%= form_tag event_approve_path(event) do %>
+          <%= button_tag "APPROVE", :type => "submit", :class => "" %><br>
+          <% end %>
+          <div id="event_attendees">
+            <% @users.each do |user| %>
+            <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <div id="event_column">
+        <h3><div id="red_text">OMA</div>WHERE</h3>
+        <%= "#{event.location}" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+  <div class="row" id="heading_row">
+    <div class="large-4 columns">
+      <p></p>
+    </div>
+    <div class="large-4 columns">
+      <% if @events != [] %>
       <div id="upcoming_events_heading"><h1>Upcoming Events</h1></div>
+      <% else %>
+      <div id="upcoming_events_heading"><h2>No Upcoming Events</h2></div>
+      <% end %>
     </div>
     <div class="large-4 columns">
       <%= link_to "submit a new event", :new_event, :id => "event_button" %>
@@ -36,21 +95,20 @@
         <% @users = event.users.limit(4)%>
         <% if current_user %>
           <% if current_user.events.include?(event) %>
-            <h3><div id="red_text">OMA</div>WHO (<%= @users_count.length %>)<%= link_to "I'M NOT GOING", {:controller => "events", :action => "attend", :event_id => event.id }, :method => :post, :id => "attendance_button" %></h3>
+            <h3><div id="red_text">OMA</div>WHO (<div id="attendee_count"><%= @users_count.length %></div>)<%= link_to "I'M NOT GOING", {:controller => "events", :action => "attend", :event_id => event.id, :remote => true  }, :method => :post, :class => "attendance_button"%></h3>
           <% else %>
-            <h3><div id="red_text">OMA</div>WHO (<%= @users_count.length %>)<%= link_to "I'M GOING", {:controller => "events", :action => "attend", :event_id => event.id }, :method => :post, :id => "attendance_button" %></h3>
+            <h3><div id="red_text">OMA</div>WHO (<div id="attendee_count"><%= @users_count.length %></div>)<%= link_to "I'M GOING", {:controller => "events", :action => "attend", :event_id => event.id, :remote => true  }, :method => :post, :class => "attendance_button"%></h3>
           <% end %>
+        <% else %>
+          <h3><div id="red_text">OMA</div>WHO (<div id="attendee_count"><%= @users_count.length %></div>)</h3>
+          <p><%= link_to "Log in to mark your attendance.", login_path %></p>
         <% end %>
         <div id="event_attendees">
-          <% if @users == [] %>
-            <p>Be the first to mark your attendance.</p>
-          <% else %>
-            <% @users.each do |user| %>
-            <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
-            <% end %>
-            <% if @users_count.length > 4 %>
-            <%= link_to "SEE MORE FACES", "/events/#{event.id}", :id => "attendance_button" %>
-            <% end %>
+          <% @users.each do |user| %>
+          <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
+          <% end %>
+          <% if @users_count.length > 4 %>
+          <%= link_to "SEE MORE FACES", "/events/#{event.id}", :class => "more_faces_button" %>
           <% end %>
         </div>
       </div>
@@ -101,6 +159,9 @@
           <% else %>
             <% @users.each do |user| %>
             <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
+            <% end %>
+            <% if @users_count.length > 4 %>
+            <%= link_to "SEE MORE FACES", "/events/#{event.id}", :class => "more_faces_button" %>
             <% end %>
           <% end %>
         </div>

@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   
-  
   def index
     if current_user && current_user.admin?
-      @events = Event.where('start_time > ?', DateTime.now).order("start_time ASC")
-      @past_events = Event.where('end_time < ?', DateTime.now).order("end_time DESC")
+      @unapproved = Event.where('approved = ?', false).order('start_time ASC')
+      @events = Event.approved.where('start_time > ?', DateTime.now).order("start_time ASC")
+      @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC")
     else
       @events = Event.approved.where('start_time > ?', DateTime.now).order("start_time ASC")
       @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC")
@@ -44,6 +44,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(params[:event])
+    current_user.events << @event
 
     respond_to do |format|
       if @event.save
@@ -101,11 +102,9 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to events_url }
-      # format.json { render json: @events }
-      # format.js
+      format.js
     end
   end
-  
   
   def approve
     if current_user && current_user.admin?
