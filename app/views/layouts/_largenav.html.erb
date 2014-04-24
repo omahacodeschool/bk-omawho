@@ -2,15 +2,20 @@
   <div class="row">
     <div class="small-6 large-6 columns">
       <div class="row">
-        <div class="small-6 large-6 columns">Filter faces by</div>
-        <div class="small-6 large-6 columns">Category</div>
+        <div class="small-6 large-6 columns" id="topnavtext">Filter faces by</div>
+        <div class="small-6 large-6 columns" id="topnavtext">Category</div>
       </div>
     </div>
     <!-- Search for Names form -->
     <div class="small-6 large-6 columns">
       <%= form_tag name_search_path, :method => 'get' do %>
-        <%= search_field_tag :name_query, params[:name_query] %>
-        <%= submit_tag "Search", :name => nil %>
+        
+        
+        
+        <div class="row">
+          <div class="small-10 large-10 columns"><%= search_field_tag :name_query, params[:name_query], :id=>"searchfield"%></div>
+          <div class="small-2 large-2 columns"><%= submit_tag "Search", :name => nil, :id => "searchthing" %></div>
+        </div>
       <% end %>
     </div>
   </div>

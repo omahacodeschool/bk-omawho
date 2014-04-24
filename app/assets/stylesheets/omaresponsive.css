@@ -53,36 +53,36 @@
 /* META KEYWORDS */
 /*****************/
 
-meta.omawho-version {
+meta.faces-version {
   font-family: "/5.2.2/";
 }
 
-meta.omawho-mq-small {
+meta.faces-mq-small {
   font-family: "/only screen/";
   width: 0em;
 }
 
-meta.omawho-mq-medium {
+meta.faces-mq-medium {
   font-family: "/only screen and (min-width:40.063em)/";
   width: 40.063em;
 }
 
-meta.omawho-mq-large {
+meta.faces-mq-large {
   font-family: "/only screen and (min-width:64.063em)/";
   width: 64.063em;
 }
 
-meta.omawho-mq-xlarge {
+meta.faces-mq-xlarge {
   font-family: "/only screen and (min-width:90.063em)/";
   width: 90.063em;
 }
 
-meta.omawho-mq-xxlarge {
+meta.faces-mq-xxlarge {
   font-family: "/only screen and (min-width:120.063em)/";
   width: 120.063em;
 }
 
-meta.omawho-data-attribute-namespace {
+meta.faces-data-attribute-namespace {
   font-family: false;
 }
 
@@ -1018,7 +1018,7 @@ for small and large */
   tr.show-for-small-only, tr.show-for-small-up, tr.show-for-small, tr.show-for-small-down, tr.hide-for-medium-only, tr.hide-for-medium-up, tr.hide-for-medium, tr.show-for-medium-down, tr.hide-for-large-only, tr.hide-for-large-up, tr.hide-for-large, tr.show-for-large-down {
     display: table-row !important;
   }
-
+  
   th.show-for-small-only, td.show-for-small-only, th.show-for-small-up, td.show-for-small-up, th.show-for-small, td.show-for-small, th.show-for-small-down, td.show-for-small-down, th.hide-for-medium-only, td.hide-for-medium-only, th.hide-for-medium-up, td.hide-for-medium-up, th.hide-for-medium, td.hide-for-medium, th.show-for-medium-down, td.show-for-medium-down, th.hide-for-large-only, td.hide-for-large-only, th.hide-for-large-up, td.hide-for-large-up, th.hide-for-large, td.hide-for-large, th.show-for-large-down, td.show-for-large-down {
     display: table-cell !important;
   }
