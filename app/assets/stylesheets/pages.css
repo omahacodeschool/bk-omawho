@@ -2,6 +2,8 @@
 
 body {
   margin: 0;
+  background-color: #1d1e1e;
+  color: #fff;
 }
 
 ul {
@@ -18,6 +20,19 @@ ul li {
   margin-bottom: 10px;
 }
 
+/* TEXT */
+
+h1, h2, h4, h5 {
+  color: #ad3d32;
+  text-align: center;
+}
+
+/* LINKS */
+
+a {
+  text-decoration: none;
+}
+
 /* HEADER */
 
 #headerguy {
@@ -27,19 +42,29 @@ ul li {
   background-position: center;
   height: 150px;
   color: #fff;
+  margin-top: 5px;
 }
 
 #header_content {
+  max-width: 750px;
   position: relative;
-  top: 15px;
-  max-width:500px;
+  top: -5px;
+}
+
+#header_tagline {
+  font-size: 0.75em;
+  text-shadow: 3px 3px 2px #000;
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 #skyline {
   width: 100%;
 }
 
-#omalogo {
+#logo {
   max-width: 300px;
   display:block;
   margin: 0 auto;
@@ -51,9 +76,32 @@ ul li {
 .red_button {
   background: #ad3d32;
   color: white;
-  padding: 5px 10px;
+  padding: 5px 15px;
   text-align: center;
+  text-decoration: none;
+  margin: 10px 0;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.25s;
+  clear: both;
+}
+
+.red_button:hover {
+  background: #fff;
+  color: #ad3d32;
+}
+
+#left_nav_buttons, #right_nav_buttons {
+  position: relative;
+  top: 30px;
+}
+
+#left_nav_buttons .red_button {
   float: right;
+}
+
+#right_nav_buttons .red_button {
+  float: left;
 }
 
 #menubar {
@@ -65,11 +113,14 @@ ul li {
 
 #mobilemenubar {
   background: #4c6262;
-  height: 60px;
+  height: 40px;
   text-align:center;
-  margin-top: -17px;
   color: white;
   padding-top: 5px;
+}
+
+#mobilemenubar p {
+  margin: 5px 0 0 0;
 }
 
 /* FOOTER */
@@ -78,6 +129,24 @@ ul li {
   background: #4c6262;
   color: white;
   padding-top: 50px;
+}
+
+#footer_content {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+#footer_content p {
+  padding-right: 10px;
+}
+
+#footer_content a {
+  color: #fff;
+}
+
+#footer_content a:hover {
+  text-decoration: underline;
 }
 
 .bottomtext {
@@ -92,38 +161,25 @@ ul li {
 }
 
 #about_icon {
+  display: block;
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
   margin-right: 5px;
 }
 
 #twitter_icon {
+  display: block;
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
   background-position-x: 60px;
   margin-right: 5px;
 }
 
-#rss_icon {
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  background-position-x: 30px;
-  margin-right: 5px;
-}
-
-#contact_icon {
-  width: 30px;
-  height: 30px;
-  background-image: url("/assets/OmawhoFooterIcons.png");
-  float:right;
-  margin-right: 5px;
-  background-position-y: 30px;
+.bottomlogo, #about_icon, #twitter_icon {
+  float: right;
+  padding-right: 10px;
 }
 
 /* MISCELLANEOUS */

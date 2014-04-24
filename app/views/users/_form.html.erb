@@ -1,25 +1,25 @@
-
-<!-- this is from sumeets code, doesnt actually associate the image eith the user yet. remove this comment when it works -->
-<%# form_for(@image, :html => {:multipart => true, :id => "upload_profile_photo"}, :remote => true) do |f| %>
+<!-- Users creation and edit form -->
+<%= form_for(@image, :html => {:multipart => true, :id => "upload_profile_photo"}, :remote => true) do |f| %>
   <div id="upload_profile_photo_container">
     <div class="pull-left">
-      <%#image_tag((@user.images.first ? @user.images.first : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
+      <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>
     </div>
+  
     
     <div class="pull-left">
       <div id="profile_photo_before">
-        <%# f.file_field :file, :id => "profile_photo_field" %>
-        <%# f.submit "Upload", :style => "display: none" %>
+        <%= f.file_field :file, :id => "profile_photo_field" %>
+        <%= f.submit "Upload", :style => "display: none"  %>
       </div>
       <div id="profile_photo_after" style="display: none">
-        <%# image_tag("loading.gif", :alt => "Loading...") %>
+        <%= image_tag("loading.gif", :alt => "Loading...") %>
       </div>
       <div id="profile_photo_success" style="display: none">
         <i class="icon-ok"></i>
       </div>
     </div>
   </div>
-<%# end %> 
+<% end %>
 
 
 
@@ -38,6 +38,9 @@
   <% end %>
   
   <div class="profile_fields">
+    
+    <%= f.hidden_field :profile_image_id%>
+    
     <div>
       <%= f.text_field :first_name, :placeholder => "First Name", :class => "input-xlarge" %>
     </div>

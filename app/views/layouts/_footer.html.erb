@@ -1,58 +1,48 @@
 <div id="footer">
+  <div id="footer_content">
     
-    
-  <div class="row" style="padding-bottom:50px;">
-    <div class="large-6 columns">
-      <div class="row" style="margin-bottom:25px">
-        <div class="small-6 large-6 columns">
-          <div class="row">
-            <div class="small-6 large-6 columns"><div id="about_icon"></div></div>
-            <div class="small-6 large-6 columns bottomtext">About</div>
-          </div>
-        </div>
-        <div class="small-6 large-6 columns">
-          <div class="row">
-            <div class="small-6 large-6 columns"><div id="twitter_icon"></div></div>
-            <div class="small-6 large-6 columns bottomtext">@Omawho</div>
-          </div>
-        </div>
+    <div class="row">
+      <div class="small-2 large-3 columns">
+        <%= link_to("", :about, id: "about_icon") %>
+      </div>
+      <div class="small-4 large-3 columns bottomtext">
+        <%= link_to("About", :about) %>
+      </div>
+      <div class="small-2 large-3 columns">
+        <%= link_to("", "https://twitter.com/Omawho_NE", target: "_blank", id: "twitter_icon") %>
+      </div>
+      <div class="small-4 large-3 columns bottomtext">
+        <%= link_to("@Omawho", "https://twitter.com/Omawho_NE", target: "_blank")%>
       </div>
     </div>
-    <div class="large-6 columns">
-      <div class="row" style="margin-bottom:25px">
-        <div class="small-6 large-6 columns">
-          <div class="row">
-            <div class="small-6 large-6 columns"><div id="rss_icon"></div></div>
-            <div class="small-6 large-6 columns bottomtext">RSS</div>
-          </div>
-        </div>
-        <div class="small-6 large-6 columns">
-          <div class="row">
-            <div class="small-6 large-6 columns"><div id="contact_icon"></div></div>
-            <div class="small-6 large-6 columns bottomtext">Contact</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
+    <hr/>
   
-    <div style="height:50px;">
-    </div>
-    <hr>
-    <div class="large-6 columns">
-      <div class="small-2 large-2 columns">
-        <img src="/assets/bigwheelb.png" class="bottomlogo" style="display:inline;">
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row">
+          <div class="small-2 large-2 columns">
+            <img src="/assets/bigwheelb.png" class="bottomlogo" style="display:inline;">
+          </div>
+  
+          <div class="small-10 large-10 columns">
+            <p class="tk-museo-slab">Omawho was created by Big Wheel Brigade, and updated by students of Omaha Code School.</p>
+          </div>
+        </div>
       </div>
-      <div class="small-10 large-10 columns">
-        <p class="tk-museo-slab">Omawho was created by Big Wheel Brigade, and updated by students of Omaha Code School.</p>
+      
+      <div class="large-6 columns">
+        <div class="row">
+          <div class="small-2 large-2 columns">
+            <img src="/assets/githubkittything.png" class="bottomlogo" style="display:inline;">
+          </div>
+    
+          <div class="small-10 large-10 columns">
+            <p class="tk-museo-slab">Not from Omaha? Cultivate your city's creative community, and fork the Omawho repository.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="large-6 columns">
-      <div class="small-2 large-2 columns">
-        <img src="/assets/githubkittything.png" class="bottomlogo" style="display:inline;">
-      </div>
-      <div class="small-10 large-10 columns">
-        <p class="tk-museo-slab">Not from Omaha? Cultivate your city's creative community, and fork the Omawho repository.</p>
-      </div>
+      
     </div>
   </div>
 </div>
