@@ -34,20 +34,7 @@ Image.create(:file => "user-avatar.jpg")
 User.create(:username => "admin_user", :email => "admin@example.com", :password => "jijijiji", :first_name => "Lawrence of ", :last_name => "Adminia", profile_image_id: 1)
 User.find_by_username("admin_user").update_attribute(:admin, true)
 
-
-# website: "website_link", 
-# company_site: "company_site_link",
-# facebook: "facebook_link",
-# twitter: "twitter_link",
-# pinterest: "pinterest_link",
-# linkedin: "linkedin_link",
-# github: "github_link",
-# googleplus: "googleplus_link",
-# dribbble: "dribbble_link",
-# instagram: "instagram_link",
-# tumblr: "tumblr_link"
-
-# Example Users
+# Example non-Admin Users
 User.create(email: "dw@example.com", username: "dw", first_name: "Dan", last_name: "Wells", company: "Some Place", password: "pass", profile_image_id: 1, website: "website_link", company_site: "company_site_link", facebook: "facebook_link", googleplus: "googleplus_link", dribbble: "dribbble_link", instagram: "instagram_link", tumblr: "tumblr_link")
 User.create(email: "bs@example.com", username: "bs", first_name: "Bob", last_name: "Smith", company: "Flywheel", password: "pass", profile_image_id: 1)
 User.create(email: "jd@example.com", username: "jd", first_name: "John", last_name: "Doe", company: "Lyconic", password: "pass", profile_image_id: 1, website: "website_link", facebook: "facebook_link", twitter: "twitter_link", pinterest: "pinterest_link", googleplus: "googleplus_link", dribbble: "dribbble_link", instagram: "instagram_link", tumblr: "tumblr_link")
