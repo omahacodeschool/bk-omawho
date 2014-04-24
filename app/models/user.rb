@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :first_name, :last_name, :tagline
   attr_accessible :bio, :website, :company, :company_site
   attr_accessible :facebook, :twitter, :pinterest, :linkedin, :github, :googleplus, :dribbble, :instagram, :tumblr
+  attr_accessible :profile_image_id
   # Note: security encryption and administrative status items not included in
   #       attr_accessible lists
   
@@ -19,8 +20,8 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
   
   validates :username, :format => { :with => /^(\w|-)*$/, :message => "can only contain letters, numbers, underscores, and dashes" }
-  validates :website, :format => { :with => /^http/ }, :allow_blank => true
-  validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
+  # validates :website, :format => { :with => /^http/ }, :allow_blank => true
+  # validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
   validates_exclusion_of :username, :in => %w(category login logout add profile quiz beta)
   validates_length_of :bio, :within => 0..400
   validates_length_of :password, :within => 4..99
@@ -30,6 +31,13 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_many :images
   has_many :embeds
+  
+
+  
+  
+  def profile_image
+    self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
+  end
   
   # Public: Utility to get full user name.
   #
@@ -85,5 +93,35 @@ class User < ActiveRecord::Base
     # Return the found user(s)
     found_users
   end
+  
+  # Public: Utility to retrieve list of contact/social links.
+  #
+  #
+  # Returns a hash of existing links for the user.  
+  def contact_links
+    links = {}
+    
+    links["website"] = website if website
+    links["company_site"] = company_site if company_site
+    links["facebook"] = facebook if facebook
+    links["twitter"] = twitter if twitter
+    links["pinterest"] = pinterest if pinterest
+    links["linkedin"] = linkedin if linkedin
+    links["github"] = github if github
+    links["googleplus"] = googleplus if googleplus
+    links["dribbble"] = dribbble if dribbble
+    links["instagram"] = instagram if instagram
+    links["tumblr"] = tumblr if tumblr
+    
+    links
+  end
+
+
+
+
+
+
+
+    
   
 end
