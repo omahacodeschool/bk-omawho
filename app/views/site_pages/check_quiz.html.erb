@@ -13,7 +13,7 @@
       <% end %>   
     </div>
     <div>
-      <p><%= "I work at #{@user.company.titleize}" %></p>
+      <p><%= "I work at #{@user.company}" %></p>
       <% if @co_guess_correct %>
         <p class="correct"><%= "You were right!" %></p>   
       <% else %>
@@ -23,7 +23,14 @@
     <hr>
     <div>
         <p>Follow me, and introduce yourself:</p>
-        <div><p>Social Media Icons...</p></div>
+        <div>
+          <% @user.contact_links.each do |c_type, c_link| %>
+            <p class=<%="#{c_type}"%>>
+              <a href="<%= 'http://example.com/'+c_link %>" class=<%="#{c_type}"%>>
+                <%= c_link %>
+              </a>
+            </p>
+          <% end %>
     </div>
     <hr>
     <div>

@@ -28,11 +28,11 @@ class SitePagesController < ApplicationController
 
   # Public: Start the name game.
   #
-  # Renders name_game quiz with random user.
+  # Renders name_game quiz with random user. Companies are picked
   def name_game
     @user = User.order('RANDOM()').first
     @companies = User.pluck(:company).uniq.select {|co| co != @user.company }
-    @companies = @companies.shuffle[0..2]
+    @companies = @companies.compact.shuffle[0..2]
     @companies << @user.company
     @companies.shuffle!
     @profile_img = @user.profile_image ? @user.profile_image : "user-avatar.jpg"
