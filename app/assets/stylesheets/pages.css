@@ -1,22 +1,71 @@
+/* FORMS */
+input {
+  width: 100%;
+  background: white;
+  padding-top: 25px;
+  padding-bottom: 24px;
+  border: none;
+}
+
+#topnavtext {
+  margin-top: 5px;
+}
+
+#searchthing {
+  margin-top: -10px;
+  height: 50px;
+  text-align: center;
+  border: none;
+  -webkit-appearance: none;
+  background-color:#ad3d32;
+  color:white;
+  font-weight:bold;
+  
+}
+
+.profilefields {
+  margin-left: 40px;
+  line-height: 5;
+  margin-top: -14px;
+}
+
+.row_1 {
+  padding-right: 20px;
+  line-height: 5;
+  
+}
+
+.row_2 {
+  padding-left: 20px;
+  line-height: 5;
+  
+}
+
+#searchfield {
+  -webkit-appearance: none;
+  margin-top: -10px;
+  border: none;
+  height: 50px;
+}
+
+
 /* GENERAL */
 
 body {
   margin: 0;
-  background-color: #1d1e1e;
+  background: #1d1e1e;
   color: #fff;
 }
 
 ul {
   list-style: none;
-  width: 50px;
-  float: right;
+ 
 }
 
 ul li {
   background: #ad3d32;
-  color: white;
   padding: 5px;
-  width: 50px;
+  width: 35px;
   margin-bottom: 10px;
 }
 
@@ -30,6 +79,7 @@ h1, h2, h4, h5 {
 /* LINKS */
 
 a {
+  color: #fff;
   text-decoration: none;
 }
 
@@ -186,4 +236,460 @@ a {
 
 #testimage {
   width: 100%;
+}
+
+#testimage:hover {
+  opacity: .2;
+}
+
+
+/* PROFILE PAGE */
+
+#name {
+  font-weight: bold;
+  font-size: 48px;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+#mobilename {
+  font-weight: bold;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#company {
+  font-size: 15px;
+  padding-left: 50px;
+}
+
+#mobilecompany {
+  font-size: 15px;
+  text-align: center;
+}
+
+#tagline {
+  padding-left: 50px;
+  font-size: 20px;
+}
+
+#mobiletagline {
+  text-align: center;
+  font-size: 20px;
+}
+
+#mywork {
+  text-align: center;
+}
+
+#bio {
+  padding-left: 50px;
+}
+
+#mobilebio {
+  text-align:center;
+}
+
+#catagories {
+  padding-left: 50px;
+}
+
+#mobilecatagories {
+  text-align:center;
+}
+
+#facebookicon {
+  width: 30px;
+  height: 30px;
+  background-position-x: 240px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#facebookicon:hover {
+  width: 30px;
+  height: 30px;
+  background-position-y: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#twittericon {
+  width: 30px;
+  height: 30px;
+  background-position-x: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#twittericon:hover {
+  width: 30px;
+  height: 30px;
+  background-position-y: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#dribbleicon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#dribbleicon:hover {
+  width: 30px;
+  height: 30px;
+  background-position-y: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#gicon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/socialmedia.png");
+  background-position-x: 120px;
+}
+
+#gicon:hover {
+  width: 30px;
+  height: 30px;
+  background-position-y: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#lnicon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/socialmedia.png");
+  background-position-x: 180px;
+}
+
+#lnicon:hover {
+  width: 30px;
+  height: 30px;
+  background-position-y: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#instagramicon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/socialmedia.png");
+  background-position-x: 210px;
+}
+
+#instagramicon:hover {
+  width: 30px;
+  height: 30px;
+  background-position-y: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#githubicon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/socialmedia.png");
+  background-position-x: 150px;
+}
+
+#githubicon:hover {
+  width: 30px;
+  height: 30px;
+  background-position-y: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+.nobg {
+  background: none;
+}
+
+#social ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  float:left;
+  padding-left: 35px;
+}
+
+#social ul li {
+  display: inline-block;
+}
+
+#social ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+}
+
+#mobilesocial ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  margin-bottom:30px;
+}
+
+#mobilesocial ul li {
+  display: inline-block;
+}
+
+#mobilesocial ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+}
+
+#works {
+  margin-bottom:50px;
+}
+
+
+#chooseface {
+  padding: 20px;
+  background: #ad3d32;
+  margin-top: 9px;
+  color:white;
+  text-align:center;
+}
+
+#addingtitle {
+  color: #ad3d32;;
+  text-align:center;
+  font-weight: bold;
+  font-size: 40px; 
+}
+
+#optional {
+  color: #4c6262;
+  text-align: center;
+  font-size: 22px;
+  margin-top: -20px;
+}
+
+.span4{
+  width: 100%;
+  height: 175px;
+  margin-top:12px;
+  text-align:center;
+  padding-top: 40px;
+}
+
+.person {
+  width: 30px;
+  height: 30px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -140px;
+  position: relative;
+  right: -15px;
+}
+
+.username {
+  width: 30px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -93px;
+  position: relative;
+  right: -15px;
+}
+
+.email {
+  width: 34px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -412px;
+  position: relative;
+  right: -15px;
+}
+
+.password {
+  width: 35px;
+  height: 35px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -230px;
+  position: relative;
+  right: -15px;
+}
+
+.tag {
+  width: 30px;
+  height: 30px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -230px;
+  position: relative;
+  right: -15px;
+}
+
+.heightfix {
+  height:15px;
+}
+
+.whitebg {
+  background: white;
+  position:relative;
+  top:9px;
+  height: 64px;
+}
+
+.fixtagheight {
+  margin-top: 2px;
+  padding-bottom: 25px;
+}
+
+.fixtagheight2 {
+  margin-top: 2px;
+  padding-bottom: 26px;
+}
+
+.whitebg2 {
+  background: white;
+  position: relative;
+  top: 2px;
+}
+
+.whitebg3 {
+background: white;
+position: relative;
+top: 9px;
+}
+
+.nooutline {
+  outline: none;
+  border: 1px solid white;
+  position:relative;
+  top:1px;
+}
+
+.tag {
+  width: 36px;
+  height: 31px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -365px;
+  position: relative;
+  background-position-y: -2px;
+  right: -15px;
+}
+
+.company {
+  width: 37px;
+  height: 35px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 0;
+  position: relative;
+  right: -15px;
+  
+}
+
+.twitter {
+  width: 30px;
+  height: 30px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 122px;
+  position: relative;
+  right: -15px;
+}
+
+.facebook {
+  width: 35px;
+  height: 35px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 215px;
+  position: relative;
+  right: -15px;
+}
+
+.github {
+  width: 32px;
+  height: 33px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 32px;
+  position: relative;
+  right: -15px;
+}
+
+.companywebsite {
+  width: 37px;
+  height: 32px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -272px;
+  position: relative;
+  right: -15px;
+}
+
+.dribble {
+  width: 33px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 78px;
+  position: relative;
+  right: -15px;
+}
+
+.pinterest {
+  width: 33px;
+  height: 32px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -90px;
+  position: relative;
+  right: -15px;
+  background-position-y: -44px;
+}
+
+.gplus {
+  width: 35px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 263px;
+  position: relative;
+  right: -15px;
+}
+
+.yowebsite {
+  width: 31px;
+  height: 33px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -319px;
+  position: relative;
+  right: -15px;
+}
+
+.ln {
+  width: 33px;
+  height: 32px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: -46px;
+  position: relative;
+  right: -15px;
+  background-position-y: -44px;
+}
+
+.instagram {
+  width: 33px;
+  height: 34px;
+  background-image: url("SUPERSPRITES.png");
+  background-position-x: 170px;
+  position: relative;
+  right: -15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .row_1 {
+    padding:0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .row_2 {
+    padding:0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .profilefields {
+    margin: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  #choosefacecol {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
