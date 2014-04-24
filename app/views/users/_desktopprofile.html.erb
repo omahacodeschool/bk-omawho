@@ -17,9 +17,9 @@
     </div>
     
     <div id="catagories">
-      Catagories here
+      Catagories:
       <% @user.categories.each do |c| %>
-      <%= c.to_s %>
+        <p><%= c.name %></p>
       <% end %>
     </div>
     
