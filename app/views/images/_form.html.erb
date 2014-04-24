@@ -3,9 +3,9 @@
     <div id="error_explanation">
       <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
-      <ul>
+      <ul class="error-list>
       <% @image.errors.full_messages.each do |msg| %>
-        <li class="error-list"><%= msg %></li>
+        <li class="error-list-item"><%= msg %></li>
       <% end %>
       </ul>
     </div>
