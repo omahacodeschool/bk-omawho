@@ -7,9 +7,9 @@
   <div class="row">
     <div class="row">
       <div class="large-4 columns">
-        <div id="event_column">
+        <div id="event_column" class="right_align">
           <h3><div id="red_text">OMA</div>WHEN</h3>
-          <p><%= "#{event_date(@event.start_time)}" %><br/>
+          <p><b><%= "#{event_date(@event.start_time)}" %></b><br/>
           Starts at <%= "#{event_time(@event.start_time)}" %><br/>
           Ends around <%= "#{event_time(@event.end_time)}" %></p>
         </div>
@@ -26,18 +26,14 @@
               <% end %>
             <% end %>
           <% else %>
+          <h3><div id="red_text">OMA</div>WHO<% if @event.end_time > DateTime.now %> IS GOING<% else %> WAS THERE<% end %> (<%= @users.length %>)</h3>
             <p><%= link_to "Log in to mark your attendance.", login_path(:return_to_url => event_path(@event)) %></p>
           <% end %>
           <div id="event_attendees">
-            <% if @users == [] %>
-              <% if current_user %>
-                <p>Be the first to mark your attendance.</p>
-              <% end %>
-            <% else %>
-              <% @users.each do |user| %>
-              <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
-              <% end %>
+            <% @users.each do |user| %>
+            <%= link_to (image_tag((user.images.first ? user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
             <% end %>
+            <%= link_to "SEE ALL EVENTS", "/events", :id => "attendance_button" %>
           </div>
         </div>
       </div>

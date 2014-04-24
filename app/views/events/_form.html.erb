@@ -3,21 +3,19 @@
   <%= form_errors @event, "Event" %>
 
   <%= f.text_field :name, :placeholder => "Event Name" %><br />
-
-  <%= f.text_area :description, :placeholder => "Description" %>
   
-  <br>
-  Start Date/Time:
-  <%= f.datetime_select :start_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => true, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input-small"} %><br />
+  <%= f.text_field :venue, :placeholder => "Venue name" %><br />
   
-  End Date/Time:
-  <%= f.datetime_select :end_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => true, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input-small"} %><br />
-
-  <%= f.text_field :venue, :placeholder => "Venue (optional)" %><br />
+  <%= f.text_field :location, :placeholder => "Address, City, State" %><br />
   
-  <%= f.text_field :location, :placeholder => "City" %><br />
-
-  <%= f.text_field :link, :placeholder => "Website (optional)" %><br />
-
-  <p><%= f.submit "Submit Event", :class => "btn" %></p>
+  <div class="large-6 columns">
+    <p>Start date &amp; time:</p>
+    <%= f.datetime_select :start_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => false, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input"} %>
+  </div>
+  <div class="large-6 columns" id="bottom_margin">
+  <p>End date &amp; time:</p>
+  <%= f.datetime_select :end_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => false, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input"} %>
+  </div>
+  
+  <p><%= f.submit "Submit", :class => "btn" %></p>
 <% end %>

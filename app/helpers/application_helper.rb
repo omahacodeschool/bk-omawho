@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   
   def event_time(time)
-    time.strftime("%l %P")
+    time.strftime("%l:%M %P")
   end
 
 end
