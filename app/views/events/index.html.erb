@@ -22,7 +22,7 @@
       <%= "#{event.venue}" %>
     </div>
   </div>
-  <div class="row event_display">
+  <div class="row event_display black_text">
     <div class="large-4 columns">
       <div id="event_column">
         <h3><div id="red_text">OMA</div>WHEN</h3>
@@ -30,7 +30,7 @@
         Ends around <%= "#{event_time(event.end_time)}" %></p>
       </div>
     </div>
-    <div class="large-4 columns black_text">
+    <div class="large-4 columns">
       <div id="event_column">
         <% @users = event.users %>
         <% if current_user %>
