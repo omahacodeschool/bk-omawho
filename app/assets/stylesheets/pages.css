@@ -496,9 +496,17 @@ position: relative;
 top: 2px;
 }
 
+.whitebg3 {
+background: white;
+position: relative;
+top: 9px;
+}
+
 .nooutline{
   outline: none;
   border: 1px solid white;
+  position:relative;
+  top:1px;
 }
 
 .tag{
