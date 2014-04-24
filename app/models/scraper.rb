@@ -39,6 +39,7 @@ class Scraper
         event.venue = e.css("td.location.vcard").text.strip.split("\n")[0]
         #event.location
         l = e.css("td.location.vcard span.fn.org span span.adr span.locality").text
+        l += ", "
         l += e.css("td.location.vcard span.fn.org span span.adr span.region").text
         event.location = l
       end
