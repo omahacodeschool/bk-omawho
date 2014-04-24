@@ -27,6 +27,12 @@ h1, h2, h4, h5 {
   text-align: center;
 }
 
+/* LINKS */
+
+a {
+  text-decoration: none;
+}
+
 /* HEADER */
 
 #headerguy {
@@ -135,6 +141,14 @@ h1, h2, h4, h5 {
   padding-right: 10px;
 }
 
+#footer_content a {
+  color: #fff;
+}
+
+#footer_content a:hover {
+  text-decoration: underline;
+}
+
 .bottomtext {
   font-size: 20px;
   position: relative;
@@ -147,6 +161,7 @@ h1, h2, h4, h5 {
 }
 
 #about_icon {
+  display: block;
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
@@ -154,6 +169,7 @@ h1, h2, h4, h5 {
 }
 
 #twitter_icon {
+  display: block;
   width: 30px;
   height: 30px;
   background-image: url("/assets/OmawhoFooterIcons.png");
