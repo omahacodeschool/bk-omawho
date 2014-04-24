@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-meta.faces-version {
-  font-family: "/5.2.2/"; }
-=======
 /**************************************************************************
   HOW TO USE THIS FILE
 
@@ -57,10 +53,9 @@ meta.faces-version {
 /* META KEYWORDS */
 /*****************/
 
-meta.omawho-version {
+meta.faces-version {
   font-family: "/5.2.2/";
 }
->>>>>>> eeea4e9c84b69ca9f8a8438a769b432eaadab2fe
 
 meta.faces-mq-small {
   font-family: "/only screen/";
@@ -87,15 +82,9 @@ meta.faces-mq-xxlarge {
   width: 120.063em;
 }
 
-<<<<<<< HEAD
 meta.faces-data-attribute-namespace {
-  font-family: false; }
-
-=======
-meta.omawho-data-attribute-namespace {
   font-family: false;
 }
->>>>>>> eeea4e9c84b69ca9f8a8438a769b432eaadab2fe
 
 /***********/
 /* GENERAL */
@@ -171,47 +160,6 @@ select {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 62.5em;
-<<<<<<< HEAD
-  *zoom: 1; }
-  .row:before, .row:after {
-    content: " ";
-    display: table; }
-  .row:after {
-    clear: both; }
-  .row.collapse > .column,
-  .row.collapse > .columns {
-    padding-left: 0;
-    padding-right: 0; }
-  .row.collapse .row {
-    margin-left: 0;
-    margin-right: 0; }
-  .row .row {
-    width: 100%;
-/* margin-left: -0.9375em;
-    margin-right: -0.9375em;*/
-    margin-top: 0;
-    margin-bottom: 0;
-    max-width: none;
-    *zoom: 1; }
-    .row .row:before, .row .row:after {
-      content: " ";
-      display: table; }
-    .row .row:after {
-      clear: both; }
-    .row .row.collapse {
-      width: auto;
-      margin: 0;
-      max-width: none;
-      *zoom: 1; }
-      .row .row.collapse:before, .row .row.collapse:after {
-        content: " ";
-        display: table; }
-      .row .row.collapse:after {
-        clear: both; }
-
-.column,
-.columns {
-=======
   *zoom: 1;
 }
 
@@ -269,7 +217,6 @@ select {
 }
 
 .column, .columns {
->>>>>>> eeea4e9c84b69ca9f8a8438a769b432eaadab2fe
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 100%;
@@ -1071,20 +1018,11 @@ for small and large */
   tr.show-for-small-only, tr.show-for-small-up, tr.show-for-small, tr.show-for-small-down, tr.hide-for-medium-only, tr.hide-for-medium-up, tr.hide-for-medium, tr.show-for-medium-down, tr.hide-for-large-only, tr.hide-for-large-up, tr.hide-for-large, tr.show-for-large-down {
     display: table-row !important;
   }
-
-<<<<<<< HEAD
-  th.hide-for-small-only, td.hide-for-small-only, th.show-for-small-up, td.show-for-small-up, th.hide-for-small, td.hide-for-small, th.hide-for-small-down, td.hide-for-small-down, th.show-for-medium-only, td.show-for-medium-only, th.show-for-medium-up, td.show-for-medium-up, th.show-for-medium, td.show-for-medium, th.show-for-medium-down, td.show-for-medium-down, th.hide-for-large-only, td.hide-for-large-only, th.hide-for-large-up, td.hide-for-large-up, th.hide-for-large, td.hide-for-large, th.show-for-large-down, td.show-for-large-down, th.hide-for-xlarge-only, td.hide-for-xlarge-only, th.hide-for-xlarge-up, td.hide-for-xlarge-up, th.hide-for-xxlarge-only, td.hide-for-xxlarge-only, th.hide-for-xxlarge-up, td.hide-for-xxlarge-up {
-    display: table-cell !important; } }
-/* large displays */
-@media only screen and (min-width: 600px;) {
-  .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .hide-for-medium-only, .show-for-medium-up, .hide-for-medium, .hide-for-medium-down, .show-for-large-only, .show-for-large-up, .show-for-large, .show-for-large-down, .hide-for-xlarge-only, .hide-for-xlarge-up, .hide-for-xxlarge-only, .hide-for-xxlarge-up {
-    display: inherit !important; }
-=======
+  
   th.show-for-small-only, td.show-for-small-only, th.show-for-small-up, td.show-for-small-up, th.show-for-small, td.show-for-small, th.show-for-small-down, td.show-for-small-down, th.hide-for-medium-only, td.hide-for-medium-only, th.hide-for-medium-up, td.hide-for-medium-up, th.hide-for-medium, td.hide-for-medium, th.show-for-medium-down, td.show-for-medium-down, th.hide-for-large-only, td.hide-for-large-only, th.hide-for-large-up, td.hide-for-large-up, th.hide-for-large, td.hide-for-large, th.show-for-large-down, td.show-for-large-down {
     display: table-cell !important;
   }
 }
->>>>>>> eeea4e9c84b69ca9f8a8438a769b432eaadab2fe
 
 /*************************************/
 /* SHOW AND HIDE FOR MEDIUM DISPLAYS */
