@@ -86,13 +86,9 @@
   
           <div style="line-height:0;color:white;">
             <!-- replace this with categories from model -->
-            <% categorys =  [ 'some', 'categorys', 'goes', 'here', 'later' ]%>
-            <% categorys.each do |c| %>
-              <div>
-                <p><%= check_box_tag c.to_s %></p>
-                <p><%= c.to_s %></p>
-              </div>
-            <% end %>
+            
+            <%= f.collection_select :category_ids, @categories, :id, :name, {}, {:multiple => true} %>
+                
           </div>
         
         </div>
