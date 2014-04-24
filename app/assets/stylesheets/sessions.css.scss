@@ -1,10 +1,36 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-body {
-  background: #1D1E1E;
+#login_form {
   text-align: center;
+}
+
+#login_form h1 {
+  color: #AD3D32; 
+  font-size: 2.5em;
+}
+
+#login_form p {
+  margin: -1em 0 2em 0;
+  color: #4C6262;
+}
+
+#login_form {
+  padding: 30px 0;
+}
+
+#login_form hr {
+  margin: 5% auto;
+  max-width: 65%;
+}
+
+#login_form p span {
+  color: #AD3D32;
+}
+
+#login_form label {
+  color: #4C6262;
+  font-size: 1.2em;
 }
 
 .button {
@@ -22,50 +48,16 @@ body {
   margin-bottom: 2em;
 }
 
-h1 {
-  color: #AD3D32; 
-  font-size: 2.5em;
-}
-
-hr {
-  margin: 5% auto;
-  max-width: 65%;
-}
-
-label {
-  color: #4C6262;
-  font-size: 1.2em;
-}
-
-p {
-  color: #4C6262;
-}
-
-p span {
-  color: #AD3D32;
+input[type="checkbox"] {
+  width: 20px; 
+  height: 20px;
 }
 
 .password_margin {
   margin-bottom: 50px;
 }
 
-input[type="checkbox"] {
- width: 20px; 
- height: 20px;
-}
-
-#login_form h1 {
-}
-
-#login_form p {
-  margin: -1em 0 2em 0;
-}
-
-#login_form {
-  padding: 30px 0;
-}
 .reset_password {
   margin-top: 1em;
   margin-bottom: 28px;
 }
-
