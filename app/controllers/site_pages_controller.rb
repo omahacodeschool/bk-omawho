@@ -36,11 +36,19 @@ class SitePagesController < ApplicationController
     @companies << @user.company
     @companies.shuffle!
     @profile_img = @user.images.first ? @user.images.first : "user-avatar.jpg"
-    render :name_game
   end
   
   def check_quiz
-    @values = params.to_s
+    @user = User.find(params[:user_id])
+    if (params[:name_guess] == "")
+      @guessed_name = "<no guess>"
+    else
+      @guessed_name = params[:name_guess]
+    end
+    @guessed_co = params[:company]
+    @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
+    @co_guess_correct = (@guessed_co == @user.company)   
+    @profile_img = @user.images.first ? @user.images.first : "user-avatar.jpg"
     
   end
   

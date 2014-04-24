@@ -1,3 +1,31 @@
 <h1>NAME GAME (Check Answers)</h1>
-<p>Params passed in:</p>
-<%= @values %>
+<div>
+  <%= image_tag(@profile_img, :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>  
+</div>
+
+<div>
+    <div>
+      <%= label_tag "Hi! My name is #{@user.full_name}" %> <br/>
+      <% if @name_guess_correct %>
+        <p><%= "You were right!" %></p>   
+      <% else %>
+        <p><%= "You said it was #{@guessed_name}" %></p>   
+      <% end %>   
+    </div>
+    <div>
+      <%= label_tag "I work at #{@user.company}" %> <br/>
+      <% if @co_guess_correct %>
+        <p><%= "You were right!" %></p>   
+      <% else %>
+        <p><%= "You said it was #{@guessed_co}" %></p>   
+      <% end %>   
+    </div>
+    <hr>
+    <div>
+        <p>Follow me, and introduce yourself:</p>
+        <div><p>Social Media Icons...</p></div>
+    </div>
+    <hr>
+    <div><p>SHOW ANOTHER FACE</p></div>
+</div>
+
