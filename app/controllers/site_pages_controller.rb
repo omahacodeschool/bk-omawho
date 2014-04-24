@@ -35,7 +35,7 @@ class SitePagesController < ApplicationController
     @companies = @companies.shuffle[0..2]
     @companies << @user.company
     @companies.shuffle!
-    @profile_img = @user.images.first ? @user.images.first : "user-avatar.jpg"
+    @profile_img = @user.profile_image ? @user.profile_image : "user-avatar.jpg"
   end
   
   def check_quiz
@@ -48,8 +48,7 @@ class SitePagesController < ApplicationController
     @guessed_co = params[:company]
     @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
     @co_guess_correct = (@guessed_co == @user.company)   
-    @profile_img = @user.images.first ? @user.images.first : "user-avatar.jpg"
-    
+    @profile_img = @user.profile_image ? @user.profile_image : "user-avatar.jpg"
   end
   
 end
