@@ -8,11 +8,10 @@
         <div class="workinthathover">
           <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :class => "img-polaroid testimage")), view_profile_path(user.username) %>
           <div class="display_name display_name_hidden" >
-            <%= user.first_name %> <%= user.last_name %>
-         
-          </div>
-        
+            <%= user.first_name %> <%= user.last_name %>        
+          </div>        
           <div class="category_name category_name_hidden">
+
             <%= user.tagline %>
           </div>
           <div style="display: none;">

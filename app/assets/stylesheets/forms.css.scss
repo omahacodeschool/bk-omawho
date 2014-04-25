@@ -29,7 +29,6 @@ textarea {
 .profilefields {
   margin: 0px;
   padding-left: 40px;
-  padding-right: 40px;
 }
 
 .profile_field {
@@ -38,7 +37,6 @@ textarea {
 }
 
 #topnavtext {
-  margin-top: 5px;
 }
 
 #search_field {
@@ -70,6 +68,10 @@ textarea {
 
 .row_2 {
   padding-left: 20px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

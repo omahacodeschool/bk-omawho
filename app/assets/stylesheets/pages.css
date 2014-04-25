@@ -1,4 +1,3 @@
-
 /* GENERAL */
 
 body {
@@ -7,21 +6,23 @@ body {
   color: #fff;
 }
 
+input:-webkit-autofill, textarea:-webkit-autofill {
+    background-colorr: #fff !important;
+}
+
 ul {
-  list-style: none;
- 
+  list-style: none; 
 }
 
 ul li {
   background: #ad3d32;
   padding: 5px;
-  width: 35px;
   margin-bottom: 10px;
 }
 
 /* TEXT */
 
-h1, h2, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   color: #ad3d32;
   text-align: center;
 }
@@ -34,6 +35,23 @@ a {
 }
 
 /* HEADER */
+
+#listitemstyle ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+text-align: center;
+}
+
+#listitemstyle ul li { display: inline-block; }
+
+#listitemstyle ul li a
+{
+text-decoration: none;
+padding: .2em 1em;
+color: #fff;
+}
 
 #headerguy {
   background-image: url("/assets/omaha_skyline3.jpg");
@@ -184,8 +202,10 @@ a {
 
 /* MISCELLANEOUS */
 
+#upload_profile_photo_container{
+  margin-top:-15px;
+}
 .display_name_hidden{
-  
   visibility: hidden;
   position:relative;
   top:-200px;
@@ -229,6 +249,7 @@ a {
   width: 100%;
   margin-bottom:-60px;
 }
+
 /* PROFILE PAGE */
 
 #profile {
@@ -239,12 +260,13 @@ a {
 
 .profilefields {
   margin-left: 40px;
-/*  line-height: 5;*/
   margin-top: -14px;
 }
+
 #name, #company, #tagline, #mywork, #bio, #categories {
   padding-left: 50px;
 }
+
 #name {
   font-weight: bold;
   font-size: 48px;
@@ -266,7 +288,9 @@ a {
 #bio {
 }
 
-#categories {
+.categories {
+  max-width: 800px !important;
+  margin-top: 40px !important;
 }
 
 .nobg {
@@ -286,6 +310,14 @@ a {
   display: inline-block;
 }
 
+#listitemstyle{
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
 #social ul li a {
   padding: .2em 1em;
 }
@@ -300,6 +332,22 @@ a {
   margin-top: 9px;
   color: #fff;
   text-align: center;
+}
+
+#topnavtext2{
+  cursor:pointer;
+}
+
+#dropdown{
+  padding-top:50px;
+}
+
+.goaway{
+  display:none;
+}
+
+.comeback{
+  visibility: visible;
 }
 
 #addingtitle {
@@ -324,12 +372,21 @@ a {
   padding-top: 40px;
 }
 
+.submitstyles{
+  margin-bottom:50px;
+  margin-top:50px;
+}
+
 @media only screen and (max-width: 600px) {
   #name, #company, #tagline, #bio, #categories, #social {
     text-align: center;
     padding-left: 0;
   }
   
+  .profilefields{
+    margin-left: 0px;
+  } 
+   
   #social ul {
     padding-left: 0;
     text-align: center;
@@ -340,7 +397,7 @@ a {
   #name {
     margin-top: 50px;
   }
-  
+   
   #choosefacecol {
     padding-left: 40px;
     padding-right: 40px;
@@ -354,10 +411,21 @@ a {
      top:-50px;
    }
    
+   .categories {
+     padding-left:20px;
+   }
+   .profilefields {
+     margin: 0px;
+     padding-left: 20px;
+     padding-right: 20px;
+   }
+   #profile_photo_before{
+     margin-left: 20px;
+     margin-right:20px;
+   }
 }
 
 @media only screen and (max-width: 1068px) {
-  
   .display_name_visibile{
     font-size:20px;
     top:-60px;

@@ -101,10 +101,11 @@
         </div>
         
       </div>
-      <div class="categories row">
+    </div>
+      <div class="categories row" >
         <%= hidden_field_tag "product[category_ids][]", nil %>
         <% @categories.each do |category| %>
-          <div class="large-4 columns">
+          <div class="large-4 columns" style="margin-top:15px;">
             <%= check_box_tag "user[category_ids][]", category.id, @user.category_ids.include?(category.id), id: dom_id(category) %>
             <%= label_tag dom_id(category), category.name %><br>
           </div>
@@ -210,7 +211,7 @@
              </div>
           </div>
           
-          <div class="profile_field">
+          <div class="profile_field" >
               <div class="small-3 columns whitebg" >
                 <p class="yowebsite sprite"></p>
               </div>
@@ -224,9 +225,9 @@
           </div>
         </div>
       </div>
-       
-      <div class="actions" style="margin-bottom:50px;">
-        <%= f.submit %>
+  
+      <div class="actions" >
+        <%= f.submit "Watch", :class => "submitstyles" %>
       </div>
     </div>
   <% end %>
