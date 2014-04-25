@@ -188,6 +188,9 @@ a {
 
 /* MISCELLANEOUS */
 
+#upload_profile_photo_container{
+  margin-top:-15px;
+}
 .display_name_hidden{
   
   visibility: hidden;
@@ -246,9 +249,7 @@ a {
 /*  line-height: 5;*/
   margin-top: -14px;
 }
-.categories{
-  margin-top: 40px !important;
-}
+
 #name, #company, #tagline, #mywork, #bio, #categories {
   padding-left: 50px;
 }
@@ -275,6 +276,7 @@ a {
 
 .categories {
   max-width: 800px !important;
+  margin-top: 40px !important;
 }
 
 .nobg {
@@ -332,6 +334,11 @@ a {
   padding-top: 40px;
 }
 
+.submitstyles{
+  margin-bottom:50px;
+  margin-top:50px;
+}
+
 @media only screen and (max-width: 600px) {
   #name, #company, #tagline, #bio, #categories, #social {
     text-align: center;
@@ -341,7 +348,7 @@ a {
   .profilefields{
     margin-left: 0px;
   } 
-  
+   
   #social ul {
     padding-left: 0;
     text-align: center;
@@ -370,9 +377,13 @@ a {
      margin-left: 40px !important;
    }
    .profilefields {
-   margin: 0px;
-   padding-left: 20px;
-   padding-right: 20px;
+     margin: 0px;
+     padding-left: 20px;
+     padding-right: 20px;
+   }
+   #profile_photo_before{
+     margin-left: 20px;
+     margin-right:20px;
    }
 }
 
