@@ -15,10 +15,9 @@
       <a href="<%= @user.company_site %>"><%= @user.company %> </a>
     </div>
     
-    <div id="catagories">
-      Catagories:
+    <div id="categories">
       <% @user.categories.each do |c| %>
-        <%= c.name %><br />
+        <div class="category"><%= c.name %></div>
       <% end %>
     </div>
     
