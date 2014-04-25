@@ -16,10 +16,10 @@
       <a href="<%= @user.company_site %>"><%= @user.company %> </a>
     </div>
     
-    <div id="categories">
-      Catagories here
+    <div id="catagories">
+      Catagories:
       <% @user.categories.each do |c| %>
-      <%= c.to_s %>
+        <%= c.name %><br />
       <% end %>
     </div>
     
