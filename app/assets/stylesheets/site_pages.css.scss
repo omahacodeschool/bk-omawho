@@ -3,12 +3,89 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media only screen and (min-width: 600px) {
+  input[type="radio"] {
+    display: none;
+  }
+  
   .about_page_photos {
     padding: 6% 0% 0% 10%;
   }
 
   .about_page_photos img {
     width: 100%;
+  }
+  
+  .name_game_company {
+    display: block;
+    text-align: center;
+    padding: 1.5%;
+    margin-top: 15px;
+  }
+  
+  .gray_choice {
+    background: #6d6d6d;
+    position: relative;
+    bottom: 5%;
+    width: 100%;
+    padding: 3%;
+  }
+  
+  .gray_choice:hover {
+    position: relative;
+    bottom: 5px;
+    margin-bottom: -5px;
+    border-bottom: 5px solid #595959;
+  }
+  
+  .gray_choice:active {
+    bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+  }
+  
+  .red_choice {
+    background: #ad3d32;
+    position: relative;
+    bottom: 5%;
+    width: 100%;
+    padding: 3%;
+  }
+  
+  .submit_button {
+    background: #ad3d32;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 0;
+    position: relative;
+    clear: both;
+  }
+  
+  .submit_button:hover {
+    position: relative;
+    bottom: 5px;
+    margin-bottom: -5px;
+    border-bottom: 5px solid #9B2A25;
+  }
+  
+  .submit_button:active {
+    bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+  }
+  
+  .red_choice:hover {
+    position: relative;
+    bottom: 5px;
+    margin-bottom: -5px;
+    border-bottom: 5px solid #9B2A25;
+  }
+  
+  .red_choice:active {
+    bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
   }
 
   #about_page_section {
@@ -42,13 +119,20 @@
   #about_page_text h2 {
     font-size: 2.3vw;
   }
-
-  #backdrop {
-    background: #000;
-  }
   
   #mobile_image_heading {
     display: none;
+  }
+  
+  #name_game_image {
+    float: left;
+    width: 50%;
+    margin-right: 5%;
+  }
+  
+  #name_game_text {
+    float: left;
+    width: 45%;
   }
 }
 
@@ -71,9 +155,5 @@
   #about_page a {
     color: #ad3d32;
     text-decoration: none;
-  }
-
-  #backdrop {
-    background: #000;
   }
 }

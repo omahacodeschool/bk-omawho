@@ -8,6 +8,8 @@
     <p><%= "Hi! My name is #{@user.full_name.titleize}" %></p>
     <% if @name_guess_correct %>
       <p class="correct"><%= "You were right!" %></p>   
+    <% elsif @guessed_name == "You didn't even guess. What's the deal?"%>
+      <p class="incorrect"><%= "#{@guessed_name}" %></p>  
     <% else %>
       <p class="incorrect"><%= "You said it was #{@guessed_name.downcase.titleize}" %></p>   
     <% end %>   
@@ -16,8 +18,10 @@
     <p><%= "I work at #{@correct_co}" %></p>
     <% if @co_guess_correct %>
       <p class="correct"><%= "You were right!" %></p>   
+    <% elsif @guessed_co == nil %>
+      <p class="incorrect"><%= "Come on, it was multiple choice. I must be doing something." %></p> 
     <% else %>
-      <p class="incorrect"><%= "You said it was #{@guessed_co}" %></p>   
+      <p class="incorrect"><%= "You said it was #{@guessed_co}" %></p> 
     <% end %>   
   </div>
   <hr>

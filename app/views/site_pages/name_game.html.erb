@@ -1,33 +1,71 @@
-<h1>NAME GAME</h1>
-
-<div>
-  <%= image_tag(@profile_img, :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>  
+<div class="row">
+  <div class="large-4 columns">
+    <p></p>
+  </div>
+  <div class="large-4 columns">
+    <div id="upcoming_events_heading"><h1>NAME GAME</h1></div>
+  </div>
+  <div class="large-4 columns">
+    <p></p>
+  </div>
 </div>
-
-<div>
-  <%= form_tag check_quiz_path do %>
-    <div>
-      <p>"What's my name?"</p>
-      <%= text_field_tag :name_guess, nil, :placeholder => "first and last name please" %>      
+<div class="row">
+  <div class="large-2 columns">
+    <p></p>
+  </div>
+  <div class="large-8 columns">
+    <div id="name_game_image">
+      <%= image_tag(@profile_img, :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>  
     </div>
-    <div>
-      <p>Where do I work?</p>
-      <% @companies.each do |c| %>
-        <li>
-          <% if (c.nil? || c == "") %>
-            <%= radio_button_tag(:company, "<No Company Specified>") %>
-            <%= label_tag :company, "<No Company Specified>" %>
-          <% else %>
-            <%= radio_button_tag(:company, c) %>
-            <%= label_tag :company, c %>
-          <% end %>
-        </li>
-      <% end %>  
-    </div>
-    <div>
-      <%= hidden_field_tag :user_id, @user.id %>
-      <%= submit_tag "TAKE A GUESS", :name => nil, class: "red_button" %>
-    </div>
-  <% end %>
+    <div id="name_game_text">
+      <div>
+        <%= form_tag check_quiz_path do %>
+          <div>
+            <p>What's my name?</p>
+            <%= text_field_tag :name_guess, nil, :placeholder => "first and last name please" %>      
+          </div>
+          <div>
+            <p>Where do I work?</p>
+            <div>
+            <% @companies.each do |c| %>
+            
+              <li class="name_game_company gray_choice">
+                <% if (c.nil? || c == "") %>
+                  <%= radio_button_tag(:company, "<No Company Specified>") %>
+                  <%= label_tag :company, "No company specified" %>
+                <% else %>
+                  <%= radio_button_tag(:company, c) %>
+                  <%= label_tag :company, c %>
+                <% end %>
+              </li>
+            <% end %>
+            </div>
+          </div>
+          <div>
+            <%= hidden_field_tag :user_id, @user.id %>
+          </div>
+        <% end %>
   
+      </div>
+    </div>
+  </div>
+  <div class="large-2 columns">
+    <p></p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-2 columns">
+    <p>&nbsp;</p>
+  </div
+  <div class="large-8 columns">
+    <%= submit_tag "TAKE A GUESS", :name => nil, class: "submit_button" %>
+  </div>
+  <div class="large-2 columns">
+    <p>&nbsp;</p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <p></p>
+  </div>
 </div>
