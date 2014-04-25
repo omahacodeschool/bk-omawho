@@ -72,6 +72,10 @@ textarea {
   padding-left: 20px;
 }
 
+input[type="submit"] {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
   .row_1, .row_2 {
     padding: 0 5%;

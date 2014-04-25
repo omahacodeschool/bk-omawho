@@ -29,12 +29,12 @@
     <%= label_tag :remember_me %>
   </div>
   <div class="actions"><%= submit_tag "Log In", :class => "log_in_button" %></div>
+  <% end %>
   
   <hr>
   
   <h1>Don’t have an account?</h1>
-  <div class="actions"><%= submit_tag "Sign up for free", :class => "log_in_button" %></div>
-  <% end %>
+  <div class="actions"><%= link_to "Sign up for free", :signup, :class => "log_in_button" %></div>
   
   <hr>
 
