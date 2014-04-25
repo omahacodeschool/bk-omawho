@@ -1,21 +1,15 @@
 <%= form_for(@event) do |f| %>
-
   <%= form_errors @event, "Event" %>
-
   <%= f.text_field :name, :placeholder => "Event Name" %><br />
-  
   <%= f.text_field :venue, :placeholder => "Venue name" %><br />
-  
   <%= f.text_field :location, :placeholder => "Address, City, State" %><br />
-  
   <div class="large-6 columns">
     <p>Start date &amp; time:</p>
     <%= f.datetime_select :start_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => false, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input"} %>
   </div>
   <div class="large-6 columns" id="bottom_margin">
-  <p>End date &amp; time:</p>
-  <%= f.datetime_select :end_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => false, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input"} %>
+    <p>End date &amp; time:</p>
+    <%= f.datetime_select :end_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => false, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input"} %>
   </div>
-  
   <p><%= f.submit "Submit", :class => "btn" %></p>
 <% end %>
