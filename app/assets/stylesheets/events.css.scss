@@ -194,12 +194,10 @@ input:focus, select:focus {
 }
 
 #flash_notice {
-  width: 250px;
+  width: 100%;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 1%;
+  background: #ad3d32;
 }
 
 #heading_row {
