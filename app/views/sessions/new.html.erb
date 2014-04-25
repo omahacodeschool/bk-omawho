@@ -8,40 +8,45 @@
       <div class="small-3 columns whitebg" >
         <p class="username"></p>
       </div>
-      
       <div class="small-3 columns">
         <%= text_field_tag :email, params[:email], :placeholder => "Username", :class => "nooutline" %>
       </div>
     </div>
   
+    <div>
       <div class="small-3 columns whitebg" >
         <p class="username"></p>
       </div>
+      <p class="username"></p>
       <div class="small-3 columns">
         <%= password_field_tag :password, :placeholder => "Password" %>
       </div>
-    
-      <div class="field">
-        <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-        <%= label_tag :remember_me %>
-      </div>
-      <div class="actions"><%= submit_tag "Log In", :class => "log_in_button" %></div>
-    
-      <hr>
-    
-      <h1>Don’t have an accout?</h1>
-      <div class="actions"><%= submit_tag "Sign up for free", :class => "log_in_button" %></div>
-      <% end %>
-    
-      <hr>
-  
-      <h1>Forgot Password?</h1>
-      <p>Sign up for free</p>
-
-      <div class="forgot_password">
-        <%= form_tag password_resets_path, :method => :post do %>
-        <%= text_field_tag :email, params[:email], :placeholder => "Email" %><br>
-        <div class="reset_password"><%= submit_tag "Reset my password!", :class => "log_in_button" %></div>
-        <% end %>
-      </div>
     </div>
+    
+    <div class="field">
+      <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+      <%= label_tag :remember_me %>
+    </div>
+    <div class="actions"><%= submit_tag "Log In", :class => "log_in_button" %></div>
+    
+    <hr>
+    
+    <h1>Don’t have an accout?</h1>
+    <div class="actions"><%= submit_tag "Sign up for free", :class => "log_in_button" %></div>
+    <% end %>
+    
+    <hr>
+  
+    <h1>Forgot Password?</h1>
+    <p>Sign up for free</p>
+  </div>
+  
+  <div>
+    <div class="small-3 columns">
+      <p class="email"></p>
+      <%= form_tag password_resets_path, :method => :post do %>
+      <%= text_field_tag :email, params[:email], :placeholder => "Email" %><br>
+      <div class="reset_password"><%= submit_tag "Reset my password!", :class => "log_in_button" %></div>
+      <% end %>
+    </div>
+  </div>
