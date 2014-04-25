@@ -7,6 +7,10 @@ body {
   color: #fff;
 }
 
+input:-webkit-autofill, textarea:-webkit-autofill {
+    background-colorr: #fff !important;
+}
+
 ul {
   list-style: none;
  
@@ -242,6 +246,9 @@ a {
 /*  line-height: 5;*/
   margin-top: -14px;
 }
+.categories{
+  margin-top: 40px !important;
+}
 #name, #company, #tagline, #mywork, #bio, #categories {
   padding-left: 50px;
 }
@@ -266,7 +273,8 @@ a {
 #bio {
 }
 
-#categories {
+.categories {
+  max-width: 800px !important;
 }
 
 .nobg {
@@ -330,6 +338,10 @@ a {
     padding-left: 0;
   }
   
+  .profilefields{
+    margin-left: 0px;
+  } 
+  
   #social ul {
     padding-left: 0;
     text-align: center;
@@ -340,7 +352,7 @@ a {
   #name {
     margin-top: 50px;
   }
-  
+   
   #choosefacecol {
     padding-left: 40px;
     padding-right: 40px;
@@ -354,6 +366,14 @@ a {
      top:-50px;
    }
    
+   .categories {
+     margin-left: 40px !important;
+   }
+   .profilefields {
+   margin: 0px;
+   padding-left: 20px;
+   padding-right: 20px;
+   }
 }
 
 @media only screen and (max-width: 1068px) {
