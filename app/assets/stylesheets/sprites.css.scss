@@ -1,0 +1,141 @@
+/* SOCIAL MEDIA SPRITES */
+
+.social_icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("/assets/socialmedia.png");
+}
+
+#facebookicon {
+  background-position: 240px 0;
+}
+
+#facebookicon:hover {
+  background-position: 0 30px;
+}
+
+#twittericon {
+  background-position: 30px 0;
+}
+
+#twittericon:hover {
+  background-position: 0 30px;
+}
+
+#dribbbleicon {
+}
+
+#dribbbleicon:hover {
+  background-position: 0 30px;
+}
+
+#gicon {
+  background-position: 120px 0;
+}
+
+#gicon:hover {
+  background-position: 0 30px;
+}
+
+#lnicon {
+  background-position: 180px 0;
+}
+
+#lnicon:hover {
+  background-position: 30px 0;
+}
+
+#instagramicon {
+  background-position: 210px 0;
+}
+
+#instagramicon:hover {
+  background-position: 0 30px;
+}
+
+#githubicon {
+  background-position: 150px 0;
+}
+
+#githubicon:hover {
+  background-position: 0 30px;
+}
+
+/* MORE SPRITES */
+
+.sprite {
+  background-image: url("SUPERSPRITES.png");
+  right: -15px;
+  position: relative;
+  width: 33px;
+  height: 33px;
+}
+
+.person {
+  background-position: -140px 0;
+  position: relative;
+}
+
+.username {
+  background-position: -93px 0;
+}
+
+.email {
+  background-position: -412px 0;
+}
+
+.password {
+  background-position: -230px 0;
+}
+
+.tag {
+  background-position: -365px -2px;
+}
+
+.company {
+}
+
+.twitter {
+  background-position: 122px 0;
+}
+
+.facebook {
+  background-position: 215px 0;
+}
+
+.github {
+  background-position: 32px 0;
+}
+
+.companywebsite {
+  background-position: -272px 0;
+}
+
+.dribbble {
+  background-position: 78px 0;
+}
+
+.pinterest {
+  background-position: -90px -44px;
+}
+
+.gplus {
+  background-position: 263px 0;
+}
+
+.yowebsite {
+  background-position: -319px 0;
+}
+
+.ln {
+  background-position: -46px -44px;
+}
+
+.instagram {
+  background-position: 170px 0;
+}
+
+.whitebg {
+  background: #fff;
+  height: 4em;
+}
