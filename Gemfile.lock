@@ -179,6 +179,7 @@ DEPENDENCIES
   dotenv-rails
   fog
   jquery-rails
+  nokogiri
   pg
   pry
   pry-rails

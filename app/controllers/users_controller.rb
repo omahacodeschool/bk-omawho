@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @image = @user.profile_image_id
+    @image = Image.find(@user.profile_image_id)
     @categories = Category.all()
   end
 
@@ -64,8 +64,9 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    @image = @user.profile_image
-
+    @image = Image.find(@user.profile_image_id)
+    @categories = Category.all()
+    
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to view_profile_path(@user.username), notice: 'User was successfully updated.' }
