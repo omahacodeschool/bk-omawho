@@ -8,7 +8,7 @@ input {
 }
 
 #topnavtext {
-  margin-top: 5px;
+
 }
 
 #searchthing {
@@ -236,6 +236,7 @@ a {
 
 #testimage {
   width: 100%;
+  margin-top:-10px;
 }
 
 #testimage:hover {
