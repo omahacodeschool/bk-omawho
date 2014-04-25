@@ -29,7 +29,6 @@
               <p>Where do I work?</p>
               <div>
               <% @companies.each do |c| %>
-            
                 <li class="name_game_company gray_choice">
                   <% if (c.nil? || c == "") %>
                     <%= radio_button_tag(:company, "<No Company Specified>") %>
