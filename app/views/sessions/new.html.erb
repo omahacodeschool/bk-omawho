@@ -11,7 +11,7 @@
       <p class="username sprite"></p>
     </div>
     <div class="small-9 large-9 columns">
-      <%= text_field_tag :email, params[:email], :placeholder => "Username" %>
+      <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
     </div>
   </div>
   
@@ -31,17 +31,17 @@
     <% end %>
   </div>
   
+  <div class="field">
+    <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+    <%= label_tag :remember_me %>
+  </div>
+  <div class="actions"><%= submit_tag "Log In", :class => "log_in_button" %></div>
+  <% end %>
+  
   <hr>
   
-  <%= form_tag new_user_path, :method => :get do %>
-  <h1>
-    Don’t have an account?
-  </h1>
-  <div class="actions">
-    <%= submit_tag "Sign up for free", :class => "log_in_button" %>
-  </div>
-  <% end %>
-</div>
+  <h1>Don’t have an account?</h1>
+  <div class="actions"><%= link_to "Sign up for free", :signup, :class => "log_in_button" %></div>
   
 <hr>
   

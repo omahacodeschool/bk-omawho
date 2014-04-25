@@ -1,41 +1,80 @@
-<h1>NAME GAME (Check Answers)</h1>
-<div>
-  <%= image_tag(@profile_img, :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>  
-</div>
-
-<div>
-  <div>
-    <p><%= "Hi! My name is #{@user.full_name.titleize}" %></p>
-    <% if @name_guess_correct %>
-      <p class="correct"><%= "You were right!" %></p>   
-    <% else %>
-      <p class="incorrect"><%= "You said it was #{@guessed_name.downcase.titleize}" %></p>   
-    <% end %>   
-  </div>
-  <div>
-    <p><%= "I work at #{@correct_co}" %></p>
-    <% if @co_guess_correct %>
-      <p class="correct"><%= "You were right!" %></p>   
-    <% else %>
-      <p class="incorrect"><%= "You said it was #{@guessed_co}" %></p>   
-    <% end %>   
-  </div>
-  <hr>
-  <div>
-    <p>Follow me, and introduce yourself:</p>
-    <div>
-      <% @user.contact_links.each do |c_type, c_link| %>
-        <p class=<%="#{c_type}"%>>
-          <a href="<%= 'http://example.com/'+c_link %>" class=<%="#{c_type}"%>>
-            <%= c_link %>
-          </a>
-        </p>
-      <% end %>
+<div id="name_game_container">
+  <div class="row">
+    <div class="large-4 columns">
+      <p></p>
+    </div>
+    <div class="large-4 columns">
+      <div id="upcoming_events_heading"><h1>NAME GAME</h1></div>
+    </div>
+    <div class="large-4 columns">
+      <p></p>
     </div>
   </div>
-  <hr>
-  <div>
-    <p><%= link_to "SHOW ANOTHER FACE", name_game_path, class: "red_button" %></p>
+  <div class="row">
+    <div class="large-2 columns">
+      <p></p>
+    </div>
+    <div class="large-8 columns">
+      <div id="name_game_image">
+        <%= image_tag(@profile_img, :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>  
+      </div>
+    <div>
+      <div>
+        <p><%= "Hi! My name is #{@user.full_name.titleize}." %></p>
+        <% if @name_guess_correct %>
+          <p class="correct"><%= "You were right!" %></p>   
+        <% elsif @guessed_name == "You didn't even guess. What's the deal?"%>
+          <p class="incorrect"><%= "#{@guessed_name}" %></p>  
+        <% else %>
+          <p class="incorrect"><%= "You said it was #{@guessed_name.downcase.titleize}." %></p>   
+        <% end %>   
+      </div>
+      <div>
+        <p><%= "I work at #{@correct_co}." %></p>
+        <% if @co_guess_correct %>
+          <p class="correct"><%= "You were right!" %></p>   
+        <% elsif @guessed_co == nil %>
+          <p class="incorrect"><%= "Come on, it was multiple choice. I must be doing something." %></p> 
+        <% else %>
+          <p class="incorrect"><%= "You said it was #{@guessed_co}." %></p> 
+        <% end %>   
+      </div>
+      <hr>
+      <div>
+        <p>Follow me, and introduce yourself:</p>
+        <div>
+          <% @user.contact_links.each do |c_type, c_link| %>
+            <p class=<%="#{c_type}"%>>
+              <a href="<%= 'http://example.com/'+c_link %>" class=<%="#{c_type}"%>>
+                <%= c_link %>
+              </a>
+            </p>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+    <div class="large-2 columns">
+      <p></p>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="large-2 columns">
+      <p>&nbsp;</p>
+    </div>
+    <div class="large-8 columns">
+      <div>
+      <%= link_to "SHOW ANOTHER FACE", name_game_path, class: "show_another_face" %>
+      </div>
+    </div>
+    <div class="large-2 columns">
+      <p>&nbsp;</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p></p>
+    </div>
   </div>
 </div>
-

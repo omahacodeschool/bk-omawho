@@ -39,11 +39,14 @@
 }
 
 .log_in_button {
+  display: block;
+  margin: 9px auto 0 auto;
   width: 25%;
   background: #ad3d32;
-  margin-top: 9px;
   color: white;
   text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 input[type="checkbox"] {

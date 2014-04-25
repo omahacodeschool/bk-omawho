@@ -6,9 +6,12 @@ body {
   color: #fff;
 }
 
+input:-webkit-autofill, textarea:-webkit-autofill {
+    background-colorr: #fff !important;
+}
+
 ul {
-  list-style: none;
- 
+  list-style: none; 
 }
 
 ul li {
@@ -20,7 +23,7 @@ ul li {
 
 /* TEXT */
 
-h1, h2, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   color: #ad3d32;
   text-align: center;
 }
@@ -183,12 +186,52 @@ a {
 
 /* MISCELLANEOUS */
 
-#testimage {
-  width: 100%;
+#upload_profile_photo_container{
+  margin-top:-15px;
+}
+.display_name_hidden{
+  visibility: hidden;
+  position:relative;
+  top:-200px;
+  text-align:center;
+  font-size: 40px;
+  height: 30px;
+  opacity: 0;
 }
 
-#testimage:hover {
+.testimageopacity{
   opacity: .2;
+}
+
+.display_name_visibile{
+  position: relative;
+  top: -50px;
+  text-align: center;
+  font-size:20px;
+  height: 30px;  
+}
+
+.category_name_hidden{  
+  visibility: hidden;
+  position:relative;
+  top:-100px;
+  text-align:center;
+  font-size: 30px;
+  height: 30px;
+  opacity: 0;
+}
+
+.category_name_visibile{
+  position:relative;
+  top:-50px;
+  text-align:center;
+  font-size: 15px;
+  height: 30px;  
+}
+
+.testimage {
+  width: 100%;
+  margin-bottom:-60px;
 }
 
 /* PROFILE PAGE */
@@ -201,7 +244,6 @@ a {
 
 .profilefields {
   margin-left: 40px;
-/*  line-height: 5;*/
   margin-top: -14px;
 }
 
@@ -230,7 +272,9 @@ a {
 #bio {
 }
 
-#categories {
+.categories {
+  max-width: 800px !important;
+  margin-top: 40px !important;
 }
 
 .nobg {
@@ -288,12 +332,21 @@ a {
   padding-top: 40px;
 }
 
+.submitstyles{
+  margin-bottom:50px;
+  margin-top:50px;
+}
+
 @media only screen and (max-width: 600px) {
   #name, #company, #tagline, #bio, #categories, #social {
     text-align: center;
     padding-left: 0;
   }
   
+  .profilefields{
+    margin-left: 0px;
+  } 
+   
   #social ul {
     padding-left: 0;
     text-align: center;
@@ -304,6 +357,7 @@ a {
   #name {
     margin-top: 50px;
   }
+   
   #choosefacecol {
     padding-left: 40px;
     padding-right: 40px;
@@ -312,4 +366,34 @@ a {
   #mywork {
      padding:20px;
   }
+  
+   .category_name_visibile{
+     top:-50px;
+   }
+   
+   .categories {
+     margin-left: 40px !important;
+   }
+   .profilefields {
+     margin: 0px;
+     padding-left: 20px;
+     padding-right: 20px;
+   }
+   #profile_photo_before{
+     margin-left: 20px;
+     margin-right:20px;
+   }
+}
+
+@media only screen and (max-width: 1068px) {
+  .display_name_visibile{
+    font-size:20px;
+    top:-60px;
+  }
+  
+  .category_name_visibile{
+    font-size: 15px;
+    top: -50px;
+  }
+  
 }
