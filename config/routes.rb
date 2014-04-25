@@ -27,5 +27,6 @@ Omawho::Application.routes.draw do
   root :to => 'users#index'
   
   get ':username' => 'users#show', :as => :view_profile
+  get 'category/:category_id' => 'users#index', :as => :category
 
 end

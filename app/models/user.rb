@@ -32,8 +32,8 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :embeds
   
+  scope :random, order("RANDOM()")
 
-  
   
   def profile_image
     self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
