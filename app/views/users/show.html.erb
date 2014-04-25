@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <%= render :partial => '/users/profile' %>
 
@@ -6,7 +5,7 @@
   <div class="row">
     <% @user.images.each do |image| %>
       <div class="large-3 columns">
-        <%= image_tag(image.file, :style => "width: 100%;") %>
+        <%= image_tag(image.file.square, :style => "width: 100%;") %>
       </div>
     <% end %>
   </div>
