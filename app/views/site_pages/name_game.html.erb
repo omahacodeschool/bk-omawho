@@ -14,8 +14,13 @@
       <p>Where do I work?</p>
       <% @companies.each do |c| %>
         <li>
-          <%= radio_button_tag(:company, c) %>
-          <%= label_tag :company, c %>
+          <% if (c.nil? || c == "") %>
+            <%= radio_button_tag(:company, "<No Company Specified>") %>
+            <%= label_tag :company, "<No Company Specified>" %>
+          <% else %>
+            <%= radio_button_tag(:company, c) %>
+            <%= label_tag :company, c %>
+          <% end %>
         </li>
       <% end %>  
     </div>

@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @image = Image.new
+    @categories = Category.all()
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,7 +37,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @image = @user.profile_image
+    @image = @user.profile_image_id
+    @categories = Category.all()
   end
 
   # POST /users
