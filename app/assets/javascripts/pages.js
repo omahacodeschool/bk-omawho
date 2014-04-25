@@ -10,6 +10,7 @@ $(document).ready(function(){
    $(this).children(".category_name").removeClass( "category_name_visibile" ).addClass( "category_name_hidden" );
    $(this).children("a").children(".testimage").css( "opacity", "1" );
   });
-  
-  
+  $("#topnavtext2").click(function(){
+    $(".drop_down").slideToggle( "goaway" );
+  }); 
 });

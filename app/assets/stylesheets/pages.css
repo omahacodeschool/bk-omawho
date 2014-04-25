@@ -17,7 +17,6 @@ ul {
 ul li {
   background: #ad3d32;
   padding: 5px;
-  width: 35px;
   margin-bottom: 10px;
 }
 
@@ -36,6 +35,23 @@ a {
 }
 
 /* HEADER */
+
+#listitemstyle ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+text-align: center;
+}
+
+#listitemstyle ul li { display: inline-block; }
+
+#listitemstyle ul li a
+{
+text-decoration: none;
+padding: .2em 1em;
+color: #fff;
+}
 
 #headerguy {
   background-image: url("/assets/omaha_skyline3.jpg");
@@ -294,6 +310,14 @@ a {
   display: inline-block;
 }
 
+#listitemstyle{
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
 #social ul li a {
   padding: .2em 1em;
 }
@@ -308,6 +332,22 @@ a {
   margin-top: 9px;
   color: #fff;
   text-align: center;
+}
+
+#topnavtext2{
+  cursor:pointer;
+}
+
+#dropdown{
+  padding-top:50px;
+}
+
+.goaway{
+  display:none;
+}
+
+.comeback{
+  visibility: visible;
 }
 
 #addingtitle {
@@ -372,7 +412,7 @@ a {
    }
    
    .categories {
-     margin-left: 40px !important;
+     padding-left:20px;
    }
    .profilefields {
      margin: 0px;
