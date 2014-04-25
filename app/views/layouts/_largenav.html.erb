@@ -2,8 +2,27 @@
   <div class="row">
     <div class="small-6 large-6 columns">
       <div class="row">
-        <div class="small-6 large-6 columns" id="topnavtext">Filter faces by</div>
-        <div class="small-6 large-6 columns" id="topnavtext">Category</div>
+        <div class="small-6 large-6 columns" id="topnavtext">
+          <% if @filter_category %>
+            <%= "Showing '#{@filter_category.name}' Faces" %>
+          <% else %>
+            Filter faces by choosing category:
+          <% end %>
+        </div>
+        <div class="small-6 large-6 columns" id="topnavtext">Category
+          <div class="drop_down" id="category_filter">
+            <ul>
+              <li id="category_filter_all">
+                <%= link_to "All", category_path(0), :class => "category_all" %>
+              </li>
+              <% Category.all.each do |c| %>
+                <li id="category_filter_<%= c.id %>">
+                  <%= link_to c.name, category_path(c.id), :class => "category_#{c.id}" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Search for Names form -->
