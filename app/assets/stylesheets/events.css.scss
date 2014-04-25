@@ -1,6 +1,5 @@
 input:focus, select:focus {
     outline: none !important;
-    box-shadow: 0 0 20px #ccc;
 }
 
 .upcoming_event_bar {
@@ -46,7 +45,7 @@ input:focus, select:focus {
   text-align: right;
 }
 
-#attendance_button {
+.approve_button, .attendance_button, .more_faces_button {
   width: 98%;
   text-decoration: none;
   background: #ad3d32;
@@ -54,6 +53,10 @@ input:focus, select:focus {
   text-align: center;
   float: left;
   margin-top: 2%;
+}
+
+#attendee_count {
+  display: inline-block;
 }
 
 #bottom_margin {
@@ -115,6 +118,15 @@ input:focus, select:focus {
 
 #events_container #event_end_time_4i, #events_container #event_end_time_5i {
   width: 38%;
+}
+
+#flash_notice {
+  width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #heading_row {
