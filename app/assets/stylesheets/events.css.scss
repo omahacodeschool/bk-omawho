@@ -1,5 +1,5 @@
 input:focus, select:focus {
-    outline: none !important;
+  outline: none !important;
 }
 
 .upcoming_event_bar {
@@ -7,6 +7,19 @@ input:focus, select:focus {
   padding: 1.5%;
   margin-top: 15px !important;
   cursor: pointer;
+}
+
+.upcoming_event_bar:hover {
+  position: relative;
+  bottom: 5px;
+  margin-bottom: -5px;
+  border-bottom: 5px solid #9B2A25;
+}
+
+.upcoming_event_bar:active {
+  bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
 }
 
 .black_text {
@@ -34,6 +47,10 @@ input:focus, select:focus {
   text-align: center;
 }
 
+.form_height {
+  height: 787px;
+}
+
 .past_event_bar {
   background: #6d6d6d;
   padding: 1.5%;
@@ -41,11 +58,24 @@ input:focus, select:focus {
   cursor: pointer;
 }
 
+.past_event_bar:hover {
+  position: relative;
+  bottom: 5px;
+  margin-bottom: -5px;
+  border-bottom: 5px solid #595959;
+}
+
+.past_event_bar:active {
+  bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
+
 .right_align {
   text-align: right;
 }
 
-.approve_button, .attendance_button, .more_faces_button {
+.approve_button, .more_faces_button {
   width: 98%;
   text-decoration: none;
   background: #ad3d32;
@@ -53,6 +83,29 @@ input:focus, select:focus {
   text-align: center;
   float: left;
   margin-top: 2%;
+}
+
+.attendance_button {
+  margin-top: 8%;
+  width: 98%;
+  text-decoration: none;
+  background: #ad3d32;
+  padding: 5px 10px;
+  text-align: center;
+  float: left;
+}
+
+.approve_button:hover, .attendance_button:hover, .more_faces_button:hover {
+  position: relative;
+  bottom: 5px;
+  margin-bottom: -5px;
+  border-bottom: 5px solid #9B2A25;
+}
+
+.approve_button:active, .attendance_button:active, .more_faces_button:active {
+  bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
 }
 
 #attendee_count {
@@ -64,13 +117,21 @@ input:focus, select:focus {
 }
 
 #event_button {
-  background: #ad3d32;
-  padding: 15px 10px;
   text-align: center;
-  float: right;
-  margin-top: 5%;
+  float: left;
   width: 100%;
-  text-decoration: none;
+  text-decoration: underline;
+  margin-top: 35px;
+}
+
+#event_button:hover {
+  color: #ad3d32;
+}
+
+#event_button:active {
+  bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
 }
 
 #event_column {
@@ -95,6 +156,18 @@ input:focus, select:focus {
   color: #fff;
   margin-top: 30px;
   cursor: pointer;
+}
+
+#events_container input[type="submit"]:hover {
+  position: relative;
+  bottom: 5px;
+  border-bottom: 5px solid #9B2A25;
+}
+
+#events_container input[type="submit"]:active {
+  bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
 }
 
 #events_container select, input[type="color"][list] {
@@ -147,9 +220,37 @@ input:focus, select:focus {
   text-align: center;
 }
 
+#upcoming_events_heading h1 {
+  color: #ddd;
+}
+
+@media only screen and (max-width: 850px) {
+  #event_button {
+    background: #6d6d6d;
+    padding: 15px;
+    text-decoration: none;
+  }
+}
+
 @media only screen and (max-width: 599px) {
   #event_name {
     margin: 10px 0px;
     font-size: 20px;
+  }
+  
+  #event_button {
+    margin-top: -20px;
+  }
+  
+  #upcoming_events_heading {
+    margin-top: 50px;
+  }
+  
+  .form_height {
+    height: 100%;
+  }
+  
+  #event_button:hover {
+    color: #fff;
   }
 }
