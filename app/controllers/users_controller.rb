@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @image = Image.new
+    @categories = Category.all()
 
     respond_to do |format|
       format.html # new.html.erb
