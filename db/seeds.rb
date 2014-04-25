@@ -46,6 +46,8 @@ User.create(email: "ds@example.com", username: "ds", first_name: "Dan", last_nam
 User.create(email: "cd@example.com", username: "cd", first_name: "Carlene", last_name: "Danger", company: "Grain & Mortar", password: "pass", profile_image_id: i.id, facebook: "facebook_link", twitter: "twitter_link", pinterest: "pinterest_link", linkedin: "linkedin_link")
 User.create(email: "bw@example.com", username: "bw", first_name: "Becky", last_name: "Williams", company: "Flywheel", password: "pass", profile_image_id: i.id, website: "website_link", company_site: "company_site_link", facebook: "facebook_link", twitter: "twitter_link", pinterest: "pinterest_link", linkedin: "linkedin_link", github: "github_link", googleplus: "googleplus_link", dribbble: "dribbble_link", instagram: "instagram_link", tumblr: "tumblr_link")
 
-
+User.all.each do |u|
+  u.categories << Category.random.limit(2)
+end
 
 
