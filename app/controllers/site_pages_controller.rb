@@ -29,6 +29,7 @@ class SitePagesController < ApplicationController
   # Public: Start the name game.
   #
   # Renders name_game quiz with random user. Companies are picked
+  
   def name_game
     @user = User.order('RANDOM()').first
     @companies = User.pluck(:company).uniq.select {|co| co != @user.company }
