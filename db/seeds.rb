@@ -25,7 +25,7 @@ i.save
 
 
 User.create(:username => "admin", :email => "admin@example.com", :password => "password", :first_name => "Lawrence of", :last_name => "Adminia", :profile_image_id => i.id, :company => "Omaha Code School", :company_site => "omahacodeschool.com")
-User.find_by_username("admin_user").update_attribute(:admin, true)
+User.find_by_username("admin").update_attribute(:admin, true)
 
 if Rails.env == "development" 
 # Example non-Admin Users
