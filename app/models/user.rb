@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   # validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
   validates_exclusion_of :username, :in => %w(category login logout add profile quiz beta)
   validates_length_of :bio, :within => 0..400
-  validates_length_of :password, :within => 4..99
+  validates_length_of :password, :within => 4..99, :allow_blank => :allow_blank_password
   validates_length_of :tagline, :within => 0..30
   
   has_and_belongs_to_many :events
@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
   scope :random, order("RANDOM()")
 
   accepts_nested_attributes_for :categories
+  
+  def allow_blank_password
+    !new_record?
+  end
   
   def profile_image
     self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil

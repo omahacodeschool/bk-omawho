@@ -8,6 +8,11 @@
         <%= image_tag(image.file.square, :style => "width: 100%;") %>
       </div>
     <% end %>
+    <% if current_user  && current_user == @user %>
+      <div class="large-3 columns">
+        <%= link_to((image_tag("plus.jpg", :style => "width: 100%;")), new_image_path) %>
+      </div>
+    <% end %>
   </div>
 </div> 
     
