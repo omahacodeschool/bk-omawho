@@ -40,7 +40,7 @@
           <% end %>
           <div id="event_attendees">
             <% @users.each do |user| %>
-            <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :class => "event_attendee_image")), view_profile_path(user.username) %>
+            <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
             <% end %>
           </div>
       </div>
@@ -85,8 +85,12 @@
     <div class="large-4 columns">
       <div id="event_column">
         <h3><div id="red_text">OMA</div>WHEN</h3>
-        <p>Starts at <%= "#{event_time(event.start_time)}" %><br/>
-        Ends around <%= "#{event_time(event.end_time)}" %></p>
+        <% if event.start_time %>
+          <p>Starts at <%= "#{event_time(event.start_time)}" %><br/>
+            <% if event.end_time %>
+            Ends around <%= "#{event_time(event.end_time)}" %></p>
+            <% end %>
+        <% end %>
       </div>
     </div>
     <div class="large-4 columns">
@@ -105,7 +109,7 @@
         <% end %>
         <div id="event_attendees">
           <% @users.each do |user| %>
-          <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :class => "event_attendee_image")), view_profile_path(user.username) %>
+          <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
           <% end %>
           <% if @users_count.length > 4 %>
           <%= link_to "SEE MORE FACES", "/events/#{event.id}", :class => "more_faces_button" %>
@@ -158,7 +162,11 @@
             <p>No one marked their attendance.</p>
           <% else %>
             <% @users.each do |user| %>
+<<<<<<< HEAD
             <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :class => "event_attendee_image")), view_profile_path(user.username) %>
+=======
+            <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
+>>>>>>> e0c8eb2fa893c3e5b7befade67ea71ec01e3a595
             <% end %>
             <% if @users_count.length > 4 %>
             <%= link_to "SEE MORE FACES", "/events/#{event.id}", :class => "more_faces_button" %>
