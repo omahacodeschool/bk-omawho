@@ -20,6 +20,8 @@ class Event < ActiveRecord::Base
     self.start_time > Time.now
   end
   
+  
+  
 end
 
 
