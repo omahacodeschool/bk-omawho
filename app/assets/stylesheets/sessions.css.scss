@@ -46,12 +46,6 @@
   text-align: center;
 }
 
-#email, #password {
-//  width: 300px;
-//  height: 20px;
-//  margin-bottom: 2em;
-}
-
 input[type="checkbox"] {
   width: 20px; 
   height: 20px;
@@ -68,4 +62,18 @@ input[type="checkbox"] {
 
 .field {
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  #login_form .row {
+    width: 95%;
+  }
+  
+  .log_in_button {
+    width: 50%;
+  }
+  
+  #login_form hr {
+    max-width: 95%;
+  }
 }
