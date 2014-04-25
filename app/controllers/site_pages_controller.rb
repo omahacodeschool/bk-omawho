@@ -41,16 +41,18 @@ class SitePagesController < ApplicationController
   def check_quiz
     @user = User.find(params[:user_id])
     if (params[:name_guess] == "")
-      @guessed_name = "<no guess>"
+      @guessed_name = "You didn't even guess. What's the deal?"
     else
       @guessed_name = params[:name_guess]
+      @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
     end
     @guessed_co = params[:company]
-    @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
     if @user.company
       @correct_co = @user.company
+    elsif (params[:company] == nil)
+      @guessed_co = "Come on. It was multiple choice. I must be doing something."
     else
-      @correct_co = "<No Company Specified>"
+      @correct_co = "I haven't listed a company. Maybe I'm saving the world."
     end
     @co_guess_correct = (@guessed_co == @correct_co)   
     @profile_img = @user.profile_image ? @user.profile_image : "user-avatar.jpg"

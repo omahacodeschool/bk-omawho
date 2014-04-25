@@ -101,7 +101,7 @@ class EventsController < ApplicationController
     @user_events = current_user.events
     
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to event_path(@event) }
       format.js
     end
   end

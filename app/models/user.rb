@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   
   scope :random, order("RANDOM()")
 
+  accepts_nested_attributes_for :categories
   
   def profile_image
     self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil

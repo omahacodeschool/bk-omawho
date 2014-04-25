@@ -1,3 +1,4 @@
+
 /* GENERAL */
 
 body {
@@ -183,14 +184,51 @@ a {
 
 /* MISCELLANEOUS */
 
-#testimage {
-  width: 100%;
+.display_name_hidden{
+  
+  visibility: hidden;
+  position:relative;
+  top:-200px;
+  text-align:center;
+  font-size: 40px;
+  height: 30px;
+  opacity: 0;
 }
 
-#testimage:hover {
+.testimageopacity{
   opacity: .2;
 }
 
+.display_name_visibile{
+  position: relative;
+  top: -50px;
+  text-align: center;
+  font-size:20px;
+  height: 30px;  
+}
+
+.category_name_hidden{  
+  visibility: hidden;
+  position:relative;
+  top:-100px;
+  text-align:center;
+  font-size: 30px;
+  height: 30px;
+  opacity: 0;
+}
+
+.category_name_visibile{
+  position:relative;
+  top:-50px;
+  text-align:center;
+  font-size: 15px;
+  height: 30px;  
+}
+
+.testimage {
+  width: 100%;
+  margin-bottom:-60px;
+}
 /* PROFILE PAGE */
 
 #profile {
@@ -204,11 +242,9 @@ a {
 /*  line-height: 5;*/
   margin-top: -14px;
 }
-
 #name, #company, #tagline, #mywork, #bio, #categories {
   padding-left: 50px;
 }
-
 #name {
   font-weight: bold;
   font-size: 48px;
@@ -304,6 +340,7 @@ a {
   #name {
     margin-top: 50px;
   }
+  
   #choosefacecol {
     padding-left: 40px;
     padding-right: 40px;
@@ -312,4 +349,23 @@ a {
   #mywork {
      padding:20px;
   }
+  
+   .category_name_visibile{
+     top:-50px;
+   }
+   
+}
+
+@media only screen and (max-width: 1068px) {
+  
+  .display_name_visibile{
+    font-size:20px;
+    top:-60px;
+  }
+  
+  .category_name_visibile{
+    font-size: 15px;
+    top: -50px;
+  }
+  
 }
