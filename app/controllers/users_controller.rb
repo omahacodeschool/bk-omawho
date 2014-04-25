@@ -2,22 +2,27 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-
-    # If category_id parameter present and 
+    
+    # Setting limit of 100 users passed in to view.  The view should further
+    # limit showing users (e.g., diplay them in groups of 12)
+    users_limit = 100
+    
+    # If category_id parameter is present and 
     # and it respresents a valid non-zero category id, 
-    # filter users by that category
+    # filter users by that category.
+    # (Note: the .to_i method converts a string to 0)
     if params[:category_id].present? && 
        params[:category_id].to_i > 0 &&
        params[:category_id].to_i <= Category.count 
       
-      # Find filtered users by Category.users
+      # Get random list of users for the selected category
       @filter_category = Category.find(params[:category_id])
-      @users = @filter_category.users.random.limit(12)
+      @users = @filter_category.users.random.limit(users_limit)
       
     # Otherwise just choose randomly (Filter for "all" categories)
     else
       @filter_category = nil
-      @users = User.random.limit(12)
+      @users = User.random.limit(users_limit)
     end
      
     respond_to do |format|

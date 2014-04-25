@@ -1,8 +1,10 @@
 <div class="row" style="max-width:none;">
 
   <div class="row" id="face-display">
-    <% @users.each do |user| %>
-      <div class="large-3 columns">
+    <% @users.each_with_index do |user, i| %>
+      <!-- Class 'display_group_[0..max==100/12]' can be used to display 
+                          faces in groups of 12 -->
+      <div class="large-3 columns display_group_<%=i/12%>">
         <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid")), view_profile_path(user.username) %>
         <div style="display: none;">
           <%= user.first_name %> <%= user.last_name %>
