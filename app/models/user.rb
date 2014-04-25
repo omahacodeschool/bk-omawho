@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :embeds
   
+  scope :random, order("RANDOM()")
+
   accepts_nested_attributes_for :categories
   
   def profile_image

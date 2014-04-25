@@ -20,9 +20,9 @@
             <% if current_user %>
               <% if @event.end_time > DateTime.now %>
                 <% if current_user.events.include?(@event) %>
-                  <h3><div id="red_text">OMA</div>WHO WILL BE THERE (<%= @users.length %>)<%= link_to "I'M NOT GOING", {:controller => "events", :action => "attend", :event_id => @event.id }, :method => :post, :class => "attendance_button" %></h3>
+                  <h3><div id="red_text">OMA</div>WHO WILL BE THERE (<div id="attendee_count"><%= @users.length %></div>)<%= link_to "I'M NOT GOING", {:controller => "events", :action => "attend", :event_id => @event.id }, :method => :post, :class => "attendance_button" %></h3>
                 <% else %>
-                  <h3><div id="red_text">OMA</div>WHO WILL BE THERE (<%= @users.length %>)<%= link_to "I'M GOING", {:controller => "events", :action => "attend", :event_id => @event.id }, :method => :post, :class => "attendance_button" %></h3>
+                  <h3><div id="red_text">OMA</div>WHO WILL BE THERE (<div id="attendee_count"><%= @users.length %></div>)<%= link_to "I'M GOING", {:controller => "events", :action => "attend", :event_id => @event.id }, :method => :post, :class => "attendance_button" %></h3>
                 <% end %>
               <% end %>
             <% else %>
@@ -33,7 +33,7 @@
               <% @users.each do |user| %>
               <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
               <% end %>
-              <%= link_to "SEE ALL EVENTS", "/events", :class => "attendance_button" %>
+              <%= link_to "SEE ALL EVENTS", "/events", :class => "more_faces_button" %>
             </div>
           </div>
         </div>
