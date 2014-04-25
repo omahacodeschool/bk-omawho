@@ -11,7 +11,7 @@
       <p class="username sprite"></p>
     </div>
     <div class="small-9 columns">
-      <%= text_field_tag :email, params[:email], :placeholder => "Username", :class => "nooutline" %>
+      <%= text_field_tag :email, params[:email], :placeholder => "Username" %>
     </div>
   </div>
 
@@ -20,7 +20,7 @@
       <p class="username sprite"></p>
     </div>
     <div class="small-9 columns">
-      <%= password_field_tag :password, :placeholder => "Password" %>
+      <%= password_field_tag :password, params[:password], :placeholder => "Password" %>
     </div>
   </div>
   
