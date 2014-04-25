@@ -12,6 +12,9 @@ class Event < ActiveRecord::Base
   validates_presence_of :location
   validates_presence_of :name
 
+  validates_uniqueness_of :start_time, :scope => :name
+
+
   def generate_slug
     self.slug = "#{name.parameterize}-#{start_time.year}-#{start_time.month}-#{start_time.day}"
   end
@@ -19,6 +22,8 @@ class Event < ActiveRecord::Base
   def is_current
     self.start_time > Time.now
   end
+  
+  
   
 end
 
