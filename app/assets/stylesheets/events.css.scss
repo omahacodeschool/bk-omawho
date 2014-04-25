@@ -1,6 +1,5 @@
 input:focus, select:focus {
   outline: none !important;
-  box-shadow: 0 0 20px #ccc;
 }
 
 .upcoming_event_bar {
@@ -46,6 +45,10 @@ input:focus, select:focus {
 .event_bar_text {
   display: inline-block;
   text-align: center;
+}
+
+.form_height {
+  height: 787px;
 }
 
 .past_event_bar {
@@ -104,20 +107,15 @@ input:focus, select:focus {
 }
 
 #event_button {
-  background: #ad3d32;
-  padding: 15px 10px;
   text-align: center;
-  float: right;
-  margin-top: 5%;
+  float: left;
   width: 100%;
-  text-decoration: none;
+  text-decoration: underline;
+  margin-top: 35px;
 }
 
 #event_button:hover {
-  position: relative;
-  bottom: 5px;
-  margin-bottom: -5px;
-  border-bottom: 5px solid #9B2A25;
+  color: #ad3d32;
 }
 
 #event_button:active {
@@ -212,9 +210,37 @@ input:focus, select:focus {
   text-align: center;
 }
 
+#upcoming_events_heading h1 {
+  color: #ddd;
+}
+
+@media only screen and (max-width: 850px) {
+  #event_button {
+    background: #6d6d6d;
+    padding: 15px;
+    text-decoration: none;
+  }
+}
+
 @media only screen and (max-width: 599px) {
   #event_name {
     margin: 10px 0px;
     font-size: 20px;
+  }
+  
+  #event_button {
+    margin-top: -20px;
+  }
+  
+  #upcoming_events_heading {
+    margin-top: 50px;
+  }
+  
+  .form_height {
+    height: 100%;
+  }
+  
+  #event_button:hover {
+    color: #fff;
   }
 }
