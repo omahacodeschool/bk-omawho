@@ -217,6 +217,7 @@ DEPENDENCIES
   fog
   jquery-rails
   launchy
+  nokogiri
   pg
   pry
   pry-rails
