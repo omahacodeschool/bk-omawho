@@ -75,7 +75,7 @@ input:focus, select:focus {
   text-align: right;
 }
 
-.approve_button, .attendance_button, .more_faces_button {
+.approve_button, .more_faces_button {
   width: 98%;
   text-decoration: none;
   background: #ad3d32;
@@ -83,6 +83,16 @@ input:focus, select:focus {
   text-align: center;
   float: left;
   margin-top: 2%;
+}
+
+.attendance_button {
+  margin-top: 8%;
+  width: 98%;
+  text-decoration: none;
+  background: #ad3d32;
+  padding: 5px 10px;
+  text-align: center;
+  float: left;
 }
 
 .approve_button:hover, .attendance_button:hover, .more_faces_button:hover {
