@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @image = @user.profile_image_id
+    @image = Image.find(@user.profile_image_id)
     @categories = Category.all()
   end
 
