@@ -1,0 +1,1 @@
+<%= link_to (image_tag((current_user.images.first ? current_user.images.first : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(current_user.username) %>

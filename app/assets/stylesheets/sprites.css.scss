@@ -67,134 +67,79 @@
   background-image: url("SUPERSPRITES.png");
   right: -15px;
   position: relative;
+  width: 30px;
+  height: 30px;
 }
 
 .person {
-  width: 30px;
-  height: 30px;
   background-position: -140px 0;
   position: relative;
 }
 
 .username {
-  width: 30px;
-  height: 34px;
   background-position: -93px 0;
 }
 
 .email {
-  width: 34px;
-  height: 34px;
   background-position: -412px 0;
 }
 
 .password {
-  width: 35px;
-  height: 35px;
   background-position: -230px 0;
 }
 
 .tag {
-  width: 30px;
-  height: 30px;
   background-position: -230px 0;
 }
 
 .tag {
-  width: 36px;
-  height: 31px;
   background-position: -365px -2px;
 }
 
 .company {
-  width: 37px;
-  height: 35px;
 }
 
 .twitter {
-  width: 30px;
-  height: 30px;
   background-position: 122px 0;
 }
 
 .facebook {
-  width: 35px;
-  height: 35px;
   background-position: 215px 0;
 }
 
 .github {
-  width: 32px;
-  height: 33px;
   background-position: 32px 0;
 }
 
 .companywebsite {
-  width: 37px;
-  height: 32px;
   background-position: -272px 0;
 }
 
 .dribbble {
-  width: 33px;
-  height: 34px;
   background-position: 78px 0;
 }
 
 .pinterest {
-  width: 33px;
-  height: 32px;
   background-position: -90px -44px;
 }
 
 .gplus {
-  width: 35px;
-  height: 34px;
   background-position: 263px 0;
 }
 
 .yowebsite {
-  width: 31px;
-  height: 33px;
   background-position: -319px 0;
 }
 
 .ln {
-  width: 33px;
-  height: 32px;
   background-position: -46px -44px;
 }
 
 .instagram {
-  width: 33px;
-  height: 34px;
   background-position: 170px 0;
-}
-
-.heightfix {
-  height:15px;
 }
 
 .whitebg {
   background: #fff;
-  height: 64px;
+  height: 4em;
 }
-
-.whitebg2 {
-  background: white;
-  position: relative;
-  top: 2px;
-}
-
-.whitebg3 {
-  background: white;
-  position: relative;
-  top: 9px;
-}
-
-//.nooutline {
-//  outline: none;
-//  border: 1px solid white;
-//  position:relative;
-//  top:1px;
-//}
