@@ -52,7 +52,8 @@ class User < ActiveRecord::Base
   #
   # query_str - The String containing the search query. Expectation is that the 
   #             query will hold a first name, a last name, or a first & 
-  #             last name.
+  #             last name. Added functionality for partial name searches and 
+  #             companies.
   # 
   #
   # Examples
@@ -63,6 +64,10 @@ class User < ActiveRecord::Base
   #
   #   User.search_name("Joe")
   #   # => Array of User objects with first_name == "Joe"
+  # 
+  #   User.search_name("wheel")
+  #   # => Array of User objects with first_name, last_name, or company 
+  #        matching a String LIKE "%wheel%"
   #
   # Returns an Array of 0 or more User model objects matching name_search query 
   # parameter strings or nil if there are errors
@@ -76,14 +81,13 @@ class User < ActiveRecord::Base
     if splits.count >= 2
       fname = splits[0]
       lname = splits[1]
-      found_users = User.find(:all, :conditions => ["lower(first_name) = ? and lower(last_name) = ?", fname.downcase, lname.downcase])
+      found_users = User.where("(LOWER(first_name) LIKE ? AND LOWER(last_name) LIKE ?) OR LOWER(company) LIKE ? OR LOWER(company) LIKE ?", "%#{fname.downcase}%", "%#{lname.downcase}%", "%#{fname.downcase}%", "%#{lname.downcase}%")
       
     # otherwise use single string and search against any name
     elsif splits.count > 0
-      anyname = splits[0]  # default to first query string an
-      found_users = User.find(:all, :conditions => ["lower(first_name) = ?", anyname.downcase])
-      found_users += User.find(:all, :conditions => ["lower(last_name) = ?", anyname.downcase])
-
+      anyname = splits[0].downcase  # default to first query string an
+      found_users = User.where("LOWER(first_name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(company) LIKE ?", "%#{anyname}%", "%#{anyname}%", "%#{anyname}%")
+      
     # catch-all for query string errors (send back nil results)
     else
       return nil
