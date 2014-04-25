@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #login_form {
   text-align: center;
+  padding: 30px 0;
+}
+
+#login_form .row {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+#login_form input[type="text"] {
+  width: 100%;
 }
 
 #login_form h1 {
@@ -11,12 +21,7 @@
 }
 
 #login_form p {
-  margin: -1em 0 2em 0;
   color: #4C6262;
-}
-
-#login_form {
-  padding: 30px 0;
 }
 
 #login_form hr {
@@ -42,9 +47,9 @@
 }
 
 #email, #password {
-  width: 300px;
-  height: 20px;
-  margin-bottom: 2em;
+//  width: 300px;
+//  height: 20px;
+//  margin-bottom: 2em;
 }
 
 input[type="checkbox"] {
@@ -59,16 +64,6 @@ input[type="checkbox"] {
 .reset_password {
   margin-top: 1em;
   margin-bottom: 28px;
-}
-
-.username {
-  width: 30px;
-  height: 34px;
-  background-image: url("SUPERSPRITES.png");
-  background-position-x: -93px;
-  position: relative;
-  right: -15px;
-  top: 23px;
 }
 
 .field {

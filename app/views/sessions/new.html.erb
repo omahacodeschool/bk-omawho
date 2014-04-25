@@ -1,52 +1,55 @@
 <div id="login_form" class="row">
   <h1>Log In</h1>
-  <p>(If you already have an account on <span>http://omawho.com,</span><br> 
-    you can use those credentials to log in here.)</p>
-    <%= form_tag sessions_path, :method => :post do %>
-  
-    <div>
-      <div class="small-3 columns whitebg" >
-        <p class="username"></p>
-      </div>
-      <div class="small-3 columns">
-        <%= text_field_tag :email, params[:email], :placeholder => "Username", :class => "nooutline" %>
-      </div>
+  <p>
+    (If you already have an account on <span>http://omawho.com,</span><br> 
+    you can use those credentials to log in here.)
+  </p>
+  <%= form_tag sessions_path, :method => :post do %>
+
+  <div class="row">
+    <div class="small-3 columns whitebg" >
+      <p class="username sprite"></p>
     </div>
-  
-    <div>
-      <div class="small-3 columns whitebg" >
-        <p class="username"></p>
-      </div>
-      <p class="username"></p>
-      <div class="small-3 columns">
-        <%= password_field_tag :password, :placeholder => "Password" %>
-      </div>
+    <div class="small-9 columns">
+      <%= text_field_tag :email, params[:email], :placeholder => "Username", :class => "nooutline" %>
     </div>
-    
-    <div class="field">
-      <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-      <%= label_tag :remember_me %>
+  </div>
+
+  <div class="row">
+    <div class="small-3 columns whitebg" >
+      <p class="username sprite"></p>
     </div>
-    <div class="actions"><%= submit_tag "Log In", :class => "log_in_button" %></div>
-    
-    <hr>
-    
-    <h1>Don’t have an accout?</h1>
-    <div class="actions"><%= submit_tag "Sign up for free", :class => "log_in_button" %></div>
-    <% end %>
-    
-    <hr>
-  
-    <h1>Forgot Password?</h1>
-    <p>Sign up for free</p>
+    <div class="small-9 columns">
+      <%= password_field_tag :password, :placeholder => "Password" %>
+    </div>
   </div>
   
-  <div>
+  <div class="field">
+    <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+    <%= label_tag :remember_me %>
+  </div>
+  <div class="actions"><%= submit_tag "Log In", :class => "log_in_button" %></div>
+  
+  <hr>
+  
+  <h1>Don’t have an account?</h1>
+  <div class="actions"><%= submit_tag "Sign up for free", :class => "log_in_button" %></div>
+  <% end %>
+  
+  <hr>
+
+  <h1>Forgot Password?</h1>
+  <p>Sign up for free</p>
+  
+  <div class="row">
     <div class="small-3 columns">
-      <p class="email"></p>
+      <p class="email sprite whitebg"></p>
+    </div>
+    <div class="small-9 columns">
       <%= form_tag password_resets_path, :method => :post do %>
       <%= text_field_tag :email, params[:email], :placeholder => "Email" %><br>
       <div class="reset_password"><%= submit_tag "Reset my password!", :class => "log_in_button" %></div>
       <% end %>
     </div>
   </div>
+</div>
