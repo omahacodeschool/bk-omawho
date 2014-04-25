@@ -95,13 +95,21 @@
           </div>
   
           <div style="line-height:0;color:white;">
-            <!-- replace this with categories from model -->
-            
-            <%= f.collection_select :category_ids, @categories, :id, :name, {}, {:multiple => true} %>
-                
+
           </div>
         
         </div>
+        
+      </div>
+      <div class="categories row">
+        
+        <%= hidden_field_tag "product[category_ids][]", nil %>
+        <% @categories.each do |category| %>
+          <div class="large-4 columns">
+            <%= check_box_tag "user[category_ids][]", category.id, @user.category_ids.include?(category.id), id: dom_id(category) %>
+            <%= label_tag dom_id(category), category.name %><br>
+          </div>
+        <% end %>
       </div>
     </div>
 
