@@ -35,6 +35,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find_by_username(params[:username])
+    @social_media = [["facebook", @user.facebook], ["twitter", @user.twitter], ["pinterest", @user.pinterest], ["dribbble", @user.dribbble], ["linkedin", @user.linkedin], ["github", @user.github], ["googleplus", @user.googleplus], ["instagram", @user.instagram]]
 
     respond_to do |format|
       format.html # show.html.erb
