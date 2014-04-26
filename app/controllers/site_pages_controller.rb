@@ -29,6 +29,7 @@ class SitePagesController < ApplicationController
   # Public: Start the name game.
   #
   # Renders name_game quiz with random user. Companies are picked
+  
   def name_game
     @user = User.order('RANDOM()').first
     @companies = User.pluck(:company).uniq.select {|co| co != @user.company }
@@ -39,22 +40,40 @@ class SitePagesController < ApplicationController
   end
   
   def check_quiz
+    # Get user from param id
     @user = User.find(params[:user_id])
-    if (params[:name_guess] == "")
+    
+    # Check name guess for existence and/or match to actual name
+    if (!params[:name_guess] || params[:name_guess] == "")
       @guessed_name = "You didn't even guess. What's the deal?"
+      @name_guess_correct = false
     else
       @guessed_name = params[:name_guess]
       @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
     end
-    @guessed_co = params[:company]
+    
+    # Check user company for existence and set instance variable for matching
     if @user.company
       @correct_co = @user.company
-    elsif (params[:company] == nil)
-      @guessed_co = "Come on. It was multiple choice. I must be doing something."
     else
-      @correct_co = "I haven't listed a company. Maybe I'm saving the world."
+      @correct_co = nil
     end
-    @co_guess_correct = (@guessed_co == @correct_co)   
+
+    # Check company guess for existence and/or match to actual company
+    if (!params[:company])
+      @guessed_co = nil
+      @co_guess_correct = false
+    else
+      @guessed_co = params[:company]
+      # If no user company, compare the guess to "No Company Specified"
+      if ((!@correct_co) && (@guessed_co == "No Company Specified"))
+        @co_guess_correct = true
+      # Otherwise compare the guess to the user's company
+      else
+        @co_guess_correct = (@guessed_co == @correct_co)  
+      end 
+    end
+
     @profile_img = @user.profile_image ? @user.profile_image : "user-avatar.jpg"
   end
   

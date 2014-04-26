@@ -30,10 +30,10 @@
         <% end %>   
       </div>
       <div>
-        <p><%= "I work at #{@correct_co}." %></p>
+        <p><%= "I work at #{@correct_co || "__. (I haven't listed a company. Maybe I'm saving the world.)"}." %></p>
         <% if @co_guess_correct %>
           <p class="correct"><%= "You were right!" %></p>   
-        <% elsif @guessed_co == nil %>
+        <% elsif !@guessed_co %>
           <p class="incorrect"><%= "Come on, it was multiple choice. I must be doing something." %></p> 
         <% else %>
           <p class="incorrect"><%= "You said it was #{@guessed_co}." %></p> 
