@@ -3,36 +3,40 @@
     <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid", :style => "width: 100%;") %>
   </div>
   <div class="large-6 columns">
-    <div id="name">
-      <%= @user.first_name %> <%= @user.last_name %>
-    </div>
+    <div id="profile_details" >
+      <div id="name">
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      </div>
     
-    <div id="tagline">
-      "<%= @user.tagline %>"
-    </div>
-    
-    <div id="company">
-      <a href="<%= @user.company_site %>"><%= @user.company %> </a>
-    </div>
-    
-    <div id="categories">
-      <% @user.categories.each do |c| %>
-        <div class="category"><%= c.name %></div>
-      <% end %>
-    </div>
-    
-    <div id="bio">
-      <%= @user.bio %>
-    </div>
-    
-    <div id="social">
-      <ul>
-        <% @social_media.each do |social| %>
-          <% if social[1] != "" %>
-            <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
-          <% end %>
+      <div id="tagline">
+        <% if @user.tagline && @user.tagline != "" %>
+          <h3>"<%= @user.tagline %>"</h3>
         <% end %>
-      </ul>
+      </div>
+    
+      <div id="company">
+        <h3><a href="<%= @user.company_site %>"><%= @user.company %></a></h3>
+      </div>
+    
+      <div id="categories">
+        <% @user.categories.each do |c| %>
+          <div class="category"><%= c.name %></div>
+        <% end %>
+      </div>
+    
+      <div id="bio">
+        <%= @user.bio %>
+      </div>
+    
+      <div id="social">
+        <ul>
+          <% @social_media.each do |social| %>
+            <% if social[1] != "" %>
+              <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
