@@ -2,21 +2,21 @@ input:focus, select:focus {
   outline: none !important;
 }
 
-.upcoming_event_bar {
+.upcoming_event_bar, .see_more_events {
   background: #ad3d32;
   padding: 1.5%;
   margin-top: 15px !important;
   cursor: pointer;
 }
 
-.upcoming_event_bar:hover {
+.upcoming_event_bar:hover, .see_more_events:hover {
   position: relative;
   bottom: 5px;
   margin-bottom: -5px;
   border-bottom: 5px solid #9B2A25;
 }
 
-.upcoming_event_bar:active {
+.upcoming_event_bar:active, .see_more_events:active {
   bottom: 0px;
   margin-bottom: 0px;
   border-bottom: 0px;
@@ -51,21 +51,21 @@ input:focus, select:focus {
   height: 787px;
 }
 
-.past_event_bar {
+.past_event_bar, .past_event_bar_first {
   background: #6d6d6d;
   padding: 1.5%;
   margin-top: 15px !important;
   cursor: pointer;
 }
 
-.past_event_bar:hover {
+.past_event_bar:hover, .past_event_bar_first:hover {
   position: relative;
   bottom: 5px;
-  margin-bottom: -5px;
+  margin-bottom: -5px !important;
   border-bottom: 5px solid #595959;
 }
 
-.past_event_bar:active {
+.past_event_bar:active, .past_event_bar_first:active {
   bottom: 0px;
   margin-bottom: 0px;
   border-bottom: 0px;
@@ -75,7 +75,7 @@ input:focus, select:focus {
   text-align: right;
 }
 
-.approve_button, .more_faces_button {
+.approve_button, .more_faces_button, .load_more_link {
   width: 98%;
   text-decoration: none;
   background: #ad3d32;
@@ -106,6 +106,24 @@ input:focus, select:focus {
   bottom: 0px;
   margin-bottom: 0px;
   border-bottom: 0px;
+}
+
+.see_more_events {
+  padding: 2% 30%;
+  margin-left: auto;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 0px 20px;
+  position: relative;
+  cursor: pointer;
+  background: #ad3d32;
+  color: white;
+  width: 100%;
+  display: block;
+}
+
+#more_events_bar {
+  height: 20px;
 }
 
 #attendee_count {

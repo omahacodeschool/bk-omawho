@@ -8,10 +8,12 @@ $(document).ready(function(){
   });
   
   $(".past_event_bar").on("click", function(event) {
-    if ( $(this).next(".event_display").is(":visible") ) {
-      $(this).next(".event_display").slideUp();
-    } else {
-      $(this).next(".event_display").slideDown();
+    if ( $(".past_event_bar").length === 5 ) {
+      if ( $(this).next(".event_display").is(":visible") ) {
+        $(this).next(".event_display").slideUp();
+      } else {
+        $(this).next(".event_display").slideDown();
+      }
     }
   });
   

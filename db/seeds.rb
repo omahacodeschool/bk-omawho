@@ -6,19 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create(name: "Web & Software")
-Category.create(name: "Graphic Design")
-Category.create(name: "Architecture & Interior Design")
-Category.create(name: "Photography")
-Category.create(name: "Music/Film/Art")
-Category.create(name: "Fashion")
-Category.create(name: "Writing")
-Category.create(name: "Venture Capital")
-Category.create(name: "Community Connector")
-Category.create(name: "Non-Profit")
+# Category.create(name: "Web & Software")
+# Category.create(name: "Graphic Design")
+# Category.create(name: "Architecture & Interior Design")
+# Category.create(name: "Photography")
+# Category.create(name: "Music/Film/Art")
+# Category.create(name: "Fashion")
+# Category.create(name: "Writing")
+# Category.create(name: "Venture Capital")
+# Category.create(name: "Community Connector")
+# Category.create(name: "Non-Profit")
 
 # Example Events
 @now = DateTime.now
+
 Event.create(name: "Omaha Code School Graduation", venue: "Omaha Code School", location: "Suite #4107\n200 S 31st Ave\nOmaha, Nebraska", start_time: @now - 1.day, end_time: @now - 1.day + 1.hour)
 Event.create(name: "CodeDay", venue: "Omaha Code School", location: "Suite #4107\n200 S 31st Ave\nOmaha, Nebraska", start_time: @now + 1.day, end_time: @now + 1.day + 1.hour)
 Event.create(name: "Summer Class", venue: "Omaha Code School", location: "Suite #4107\n200 S 31st Ave\nOmaha, Nebraska", start_time: @now + 1.week, end_time: @now + 1.week + 1.hour)
@@ -49,6 +50,3 @@ User.create(email: "bw@example.com", username: "bw", first_name: "Becky", last_n
 User.all.each do |u|
   u.categories << Category.random.limit(2)
 end
-
-
-
