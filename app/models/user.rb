@@ -73,6 +73,9 @@ class User < ActiveRecord::Base
   # Returns an Array of 0 or more User model objects matching name_search query 
   # parameter strings or nil if there are errors
   def self.search_name(query_str)
+    # Return nil on empty query
+    return nil if !query_str
+    
     # split the query into multiple strings
     splits = query_str.split
     found_users = []
