@@ -52,23 +52,23 @@ class SitePagesController < ApplicationController
       @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
     end
     
-    # Check user company for existence. Set
+    # Check user company for existence and set instance variable for matching
     if @user.company
       @correct_co = @user.company
     else
       @correct_co = nil
-      # @correct_co = "I haven't listed a company. Maybe I'm saving the world."
     end
 
     # Check company guess for existence and/or match to actual company
     if (!params[:company])
       @guessed_co = nil
-      # @guessed_co = "Come on. It was multiple choice. I must be doing something."
       @co_guess_correct = false
     else
       @guessed_co = params[:company]
+      # If no user company, compare the guess to "No Company Specified"
       if ((!@correct_co) && (@guessed_co == "No Company Specified"))
         @co_guess_correct = true
+      # Otherwise compare the guess to the user's company
       else
         @co_guess_correct = (@guessed_co == @correct_co)  
       end 
