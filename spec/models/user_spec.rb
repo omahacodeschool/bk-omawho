@@ -17,8 +17,5 @@ describe User do
     expect(User.search_name(query)).to be_nil
   end
 
-  it "test seeds loading" do
-    expect(User.count).to be <= 0
-  end
   
 end
