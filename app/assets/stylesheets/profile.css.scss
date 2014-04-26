@@ -1,8 +1,12 @@
 /* PROFILE PAGE */
 
 #profile {
-  margin-top:55px;
-  margin-bottom:50px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+#profile_details{
+  padding-left: 50px;
 }
 
 #profile h1, #profile h2, #profile h3, #profile h4, #profile h5, #profile h6 {
@@ -12,6 +16,13 @@
 #profile h1 {
   font-size: 4em;
   margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+#profile h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #fff;
 }
 
 .error-list{
@@ -20,27 +31,26 @@
 
 #profile_photo_preview{
   width: 100%;
-  padding-top: 20px; 
-  padding-bottom:40px;
 }
 
 .center-text{
   text-align:center;
 }
 
+#categories {
+  margin-bottom: 25px;
+}
+
 .category{
   display:inline-block;
-  background-color: grey;
+  background-color: #ad3d32;
   margin:.3em;
+  padding: 0.2em 1em;
 }
 
 .profilefields {
   margin-left: 40px;
   margin-top: -14px;
-}
-
-#name, #company, #tagline, #mywork, #bio, #categories {
-  padding-left: 50px;
 }
 
 #name {
@@ -56,6 +66,7 @@
 
 #bio {
   line-height: 1.5em;
+  margin-bottom: 25px;
 }
 
 .categories {
