@@ -75,7 +75,7 @@ input[type="radio"] {
   margin-left: auto;
   text-align: center;
   text-decoration: none;
-  margin: 0px 0px 20px;
+  margin-bottom: 20px;
   position: relative;
   cursor: pointer;
   background: #ad3d32;
@@ -88,7 +88,7 @@ input[type="radio"] {
 .show_another_face:hover {
   position: relative;
   bottom: 5px;
-  margin-bottom: -5px;
+  margin-bottom: 15px;
   border-bottom: 5px solid #9B2A25;
 }
 
