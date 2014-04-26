@@ -1,4 +1,5 @@
 class SitePagesController < ApplicationController
+  skip_before_filter :require_login
   def about
     @users = User.order("RANDOM()").limit(4)
   end

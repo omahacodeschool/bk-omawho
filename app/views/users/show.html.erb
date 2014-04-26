@@ -7,10 +7,19 @@
         <%= image_tag(image.file.square, :style => "width: 100%;") %>
       </div>
     <% end %>
+    <% if current_user  && current_user == @user %>
+      <div class="large-3 columns">
+        <%= link_to((image_tag("plus.jpg", :style => "width: 100%;")), new_image_path) %>
+      </div>
+    <% end %>
   </div>
 </div> 
     
 <div>
-  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <% if current_user %>
+    <% if current_user.admin  || current_user == @user %>
+      <%= link_to 'Edit', edit_user_path(@user) %> |
+    <% end %>
+  <% end %>
   <%= link_to 'Back', users_path %>
 </div>

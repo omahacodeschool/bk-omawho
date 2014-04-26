@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+  skip_before_filter :require_login, :except => [:new, :edit, :update, :destroy]
   def index
     if current_user && current_user.admin?
       @unapproved = Event.where('approved = ?', false).order('start_time ASC')

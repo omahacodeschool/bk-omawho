@@ -17,6 +17,7 @@
 # Category.create(name: "Community Connector")
 # Category.create(name: "Non-Profit")
 
+
 # Example Events
 @now = DateTime.now
 
@@ -31,14 +32,16 @@ Event.all.each do |event|
 end
 
 
+
 i = Image.new
 i.file = File.open("public/user-avatar.jpg")
 i.save
 
 
-User.create(:username => "admin_user", :email => "admin@example.com", :password => "jijijiji", :first_name => "Lawrence of ", :last_name => "Adminia", :profile_image_id => i.id)
-User.find_by_username("admin_user").update_attribute(:admin, true)
+User.create(:username => "admin", :email => "admin@example.com", :password => "password", :first_name => "Lawrence of", :last_name => "Adminia", :profile_image_id => i.id, :company => "Omaha Code School", :company_site => "omahacodeschool.com")
+User.find_by_username("admin").update_attribute(:admin, true)
 
+if Rails.env == "development" 
 # Example non-Admin Users
 User.create(email: "dw@example.com", username: "dw", first_name: "Dan", last_name: "Wells", company: "Some Place", password: "pass", profile_image_id: i.id, website: "http://website_link", company_site: "http://company_site_link", facebook: "facebook_link", googleplus: "googleplus_link", dribbble: "dribbble_link", instagram: "instagram_link", tumblr: "tumblr_link")
 User.create(email: "bs@example.com", username: "bs", first_name: "Bob", last_name: "Smith", company: "Flywheel", password: "pass", profile_image_id: i.id)
