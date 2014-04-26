@@ -136,44 +136,14 @@
       <p></p>
     </div>
   </div>
-  <% @past_events.each do |event| %>
-    <div class="row past_event_bar">
-      <div class="large-4 columns event_bar_text">
-        <%= "#{event_date(event.start_time)}" %>
-      </div>
-      <div class="large-4 columns event_bar_text">
-        <div id="event_name"><b><%= "#{event.name}" %></b></div>
-      </div>
-      <div class="large-4 columns event_bar_text">
-        <%= "#{event.venue}" %>
-      </div>
+  <div class="row" id="heading_row">
+    <div class="large-12 columns" id="past_events">
+  <%= render "events/index" %>
     </div>
-    <div class="row event_display black_text">
-      <div class="large-4 columns" id="event_column">
-        <h3><div id="red_text">OMA</div>WHEN</h3>
-        <p>Started at <%= "#{event_time(event.start_time)}" %><br/>
-        Ended around <%= "#{event_time(event.end_time)}" %></p>
-      </div>
-      <div class="large-4 columns" id="event_column">
-        <h3><div id="red_text">OMA</div>WHO WAS THERE</h3>
-        <% @users = event.users %>
-        <div id="event_attendees">
-          <% if @users == [] %>
-            <p>No one marked their attendance.</p>
-          <% else %>
-            <% @users.each do |user| %>
-            <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "User profile picture",  :class => "event_attendee_image")), view_profile_path(user.username) %>
-            <% end %>
-            <% if @users_count.length > 4 %>
-            <%= link_to "SEE MORE FACES", "/events/#{event.id}", :class => "more_faces_button" %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <div class="large-4 columns" id="event_column">
-        <h3><div id="red_text">OMA</div>WHERE</h3>
-        <%= "#{event.location}" %>
-      </div>
-    </div>  
-  <% end %>
+  </div>
+  <div class="row" id="heading_row">
+    <div id="more_events_bar">
+  <%= link_to_next_page @past_events, 'SEE MORE PAST EVENTS', :remote => true, :class => "see_more_events" %>
+    </div>
+  </div>
 </div>

@@ -47,6 +47,14 @@
   text-align: center;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
+  transition-property: all;
+  transition-duration: 0.25s;
+  cursor: pointer;
+}
+
+.log_in_button:hover {
+  background: #fff;
+  color: #ad3d32;
 }
 
 input[type="checkbox"] {

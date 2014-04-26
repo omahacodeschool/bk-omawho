@@ -15,9 +15,6 @@ ul {
 }
 
 ul li {
-  background: #ad3d32;
-  padding: 5px;
-  margin-bottom: 10px;
 }
 
 /* TEXT */
@@ -36,21 +33,32 @@ a {
 
 /* HEADER */
 
-#listitemstyle ul
-{
-margin: 0;
-padding: 0;
-list-style-type: none;
-text-align: center;
+#listitemstyle ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
 }
 
-#listitemstyle ul li { display: inline-block; }
+#listitemstyle ul li {
+  display: inline-block;
+}
 
-#listitemstyle ul li a
-{
-text-decoration: none;
-padding: .2em 1em;
-color: #fff;
+#listitemstyle ul li a {
+  display: inline-block;
+  background: #ad3d32;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+  transition-property: all;
+  transition-duration: 0.25s;
+}
+
+#listitemstyle ul li a:hover {
+  background: #fff;
+  color: #ad3d32;
 }
 
 #headerguy {
@@ -205,6 +213,7 @@ color: #fff;
 #upload_profile_photo_container{
   margin-top:-15px;
 }
+
 .display_name_hidden{
   visibility: hidden;
   position:relative;
@@ -215,138 +224,52 @@ color: #fff;
   opacity: 0;
 }
 
-.testimageopacity{
-  opacity: .2;
-}
-
 .display_name_visibile{
   position: relative;
   top: -50px;
   text-align: center;
-  font-size:20px;
+  font-size: 20px;
   height: 30px;  
 }
 
 .category_name_hidden{  
   visibility: hidden;
-  position:relative;
-  top:-100px;
-  text-align:center;
+  position: relative;
+  top: -100px;
+  text-align: center;
   font-size: 30px;
   height: 30px;
   opacity: 0;
 }
 
 .category_name_visibile{
-  position:relative;
-  top:-50px;
-  text-align:center;
+  position: relative;
+  top: -50px;
+  text-align: center;
   font-size: 15px;
   height: 30px;  
 }
 
-.testimage {
+.index_image {
   width: 100%;
-  margin-bottom:-60px;
-}
-
-/* PROFILE PAGE */
-
-#profile {
-  margin-top:55px;
-  line-height:40px;
-  margin-bottom:50px;
-}
-
-.profilefields {
-  margin-left: 40px;
-  margin-top: -14px;
-}
-
-#name, #company, #tagline, #mywork, #bio, #categories {
-  padding-left: 50px;
-}
-
-#name {
-  font-weight: bold;
-  font-size: 48px;
-  padding-top: 50px;
-}
-
-#company {
-  font-size: 15px;
-}
-
-#tagline {
-  font-size: 20px;
-}
-
-#mywork {
-  text-align: center;
-}
-
-#bio {
-}
-
-.categories {
-  max-width: 800px !important;
-  margin-top: 40px !important;
-}
-
-.nobg {
-  background: none;
-}
-
-#social ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-align: center;
-  float:left;
-  padding-left: 35px;
-}
-
-#social ul li {
-  display: inline-block;
-}
-
-#listitemstyle{
-  padding: 5px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  text-align: center;
-  margin-bottom: 23px;
-}
-
-#social ul li a {
-  padding: .2em 1em;
-}
-
-#works {
-  margin-bottom:50px;
-}
-
-#chooseface {
-  padding: 20px;
-  background: #ad3d32;
-  margin-top: 9px;
-  color: #fff;
-  text-align: center;
+  margin-bottom: -60px;
+  transition-property: all;
+  transition-duration: 0.25s;
 }
 
 #topnavtext2{
   cursor:pointer;
 }
 
-#dropdown{
-  padding-top:50px;
+#dropdown {
+  padding-top: 50px;
 }
 
-.goaway{
-  display:none;
+.goaway {
+  display: none;
 }
 
-.comeback{
+.comeback {
   visibility: visible;
 }
 
@@ -364,7 +287,7 @@ color: #fff;
   margin-top: -20px;
 }
 
-.span4{
+.span4 {
   width: 100%;
   height: 175px;
   margin-top:12px;
@@ -372,7 +295,7 @@ color: #fff;
   padding-top: 40px;
 }
 
-.submitstyles{
+.submitstyles {
   margin-bottom:50px;
   margin-top:50px;
 }
@@ -414,11 +337,13 @@ color: #fff;
    .categories {
      padding-left:20px;
    }
+   
    .profilefields {
      margin: 0px;
      padding-left: 20px;
      padding-right: 20px;
    }
+   
    #profile_photo_before{
      margin-left: 20px;
      margin-right:20px;
@@ -435,5 +360,4 @@ color: #fff;
     font-size: 15px;
     top: -50px;
   }
-  
 }

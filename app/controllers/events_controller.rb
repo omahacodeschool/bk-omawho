@@ -4,10 +4,10 @@ class EventsController < ApplicationController
     if current_user && current_user.admin?
       @unapproved = Event.where('approved = ?', false).order('start_time ASC')
       @events = Event.approved.where('start_time > ?', DateTime.now).order("start_time ASC")
-      @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC")
+      @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC").page(params[:page]).per(5)
     else
       @events = Event.approved.where('start_time > ?', DateTime.now).order("start_time ASC")
-      @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC")
+      @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC").page(params[:page]).per(5)
     end
     
     if current_user
@@ -102,6 +102,15 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to event_path(@event) }
+      format.js
+    end
+  end
+  
+  def past
+    @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC").page(params[:page]).per_page(5)
+    
+    respond_to do |format|
+      format.html
       format.js
     end
   end
