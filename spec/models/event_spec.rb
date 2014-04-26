@@ -9,7 +9,7 @@ describe Event do
   
   it "fails on an event that doesnt have a start time" do
     @event = Event.create(name: "Omaha Code School Graduation", venue: "Omaha Code School", location: "Suite #4107\n200 S 31st Ave\nOmaha, Nebraska")
-    expect(@event.name).to eq("Omaha Code School Graduation")
+    expect(@event.errors).to eq(true)
   end
   
   
