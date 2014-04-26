@@ -48,6 +48,13 @@ textarea {
   color: #fff;
   font-weight: bold;
   line-height: 0;
+  transition-property: all;
+  transition-duration: 0.25s;
+}
+
+#search_button:hover {
+  background: #fff;
+  color: #ad3d32; 
 }
 
 #search_field, #search_button {
