@@ -15,6 +15,7 @@ Omawho::Application.routes.draw do
     post "approve" => "events#approve", :as => :approve
   end
   
+  get "past" => "events#past", :as => :past
   get "about" => "site_pages#about", :as => :about
   get "contact" => "site_pages#contact", :as => :contact
   get "rss_feed" => "site_pages#rss_feed", :as => :rss_feed
