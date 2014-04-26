@@ -36,21 +36,19 @@ a {
 
 /* HEADER */
 
-#listitemstyle ul
-{
-margin: 0;
-padding: 0;
-list-style-type: none;
-text-align: center;
+#listitemstyle ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
 }
 
 #listitemstyle ul li { display: inline-block; }
 
-#listitemstyle ul li a
-{
-text-decoration: none;
-padding: .2em 1em;
-color: #fff;
+#listitemstyle ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
 }
 
 #headerguy {
@@ -248,65 +246,6 @@ color: #fff;
 .testimage {
   width: 100%;
   margin-bottom:-60px;
-}
-
-/* PROFILE PAGE */
-
-#profile {
-  margin-top:55px;
-  line-height:40px;
-  margin-bottom:50px;
-}
-
-.profilefields {
-  margin-left: 40px;
-  margin-top: -14px;
-}
-
-#name, #company, #tagline, #mywork, #bio, #categories {
-  padding-left: 50px;
-}
-
-#name {
-  font-weight: bold;
-  font-size: 48px;
-  padding-top: 50px;
-}
-
-#company {
-  font-size: 15px;
-}
-
-#tagline {
-  font-size: 20px;
-}
-
-#mywork {
-  text-align: center;
-}
-
-#bio {
-}
-
-.categories {
-  max-width: 800px !important;
-  margin-top: 40px !important;
-}
-
-.nobg {
-  background: none;
-}
-
-#listitemstyle{
-  padding: 5px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  text-align: center;
-  margin-bottom: 23px;
-}
-
-#works {
-  margin-bottom:50px;
 }
 
 #chooseface {
