@@ -15,9 +15,6 @@ ul {
 }
 
 ul li {
-  background: #ad3d32;
-  padding: 5px;
-  margin-bottom: 10px;
 }
 
 /* TEXT */
@@ -43,12 +40,25 @@ a {
   text-align: center;
 }
 
-#listitemstyle ul li { display: inline-block; }
+#listitemstyle ul li {
+  display: inline-block;
+}
 
 #listitemstyle ul li a {
+  display: inline-block;
+  background: #ad3d32;
+  padding: 5px;
+  margin-bottom: 10px;
   text-decoration: none;
   padding: .2em 1em;
   color: #fff;
+  transition-property: all;
+  transition-duration: 0.25s;
+}
+
+#listitemstyle ul li a:hover {
+  background: #fff;
+  color: #ad3d32;
 }
 
 #headerguy {
@@ -245,14 +255,6 @@ a {
   margin-bottom: -60px;
   transition-property: all;
   transition-duration: 0.25s;
-}
-
-#chooseface {
-  padding: 20px;
-  background: #ad3d32;
-  margin-top: 9px;
-  color: #fff;
-  text-align: center;
 }
 
 #topnavtext2{
