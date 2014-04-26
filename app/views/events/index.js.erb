@@ -1,0 +1,15 @@
+$("#past_events").append("<%= j render 'index' %>");
+$('.see_more_events').replaceWith("<%= escape_javascript(link_to_next_page(@past_events, 'SEE MORE PAST EVENTS', :remote => true, :class => 'see_more_events'))%>");
+if ( <%= @past_events.length %> == $(".past_event_bar").length ) {
+  $(".see_more_events").hide();
+}
+
+$(".past_event_bar").on("click", function(event) {
+  if ( $(".past_event_bar").length > 5 ) {
+    if ( $(this).next(".event_display").is(":visible") ) {
+      $(this).next(".event_display").slideUp();
+    } else {
+      $(this).next(".event_display").slideDown();
+    }
+  }
+});
