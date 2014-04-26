@@ -30,10 +30,10 @@
         <% end %>   
       </div>
       <div>
-        <p><%= "I work at #{@correct_co}." %></p>
+        <p><%= "I work at #{@correct_co || "__. (I haven't listed a company. Maybe I'm saving the world.)"}." %></p>
         <% if @co_guess_correct %>
           <p class="correct"><%= "You were right!" %></p>   
-        <% elsif @guessed_co == nil %>
+        <% elsif !@guessed_co %>
           <p class="incorrect"><%= "Come on, it was multiple choice. I must be doing something." %></p> 
         <% else %>
           <p class="incorrect"><%= "You said it was #{@guessed_co}." %></p> 
@@ -42,14 +42,14 @@
       <hr>
       <div>
         <p>Follow me, and introduce yourself:</p>
-        <div>
-          <% @user.contact_links.each do |c_type, c_link| %>
-            <p class=<%="#{c_type}"%>>
-              <a href="<%= 'http://example.com/'+c_link %>" class=<%="#{c_type}"%>>
-                <%= c_link %>
-              </a>
-            </p>
-          <% end %>
+        <div id="social">
+          <ul>
+            <% @social_media.each do |social| %>
+              <% if social[1] != "" %>
+                <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
+              <% end %>
+            <% end %>
+          </ul>
         </div>
       </div>
       <hr>

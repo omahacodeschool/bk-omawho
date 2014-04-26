@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
   
   validates :username, :format => { :with => /^(\w|-)*$/, :message => "can only contain letters, numbers, underscores, and dashes" }
-  # validates :website, :format => { :with => /^http/ }, :allow_blank => true
-  # validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
+  validates :website, :format => { :with => /^http/ }, :allow_blank => true
+  validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
   validates_exclusion_of :username, :in => %w(category login logout add profile quiz beta)
   validates_length_of :bio, :within => 0..400
   validates_length_of :password, :within => 4..99
@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :embeds
   
+  scope :random, order("RANDOM()")
+
   accepts_nested_attributes_for :categories
   
   def profile_image
@@ -43,7 +45,7 @@ class User < ActiveRecord::Base
   #
   # Returns the user first/last names concatenated into a String.
   def full_name
-    "#{first_name} #{last_name}"
+    "#{first_name.strip} #{last_name.strip}"
   end
 
   # Class Method:

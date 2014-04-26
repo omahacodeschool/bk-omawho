@@ -1,4 +1,3 @@
-
 /* GENERAL */
 
 body {
@@ -7,21 +6,20 @@ body {
   color: #fff;
 }
 
+input:-webkit-autofill, textarea:-webkit-autofill {
+    background-colorr: #fff !important;
+}
+
 ul {
-  list-style: none;
- 
+  list-style: none; 
 }
 
 ul li {
-  background: #ad3d32;
-  padding: 5px;
-  width: 35px;
-  margin-bottom: 10px;
 }
 
 /* TEXT */
 
-h1, h2, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   color: #ad3d32;
   text-align: center;
 }
@@ -34,6 +32,34 @@ a {
 }
 
 /* HEADER */
+
+#listitemstyle ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+#listitemstyle ul li {
+  display: inline-block;
+}
+
+#listitemstyle ul li a {
+  display: inline-block;
+  background: #ad3d32;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #fff;
+  transition-property: all;
+  transition-duration: 0.25s;
+}
+
+#listitemstyle ul li a:hover {
+  background: #fff;
+  color: #ad3d32;
+}
 
 #headerguy {
   background-image: url("/assets/omaha_skyline3.jpg");
@@ -184,8 +210,11 @@ a {
 
 /* MISCELLANEOUS */
 
+#upload_profile_photo_container{
+  margin-top:-15px;
+}
+
 .display_name_hidden{
-  
   visibility: hidden;
   position:relative;
   top:-200px;
@@ -195,111 +224,53 @@ a {
   opacity: 0;
 }
 
-.testimageopacity{
-  opacity: .2;
-}
-
 .display_name_visibile{
   position: relative;
   top: -50px;
   text-align: center;
-  font-size:20px;
+  font-size: 20px;
   height: 30px;  
 }
 
 .category_name_hidden{  
   visibility: hidden;
-  position:relative;
-  top:-100px;
-  text-align:center;
+  position: relative;
+  top: -100px;
+  text-align: center;
   font-size: 30px;
   height: 30px;
   opacity: 0;
 }
 
 .category_name_visibile{
-  position:relative;
-  top:-50px;
-  text-align:center;
+  position: relative;
+  top: -50px;
+  text-align: center;
   font-size: 15px;
   height: 30px;  
 }
 
-.testimage {
+.index_image {
   width: 100%;
-  margin-bottom:-60px;
-}
-/* PROFILE PAGE */
-
-#profile {
-  margin-top:55px;
-  line-height:40px;
-  margin-bottom:50px;
+  margin-bottom: -60px;
+  transition-property: all;
+  transition-duration: 0.25s;
 }
 
-.profilefields {
-  margin-left: 40px;
-/*  line-height: 5;*/
-  margin-top: -14px;
+#topnavtext2{
+  cursor:pointer;
 }
-#name, #company, #tagline, #mywork, #bio, #categories {
-  padding-left: 50px;
-}
-#name {
-  font-weight: bold;
-  font-size: 48px;
+
+#dropdown {
   padding-top: 50px;
 }
 
-#company {
-  font-size: 15px;
+.goaway {
+  display: none;
 }
 
-#tagline {
-  font-size: 20px;
-}
-
-#mywork {
-  text-align: center;
-}
-
-#bio {
-}
-
-#categories {
-}
-
-.nobg {
-  background: none;
-}
-
-#social ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-align: center;
-  float:left;
-  padding-left: 35px;
-}
-
-#social ul li {
-  display: inline-block;
-}
-
-#social ul li a {
-  padding: .2em 1em;
-}
-
-#works {
-  margin-bottom:50px;
-}
-
-#chooseface {
-  padding: 20px;
-  background: #ad3d32;
-  margin-top: 9px;
-  color: #fff;
-  text-align: center;
+.comeback {
+  visibility: visible;
 }
 
 #addingtitle {
@@ -316,12 +287,17 @@ a {
   margin-top: -20px;
 }
 
-.span4{
+.span4 {
   width: 100%;
   height: 175px;
   margin-top:12px;
   text-align:center;
   padding-top: 40px;
+}
+
+.submitstyles {
+  margin-bottom:50px;
+  margin-top:50px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -330,6 +306,10 @@ a {
     padding-left: 0;
   }
   
+  .profilefields{
+    margin-left: 0px;
+  } 
+   
   #social ul {
     padding-left: 0;
     text-align: center;
@@ -340,7 +320,7 @@ a {
   #name {
     margin-top: 50px;
   }
-  
+   
   #choosefacecol {
     padding-left: 40px;
     padding-right: 40px;
@@ -354,10 +334,23 @@ a {
      top:-50px;
    }
    
+   .categories {
+     padding-left:20px;
+   }
+   
+   .profilefields {
+     margin: 0px;
+     padding-left: 20px;
+     padding-right: 20px;
+   }
+   
+   #profile_photo_before{
+     margin-left: 20px;
+     margin-right:20px;
+   }
 }
 
 @media only screen and (max-width: 1068px) {
-  
   .display_name_visibile{
     font-size:20px;
     top:-60px;
@@ -367,5 +360,4 @@ a {
     font-size: 15px;
     top: -50px;
   }
-  
 }

@@ -1,0 +1,91 @@
+/* PROFILE PAGE */
+
+#profile {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+#profile_details{
+  padding-left: 50px;
+}
+
+#profile h1, #profile h2, #profile h3, #profile h4, #profile h5, #profile h6 {
+  text-align: left;
+}
+
+#profile h1 {
+  font-size: 4em;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+#profile h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+.error-list{
+  .error-list-item{}
+}
+
+#profile_photo_preview{
+  width: 100%;
+}
+
+.center-text{
+  text-align:center;
+}
+
+#categories {
+  margin-bottom: 25px;
+}
+
+.category{
+  display:inline-block;
+  background-color: #ad3d32;
+  margin:.3em;
+  padding: 0.2em 1em;
+}
+
+.profilefields {
+  margin-left: 40px;
+  margin-top: -14px;
+}
+
+#name {
+}
+
+#tagline, #company {
+  font-size: 1.75em;
+}
+
+#mywork {
+  text-align: center;
+}
+
+#bio {
+  line-height: 1.5em;
+  margin-bottom: 25px;
+}
+
+.categories {
+  max-width: 800px !important;
+  margin-top: 40px !important;
+}
+
+.nobg {
+  background: none;
+}
+
+#listitemstyle{
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+#works {
+  margin-bottom:50px;
+}
