@@ -18,6 +18,7 @@
   <div class="row">
     <% @user.images.each do |image| %>
       <div class="large-3 columns">
+        <%= link_to(image_tag(image.file.square, :style => "width: 100%;"), image.file, :data-lightbox => "image-1", :data-title => "My caption")%>
         <%= image_tag(image.file.square, :style => "width: 100%;") %>
       </div>
     <% end %>
