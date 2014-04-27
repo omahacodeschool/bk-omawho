@@ -200,6 +200,9 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.6)
     unicorn (4.8.2)
       kgio (~> 2.6)
       rack
@@ -234,4 +237,5 @@ DEPENDENCIES
   selenium-webdriver
   sorcery
   uglifier (>= 1.0.3)
+  unf
   unicorn
