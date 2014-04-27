@@ -133,12 +133,4 @@ class User < ActiveRecord::Base
     links
   end
 
-
-
-
-
-
-
-    
-  
 end
