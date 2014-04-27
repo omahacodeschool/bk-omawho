@@ -164,7 +164,7 @@ class User < ActiveRecord::Base
     format_social_link(dribbble, "dribbble.com", "http://dribbble.com/$USERNAME")
   end
 
-  def github_urlt
+  def github_url
     format_social_link(github, "github.com", "http://github.com/$USERNAME")
   end
 
