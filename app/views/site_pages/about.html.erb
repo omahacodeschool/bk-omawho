@@ -16,7 +16,7 @@
     <div class="row about_page_photos" id="face-display">
       <% @users.each do |user| %>
         <div class="large-6 columns">
-          <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid")), view_profile_path(user.username) %>
+          <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid", :style => "width: 100%;")), view_profile_path(user.username) %>
         </div>
         <div style="display: none;"><%= user.first_name %> <%= user.last_name %></div>
         <div style="display: none;"><%= link_to 'Show', user %></div>
