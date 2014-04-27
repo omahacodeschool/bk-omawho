@@ -297,6 +297,13 @@ a:hover {
   margin-top:50px;
 }
 
+@media only screen and (min-width: 600px) {
+  .profilefields {
+    margin: 0px;
+    padding-left: 40px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #name, #company, #tagline, #bio, #categories, #social {
     text-align: center;
