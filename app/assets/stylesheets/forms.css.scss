@@ -11,19 +11,19 @@ input {
   height: 4em;
 }
 
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 15px;
+}
+
 textarea {
   font-size: 1em;
   width: 100%;
   padding: 1.5em;
-}
-
-#functional_file_button {
-  opacity: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  width: 100%;
 }
 
 #chooseface {
@@ -86,12 +86,28 @@ textarea {
   padding-left: 20px;
 }
 
-input[type="submit"] {
-  cursor: pointer;
-}
-
 @media only screen and (max-width: 600px) {
   .row_1, .row_2 {
     padding: 0 5%;
+  }
+  
+  #search_container {
+    width: 95% !important;
+  }
+  
+  #search_field, #search_button {
+    margin: 10px 0;
+  }
+  
+  #search_field {
+    background-color: transparent;
+    border: solid 1px #4c6262;
+    border-radius: 10px 0 0 10px;
+    color: #fff;
+  }
+  
+  #search_button {
+    background-color: #4c6262;
+    border-radius: 0 10px 10px 0;
   }
 }

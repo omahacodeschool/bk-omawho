@@ -13,7 +13,10 @@ $(document).ready(function(){
    $(this).children(".category_name").removeClass( "category_name_visibile" ).addClass( "category_name_hidden" );
    $(this).children("a").children(".index_image").css( "opacity", "1" );
   });
-  $("#topnavtext2").click(function(){
+  $("#topnavtext").click(function(){
     $(".drop_down").slideToggle( "goaway" );
-  }); 
+  });
+  $("#mobile_menu_bar p").click(function(){
+    $("#mobile_menu_bar ul").slideToggle( "goaway" );
+  });
 });
