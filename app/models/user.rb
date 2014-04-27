@@ -120,8 +120,8 @@ class User < ActiveRecord::Base
   def contact_links
     links = {}
     
-    links["website"] = website if website
-    links["company_site"] = company_site if company_site
+    #links["website"] = website if website
+    #links["company_site"] = company_site if company_site
     links["facebook"] = facebook_url if facebook        #
     links["twitter"] = twitter_url if twitter           #
     links["pinterest"] = pinterest_url if pinterest     #
