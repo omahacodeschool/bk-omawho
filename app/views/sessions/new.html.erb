@@ -4,16 +4,16 @@
   <%= form_tag sessions_path, :method => :post do %>
 
   <div class="row">
-    <div class="small-3 large-3 columns whitebg" >
+    <div class="small-3 large-3 columns whitebg">
       <p class="username sprite"></p>
     </div>
     <div class="small-9 large-9 columns">
       <%= text_field_tag :email, params[:email], :placeholder => "Email", :class => "log_in_email" %>
     </div>
   </div>
-
+  
   <div class="row">
-    <div class="small-3 large-3 columns whitebg" >
+    <div class="small-3 large-3 columns whitebg">
       <p class="password sprite"></p>
     </div>
     <div class="small-9 large-9 columns">
@@ -34,7 +34,7 @@
   <div class="actions"><%= link_to "Sign up for free", :signup, :class => "log_in_button" %></div>
   
   <hr>
-
+  
   <h1>Forgot Password?</h1>
   
   <%= form_tag password_resets_path, :method => :post do %>
