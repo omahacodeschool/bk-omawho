@@ -1,17 +1,17 @@
-// Place all the styles related to the site_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 input[type="radio"] {
   display: none;
 }
 
 .correct {
-  color: #4c6262;
+  color: #10E7E7;
 }
 
 .incorrect {
   color: #ad3d32;
+}
+
+#name_game_image img {
+  margin-top: 25px;
 }
 
 .name_game_company {
@@ -63,6 +63,7 @@ input[type="radio"] {
   color: white;
   width: 100%;
   display: block;
+  margin-top: 25px;
 }
 
 .submit_div {
@@ -74,20 +75,22 @@ input[type="radio"] {
   margin-left: auto;
   text-align: center;
   text-decoration: none;
-  margin: 0px 0px 20px;
+  margin-bottom: 20px;
   position: relative;
   cursor: pointer;
   background: #ad3d32;
   color: white;
   width: 100%;
   display: block;
+  margin-top: 25px;
 }
 
 .show_another_face:hover {
   position: relative;
   bottom: 5px;
-  margin-bottom: -5px;
+  margin-bottom: 15px;
   border-bottom: 5px solid #9B2A25;
+  color: #fff;
 }
 
 .submit_div:hover {
@@ -95,12 +98,7 @@ input[type="radio"] {
   bottom: 5px;
   margin-bottom: -5px;
   border-bottom: 5px solid #9B2A25;
-};
-
-.submit_div:active, .show_another_face:active {
-  bottom: 0px;
-  margin-bottom: 0px;
-  border-bottom: 0px;
+  color: #fff;
 }
 
 .red_choice:hover {
@@ -119,6 +117,12 @@ input[type="radio"] {
 #name_guess {
   padding-left: 1.5em;
 }
+  
+#name_game_container #social ul {
+  float: none;
+  text-align: left;
+  padding-left: 0;
+}
 
 @media only screen and (min-width: 600px) {
   .about_page_photos {
@@ -136,6 +140,14 @@ input[type="radio"] {
   #about_page_section {
     margin-left: auto;
     margin-right: auto;
+  }
+  
+  #about_page_section p {
+    line-height: 1.5em;
+  }
+  
+  #about_page_section hr {
+    margin: 90px 0;
   }
   
   #about_page_section h1, #about_page_section h2 {
@@ -170,7 +182,7 @@ input[type="radio"] {
   }
   
   #name_game_container {
-    height: 570px;
+    clear: both;
   }
   
   #name_game_image {

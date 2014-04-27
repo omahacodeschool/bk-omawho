@@ -1,17 +1,14 @@
 <div id="login_form" class="row">
-  <h1>
-    Log In
-  </h1>
-  <p>
-    (If you already have an account on <span>http://omawho.com,</span><br>
-    you can use those credentials to log in here.)
-  </p><%= form_tag sessions_path, :method => :post do %>
+  <h1>Log In</h1>
+  
+  <%= form_tag sessions_path, :method => :post do %>
+
   <div class="row">
     <div class="small-3 large-3 columns whitebg">
       <p class="username sprite"></p>
     </div>
     <div class="small-9 large-9 columns">
-      <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+      <%= text_field_tag :email, params[:email], :placeholder => "Email", :class => "log_in_email" %>
     </div>
   </div>
   

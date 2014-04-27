@@ -93,6 +93,9 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.9.2)
     launchy (2.4.2)
       addressable (~> 2.3)
@@ -197,6 +200,9 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.6)
     unicorn (4.8.2)
       kgio (~> 2.6)
       rack
@@ -216,6 +222,7 @@ DEPENDENCIES
   dotenv-rails
   fog
   jquery-rails
+  kaminari
   launchy
   nokogiri
   pg
@@ -230,4 +237,5 @@ DEPENDENCIES
   selenium-webdriver
   sorcery
   uglifier (>= 1.0.3)
+  unf
   unicorn

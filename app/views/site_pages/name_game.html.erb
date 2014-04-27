@@ -16,29 +16,29 @@
     </div>
     <div class="large-8 columns">
       <div id="name_game_image">
-        <%= image_tag(@profile_img, :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid") %>  
+        <%= image_tag(@profile_img, :alt => "#{@user.first_name} #{@user.last_name}", :id => "profile_photo_preview", :class => "img-polaroid") %>  
       </div>
       <div id="name_game_text">
         <div>
           <%= form_tag check_quiz_path do %>
             <div>
               <p>What's my name?</p>
-              <%= text_field_tag :name_guess, nil, :placeholder => "First and last name please" %>      
+              <%= text_field_tag :name_guess, nil, :placeholder => "First and last name please" %>     
             </div>
             <div>
               <p>Where do I work?</p>
               <div>
-              <% @companies.each do |c| %>
-                <li class="name_game_company gray_choice">
-                  <% if (c.nil? || c == "") %>
-                    <%= radio_button_tag(:company, "<No Company Specified>") %>
-                    <%= label_tag :company, "No company specified" %>
-                  <% else %>
-                    <%= radio_button_tag(:company, c) %>
-                    <%= label_tag :company, c %>
-                  <% end %>
-                </li>
-              <% end %>
+                <% @companies.each do |c| %>
+                  <li class="name_game_company gray_choice">
+                    <% if (c.nil? || c == "") %>
+                      <%= radio_button_tag(:company, "No Company Specified") %>
+                      <%= label_tag :company, "No company specified" %>
+                    <% else %>
+                      <%= radio_button_tag(:company, c) %>
+                      <%= label_tag :company, c %>
+                    <% end %>
+                  </li>
+                <% end %>
               </div>
             </div>
             <div>

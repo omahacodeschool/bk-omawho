@@ -47,7 +47,8 @@ class Scraper
       #event.link
       #puts e.css("td.event-name a")[0]["href"]
       event.link = e.css("td.event-name a")[0]["href"]
-      event.approved = true
+      #set this to auto-approve events
+      #event.approved = true
       event.save
     end
   end

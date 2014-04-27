@@ -9,6 +9,7 @@ gem 'pry-rails', :group => [:development, :test]
 
 gem 'pg'
 
+gem 'kaminari'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,6 +44,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'sorcery'
 
+gem 'unf'
 gem 'fog'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'

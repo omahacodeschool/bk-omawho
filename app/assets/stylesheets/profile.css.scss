@@ -1,0 +1,124 @@
+/* PROFILE PAGE */
+
+#profile_container {
+  max-width: 800px !important;
+  margin: 0 auto;
+}
+
+#profile {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#profile_details{
+  padding-left: 50px;
+}
+
+#profile h1, #profile h2, #profile h3, #profile h4, #profile h5, #profile h6 {
+  text-align: left;
+  margin-top: 0;
+}
+
+#profile h1 {
+  font-size: 4em;
+  margin-bottom: 0.25em;
+}
+
+#profile h3, #profile h4 {
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+#top_profile_form_area {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#profile_photo_before {
+  position: relative;
+}
+
+#functional_file_button {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+#profile_edit {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.error-list{
+  .error-list-item{}
+}
+
+#profile_photo_preview {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.center-text {
+  text-align:center;
+}
+
+#categories {
+  margin: 25px 0;
+}
+
+.profilefields {
+  margin-left: 40px;
+  margin-top: -14px;
+}
+
+#name {
+}
+
+#mywork {
+  text-align: center;
+}
+
+#bio {
+  line-height: 1.5em;
+  margin-bottom: 25px;
+}
+
+#bio p {
+  margin: 25px 0;
+}
+
+.categories {
+  margin-bottom: 25px !important;
+}
+
+#profile_container .categories div {
+  margin-top: 15px !important;
+}
+
+.nobg {
+  background: none;
+}
+
+#listitemstyle{
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+#personal_site {
+  padding-top: 25px;
+  clear: both;
+}
+
+#works {
+  margin-bottom:50px;
+}

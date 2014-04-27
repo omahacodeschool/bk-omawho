@@ -10,12 +10,16 @@
       </ul>
     </div>
   <% end %>
-  <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
-  <div class="field">
-    <%= f.label :file %><br />
-    <%= f.file_field :file %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div id="upload_profile_photo_container" class="row">
+    <div class="field">
+      <%= f.label :file %><br />
+      <%= f.file_field :file, :id => "profile_photo_field" %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <%= image_tag("default_pic.jpg", :alt => "Your work", :id => "profile_photo_preview", :class => "img-polaroid", :style => "width: 100%;padding-top: 20px; padding-bottom:40px;") %>
+    <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
+
   </div>
 <% end %>
