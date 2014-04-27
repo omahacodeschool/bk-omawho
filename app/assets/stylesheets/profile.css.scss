@@ -1,8 +1,8 @@
 /* PROFILE PAGE */
 
 #profile {
-  margin-top: 60px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #profile_details{
@@ -11,18 +11,25 @@
 
 #profile h1, #profile h2, #profile h3, #profile h4, #profile h5, #profile h6 {
   text-align: left;
+  margin-top: 0;
 }
 
 #profile h1 {
   font-size: 4em;
-  margin-top: 0;
   margin-bottom: 0.25em;
 }
 
-#profile h3 {
-  margin-top: 0;
+#profile h3, #profile h4 {
   margin-bottom: 0.5em;
   color: #fff;
+}
+
+#profile_edit {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .error-list{
@@ -38,14 +45,7 @@
 }
 
 #categories {
-  margin-bottom: 25px;
-}
-
-.category{
-  display:inline-block;
-  background-color: #ad3d32;
-  margin:.3em;
-  padding: 0.2em 1em;
+  margin: 25px 0;
 }
 
 .profilefields {
@@ -56,10 +56,6 @@
 #name {
 }
 
-#tagline, #company {
-  font-size: 1.75em;
-}
-
 #mywork {
   text-align: center;
 }
@@ -67,6 +63,10 @@
 #bio {
   line-height: 1.5em;
   margin-bottom: 25px;
+}
+
+#bio p {
+  margin: 25px 0;
 }
 
 .categories {
@@ -84,6 +84,11 @@
   margin-bottom: 10px;
   text-align: center;
   margin-bottom: 23px;
+}
+
+#personal_site {
+  padding-top: 25px;
+  clear: both;
 }
 
 #works {
