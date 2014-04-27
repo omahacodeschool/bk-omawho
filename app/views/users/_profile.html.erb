@@ -1,6 +1,6 @@
 <div id="profile" class="row">
   <div class="large-6 columns">
-    <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "profile_photo_preview", :class => "img-polaroid", :style => "width: 100%;") %>
+    <%= image_tag((@user.profile_image ? @user.profile_image : "user-avatar.jpg"), :alt => "#{@user.first_name} #{@user.last_name}", :id => "profile_photo_preview", :class => "img-polaroid", :style => "width: 100%;") %>
   </div>
   <div class="large-6 columns">
     <div id="profile_details" >

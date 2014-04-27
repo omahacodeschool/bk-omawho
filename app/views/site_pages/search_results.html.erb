@@ -1,14 +1,21 @@
 <h1>Search Results</h1>
-
 <!-- Displays users found by name search using same format as root page -->
 <div class="row" style="max-width:none;">
-
   <div class="row" id="face-display">
     <% @users_found.each do |user| %>
       <div class="large-3 columns">
-        <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "This is you! (?)", :id => "testimage", :class => "img-polaroid")), view_profile_path(user.username) %>
-        <div style="display: none;"><%= user.first_name %> <%= user.last_name %></div>
-        <div style="display: none;"><%= link_to 'Show', user %></div>
+        <div class="workinthathover">
+          <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "#{user.first_name} #{user.last_name}", :class => "index_image")), view_profile_path(user.username) %>
+          <div class="display_name display_name_hidden" >
+            <%= user.first_name %> <%= user.last_name %>        
+          </div>        
+          <div class="category_name category_name_hidden">
+            <%= user.tagline %>
+          </div>
+          <div style="display: none;">
+            <%= link_to 'Show', user %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

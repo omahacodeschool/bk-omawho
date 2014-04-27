@@ -15,5 +15,8 @@ $(document).ready(function(){
   });
   $("#topnavtext").click(function(){
     $(".drop_down").slideToggle( "goaway" );
-  }); 
+  });
+  $("#mobile_menu_bar p").click(function(){
+    $("#mobile_menu_bar ul").slideToggle( "goaway" );
+  });
 });
