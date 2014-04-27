@@ -335,14 +335,14 @@ a:hover {
      margin-left: 20px;
      margin-right:20px;
    }
+   
+   .display-name-hidden {
+     visibility: visible;
+     opacity: 1;
+   }
 }
 
 @media only screen and (max-width: 1068px) {
-  .display_name_visibile{
-    font-size:20px;
-    top:-60px;
-  }
-  
   .category_name_visibile{
     font-size: 15px;
     top: -50px;
