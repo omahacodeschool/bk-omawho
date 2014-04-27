@@ -122,15 +122,15 @@ class User < ActiveRecord::Base
     
     #links["website"] = website if website
     #links["company_site"] = company_site if company_site
-    links["facebook"] = facebook_url if facebook        #
-    links["twitter"] = twitter_url if twitter           #
-    links["pinterest"] = pinterest_url if pinterest     #
-    links["linkedin"] = linkedin_url if linkedin        #
-    links["github"] = github_url if github              #
-    links["googleplus"] = googleplus_url if googleplus  #
-    links["dribbble"] = dribbble_url if dribbble        #
-    links["instagram"] = instagram_url if instagram     #
-    links["tumblr"] = tumblr_url if tumblr              #
+    (links["facebook"] = facebook_url) if facebook && facebook != ""
+    (links["twitter"] = twitter_url) if twitter && twitter != ""
+    (links["pinterest"] = pinterest_url) if pinterest && pinterest != ""
+    (links["linkedin"] = linkedin_url) if linkedin && linkedin != ""
+    (links["github"] = github_url) if github && github != ""
+    (links["googleplus"] = googleplus_url) if googleplus && googleplus != ""
+    (links["dribbble"] = dribbble_url) if dribbble && dribbble != ""
+    (links["instagram"] = instagram_url) if instagram && instagram  != ""
+    (links["tumblr"] = tumblr_url) if tumblr && tumblr != ""
     
     links
   end
