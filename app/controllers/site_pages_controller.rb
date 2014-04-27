@@ -33,9 +33,14 @@ class SitePagesController < ApplicationController
   
   def name_game
     @user = User.order('RANDOM()').first
-    @companies = User.pluck(:company).uniq.select {|co| co != @user.company }
+    if @user.nil? 
+      flash.now[:alert] = "No users in the database!"
+      redirect_to root_path
+    end
+    user_co = @user.company ? @user.company : ""
+    @companies = User.pluck(:company).uniq.select {|co| co != user_co }
     @companies = @companies.compact.shuffle[0..2]
-    @companies << @user.company
+    @companies << user_co
     @companies.shuffle!
     @profile_img = @user.profile_image ? @user.profile_image : "user-avatar.jpg"
   end
@@ -48,19 +53,19 @@ class SitePagesController < ApplicationController
     @social_media.each do |social|
       if social[1] != ""
         @user_has_social_media = true
-        return
+        # return
       end
     end
     
     # Check name guess for existence and/or match to actual name
-    if (!params[:name_guess] || params[:name_guess] == "")
+    if (!params[:name_guess] || params[:name_guess].nil? || params[:name_guess] == "")
       @guessed_name = "You didn't even guess. What's the deal?"
       @name_guess_correct = false
     else
-      @guessed_name = params[:name_guess]
+      @guessed_name = params[:name_guess] ? params[:name_guess] : ""
       @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
     end
-    
+    binding.pry
     # Check user company for existence and set instance variable for matching
     if @user.company
       @correct_co = @user.company
