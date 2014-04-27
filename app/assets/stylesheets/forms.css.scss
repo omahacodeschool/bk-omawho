@@ -9,10 +9,12 @@ input {
   margin: 0;
   font-size: 1em;
   height: 4em;
+  border-radius: 0;
 }
 
 input[type="submit"] {
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 input[type="checkbox"] {
@@ -85,6 +87,8 @@ textarea {
 .row_2 {
   padding-left: 20px;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   .row_1, .row_2 {
