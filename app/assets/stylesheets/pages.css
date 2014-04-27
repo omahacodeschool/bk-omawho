@@ -1,5 +1,15 @@
 /* GENERAL */
 
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "museo-slab",serif;
+}
+
+body, p, li, td, th, label, input {
+  font-family: "museo-sans",sans-serif;
+}
+
+
 body {
   margin: 0;
   background: #1d1e1e;

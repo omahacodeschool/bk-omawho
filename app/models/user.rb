@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
   
   validates :username, :format => { :with => /^(\w|-)*$/, :message => "can only contain letters, numbers, underscores, and dashes" }
-  validates :website, :format => { :with => /^http/ }, :allow_blank => true
-  validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
+  #validates :website, :format => { :with => /^http/ }, :allow_blank => true
+  #validates :company_site, :format => { :with => /^http/ }, :allow_blank => true
   validates_exclusion_of :username, :in => %w(category login logout add profile quiz beta)
   validates_length_of :bio, :within => 0..400
   validates_length_of :password, :within => 4..99, :allow_blank => :allow_blank_password
@@ -36,10 +36,12 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :categories
   
+  #allow the password to be blank when editing a user
   def allow_blank_password
     !new_record?
   end
   
+  #Formats image as a square
   def profile_image
     self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
   end
@@ -118,19 +120,80 @@ class User < ActiveRecord::Base
   def contact_links
     links = {}
     
-    links["website"] = website if website
-    links["company_site"] = company_site if company_site
-    links["facebook"] = facebook if facebook
-    links["twitter"] = twitter if twitter
-    links["pinterest"] = pinterest if pinterest
-    links["linkedin"] = linkedin if linkedin
-    links["github"] = github if github
-    links["googleplus"] = googleplus if googleplus
-    links["dribbble"] = dribbble if dribbble
-    links["instagram"] = instagram if instagram
-    links["tumblr"] = tumblr if tumblr
+    #links["website"] = website if website
+    #links["company_site"] = company_site if company_site
+    (links["facebook"] = facebook_url) if facebook && facebook != ""
+    (links["twitter"] = twitter_url) if twitter && twitter != ""
+    (links["pinterest"] = pinterest_url) if pinterest && pinterest != ""
+    (links["linkedin"] = linkedin_url) if linkedin && linkedin != ""
+    (links["github"] = github_url) if github && github != ""
+    (links["googleplus"] = googleplus_url) if googleplus && googleplus != ""
+    (links["dribbble"] = dribbble_url) if dribbble && dribbble != ""
+    (links["instagram"] = instagram_url) if instagram && instagram  != ""
+    (links["tumblr"] = tumblr_url) if tumblr && tumblr != ""
     
     links
+  end
+  #https://plus.google.com/+JohnClarkW
+  
+  def googleplus_url
+    format_social_link(googleplus, "plus.google.com", "https://plus.google.com/+$USERNAME")
+  end
+  
+  def instagram_url
+    format_social_link(instagram, "instagram.com", "http://instagram.com/$USERNAME")
+  end
+  
+  def tumblr_url
+    format_social_link(tumblr, "tumblr.com", "http://$USERNAME.tumblr.com")
+  end
+  
+  def linkedin_url
+    format_social_link(linkedin, "linkedin.com", "http://linkedin.com/in/$USERNAME")
+  end
+
+  def facebook_url
+    format_social_link(facebook, "facebook.com", "http://facebook.com/$USERNAME")
+  end
+
+  def twitter_url
+    format_social_link(twitter.gsub(/^@/, ""), "twitter.com", "http://twitter.com/$USERNAME")
+  end
+
+  def dribbble_url
+    format_social_link(dribbble, "dribbble.com", "http://dribbble.com/$USERNAME")
+  end
+
+  def github_url
+    format_social_link(github, "github.com", "http://github.com/$USERNAME")
+  end
+
+  def pinterest_url
+    format_social_link(pinterest, "pinterest.com", "http://pinterest.com/$USERNAME")
+  end
+
+protected
+  def format_social_link(input, domain, example)
+    # If "domain" is present, they probably added the whole URL.
+    if input =~ /#{domain}/
+
+      # If it starts with a valid protocol, use the link as is.
+      if input =~ /^https?:\/\//
+        input
+
+      # If just the protocol is absent, add it.
+      elsif input =~ /^((www\.)|(#{domain}))/
+        "http://#{input}"
+
+      # Otherwise I don't know what is going on.
+      else
+        input
+      end
+
+    # Sane people just used their username.
+    else
+      "#{example.gsub("$USERNAME", input)}"
+    end
   end
 
 end

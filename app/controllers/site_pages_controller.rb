@@ -43,14 +43,6 @@ class SitePagesController < ApplicationController
   def check_quiz
     # Get user from param id
     @user = User.find(params[:user_id])
-    @social_media = [["facebook", @user.facebook], ["twitter", @user.twitter], ["pinterest", @user.pinterest], ["dribbble", @user.dribbble], ["linkedin", @user.linkedin], ["github", @user.github], ["googleplus", @user.googleplus], ["instagram", @user.instagram]]
-    
-    @social_media.each do |social|
-      if social[1] != ""
-        @user_has_social_media = true
-        return
-      end
-    end
     
     # Check name guess for existence and/or match to actual name
     if (!params[:name_guess] || params[:name_guess] == "")
