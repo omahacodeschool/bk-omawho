@@ -77,30 +77,38 @@ class User < ActiveRecord::Base
   # Returns an Array of 0 or more User model objects matching name_search query 
   # parameter strings or nil if there are errors
   def self.search_name(query_str)
-    # split the query into multiple strings
+    # Return nil on nil query
+    return nil if !query_str
+    
+    # split the query into multiple strings, return nil if empty query
     splits = query_str.split
+    return nil if splits.count <= 0
+    
     found_users = []
     
-    # if two or more parameter strings, use first two for searching against 
-    #   first and last name
-    if splits.count >= 2
+    # if two parameter strings, assume searching for person by first + last name
+    if splits.count == 2
       fname = splits[0]
       lname = splits[1]
-      found_users = User.where("(LOWER(first_name) LIKE ? AND LOWER(last_name) LIKE ?) OR LOWER(company) LIKE ? OR LOWER(company) LIKE ?", "%#{fname.downcase}%", "%#{lname.downcase}%", "%#{fname.downcase}%", "%#{lname.downcase}%")
-      
-    # otherwise use single string and search against any name
-    elsif splits.count > 0
-      anyname = splits[0].downcase  # default to first query string an
-      found_users = User.where("LOWER(first_name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(company) LIKE ?", "%#{anyname}%", "%#{anyname}%", "%#{anyname}%")
-      
-    # catch-all for query string errors (send back nil results)
-    else
-      return nil
-      
+      found_users = User.where("LOWER(first_name) LIKE ? AND LOWER(last_name) LIKE ?", "%#{fname.downcase}%", "%#{lname.downcase}%")
     end
     
-    # Return the found user(s)
-    found_users
+    # if nothing found, iterate over each parameter string and find any matches
+    # in first name, last name, or company name
+    if found_users.flatten.count <= 0
+      splits.each do |s|
+        found_users << User.where("LOWER(first_name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(company) LIKE ?", "%#{s.downcase}%", "%#{s.downcase}%", "%#{s.downcase}%")
+      end
+    end
+        
+    # If one or more found, return flattened and uniq array of users
+    if found_users.flatten.count > 0
+      return found_users.flatten.uniq
+    # Otherwise, catch all return nil
+    else
+      return nil
+    end
+    
   end
   
   # Public: Utility to retrieve list of contact/social links.
@@ -125,12 +133,4 @@ class User < ActiveRecord::Base
     links
   end
 
-
-
-
-
-
-
-    
-  
 end
