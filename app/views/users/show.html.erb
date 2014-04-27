@@ -18,7 +18,7 @@
   <div class="row">
     <% @user.images.each do |image| %>
       <div class="large-3 columns">
-        <%= image_tag(image.file.square, :style => "width: 100%;") %>
+        <a href="<%= image.file %>" style="width: 100%;" data-lightbox="image" data-title="<%= @user.first_name %>'s Image"><%= image_tag(image.file.square, :style => "width: 100%;") %></a>
       </div>
     <% end %>
     <% if current_user  && current_user == @user %>
