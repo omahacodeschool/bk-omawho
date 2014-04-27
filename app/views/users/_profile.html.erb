@@ -17,7 +17,7 @@
       <% if @user.company && @user.company != "" %>
         <div id="company">
           <% if @user.company_site %>
-            <h4>Company: <%= link_to(@user.company, @user.company_site, :target => "_blank") %></h4>
+            <h4>Company: <%= link_to(@user.company, "#{@user.company_url}", :target => "_blank") %></h4>
           <% else %>
             <h4>Company: <%= @user.company %></h4>
           <% end %>
@@ -55,7 +55,7 @@
       
       <% if @user.website && @user.website != "" %>
         <div id="personal_site">
-          <p><strong>My personal site:</strong> <%= link_to(@user.website, @user.website) %></p>
+          <p><strong>My personal site:</strong> <%= link_to(@user.website, @user.personal_url) %></p>
         </div>
       <% end %>
     </div>

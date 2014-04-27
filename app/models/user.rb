@@ -172,6 +172,14 @@ class User < ActiveRecord::Base
     format_social_link(pinterest, "pinterest.com", "http://pinterest.com/$USERNAME")
   end
 
+  def company_url
+    format_link(company_site)
+  end
+  
+  def personal_url
+    format_link(website)
+  end
+  
 protected
   def format_social_link(input, domain, example)
     # If "domain" is present, they probably added the whole URL.
@@ -195,5 +203,16 @@ protected
       "#{example.gsub("$USERNAME", input)}"
     end
   end
+  
+  def format_link(input)
+      # If it starts with a valid protocol, use the link as is.
+      if input =~ /^https?:\/\//
+        input
 
+      # If just the protocol is absent, add it.
+      else
+        "http://#{input}"
+
+      end
+  end
 end
