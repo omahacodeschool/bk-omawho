@@ -1,5 +1,15 @@
 /* GENERAL */
 
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "museo-slab",serif;
+}
+
+body, p, li, td, th, label, input {
+  font-family: "museo-sans",sans-serif;
+}
+
+
 body {
   margin: 0;
   background: #1d1e1e;
@@ -14,9 +24,6 @@ ul {
   list-style: none; 
 }
 
-ul li {
-}
-
 /* TEXT */
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,7 +35,28 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: #fff;
+}
+
+a:hover {
+  color: #fb8971;
+}
+
+.red_button {
+  background: #ad3d32;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
   text-decoration: none;
+  margin: 10px 0;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.25s;
+  clear: both;
+}
+
+.red_button:hover {
+  background: #fff;
+  color: #ad3d32;
 }
 
 /* HEADER */
@@ -40,25 +68,13 @@ a {
   text-align: center;
 }
 
-#listitemstyle ul li {
+#listitemstyle ul li, #listitemstyle .red_button {
   display: inline-block;
 }
 
-#listitemstyle ul li a {
-  display: inline-block;
-  background: #ad3d32;
-  padding: 5px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  padding: .2em 1em;
-  color: #fff;
-  transition-property: all;
-  transition-duration: 0.25s;
-}
-
-#listitemstyle ul li a:hover {
-  background: #fff;
-  color: #ad3d32;
+#listitemstyle .red_button {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #headerguy {
@@ -99,24 +115,6 @@ a {
   top: 15px;
 }
 
-.red_button {
-  background: #ad3d32;
-  color: white;
-  padding: 5px 15px;
-  text-align: center;
-  text-decoration: none;
-  margin: 10px 0;
-  position: relative;
-  transition-property: all;
-  transition-duration: 0.25s;
-  clear: both;
-}
-
-.red_button:hover {
-  background: #fff;
-  color: #ad3d32;
-}
-
 #left_nav_buttons, #right_nav_buttons {
   position: relative;
   top: 30px;
@@ -137,16 +135,26 @@ a {
   padding-top: 10px;
 }
 
-#mobilemenubar {
-  background: #4c6262;
-  height: 40px;
-  text-align:center;
-  color: white;
-  padding-top: 5px;
+#mobile_menu_bar {
+  text-align: center;
+  font-size: 1.5em;
 }
 
-#mobilemenubar p {
-  margin: 5px 0 0 0;
+#mobile_menu_bar p {
+  cursor: pointer;
+  background: #4c6262;
+  margin: 10px 0 0 0;
+  padding: 5px 0;
+}
+
+#mobile_menu_bar ul {
+  padding: 0;
+  margin: 0;
+}
+
+#mobile_menu_bar .red_button {
+  display: block;
+  width: 100%;
 }
 
 /* FOOTER */
@@ -165,14 +173,6 @@ a {
 
 #footer_content p {
   padding-right: 10px;
-}
-
-#footer_content a {
-  color: #fff;
-}
-
-#footer_content a:hover {
-  text-decoration: underline;
 }
 
 .bottomtext {
@@ -209,6 +209,10 @@ a {
 }
 
 /* MISCELLANEOUS */
+
+.typekit-badge {
+  display: none !important;
+}
 
 #upload_profile_photo_container{
   margin-top:-15px;
@@ -257,8 +261,8 @@ a {
   transition-duration: 0.25s;
 }
 
-#topnavtext2{
-  cursor:pointer;
+#topnavtext {
+  cursor: pointer;
 }
 
 #dropdown {
@@ -271,13 +275,6 @@ a {
 
 .comeback {
   visibility: visible;
-}
-
-#addingtitle {
-  color: #ad3d32;;
-  text-align:center;
-  font-weight: bold;
-  font-size: 40px; 
 }
 
 #optional {
@@ -348,14 +345,14 @@ a {
      margin-left: 20px;
      margin-right:20px;
    }
+   
+   .display-name-hidden {
+     visibility: visible;
+     opacity: 1;
+   }
 }
 
 @media only screen and (max-width: 1068px) {
-  .display_name_visibile{
-    font-size:20px;
-    top:-60px;
-  }
-  
   .category_name_visibile{
     font-size: 15px;
     top: -50px;

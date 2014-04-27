@@ -1,4 +1,5 @@
 class SitePagesController < ApplicationController
+  skip_before_filter :require_login
   def about
     @users = User.order("RANDOM()").limit(4)
   end
@@ -42,7 +43,6 @@ class SitePagesController < ApplicationController
   def check_quiz
     # Get user from param id
     @user = User.find(params[:user_id])
-    @social_media = [["facebook", @user.facebook], ["twitter", @user.twitter], ["pinterest", @user.pinterest], ["dribbble", @user.dribbble], ["linkedin", @user.linkedin], ["github", @user.github], ["googleplus", @user.googleplus], ["instagram", @user.instagram]]
     
     # Check name guess for existence and/or match to actual name
     if (!params[:name_guess] || params[:name_guess] == "")

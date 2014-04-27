@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  #before_filter :require_login  #set this up later
+  before_filter :require_login  #set this up later
   #before_filter :categories_with_users
   #before_filter :set_randomization_seed
   before_filter :application_configuration
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   protected
 
     def not_authenticated
-      redirect_to root_path, :alert => "Please login first."
+      redirect_to login_path, :alert => "Please login first."
     end
     
 end

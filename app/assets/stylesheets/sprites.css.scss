@@ -6,7 +6,6 @@
   list-style-type: none;
   text-align: center;
   float:left;
-  padding-left: 35px;
 }
 
 #social ul li {
@@ -85,6 +84,14 @@
 
 #pinteresticon:hover {
   background-position: 90px 28px;
+}
+
+#tumblricon {
+  background-position: 60px -2px;
+}
+
+#tumblricon:hover {
+  background-position: 60px 28px;
 }
 
 /* GENERAL SPRITES */

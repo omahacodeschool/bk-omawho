@@ -44,6 +44,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'sorcery'
 
+gem 'unf'
 gem 'fog'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
