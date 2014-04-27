@@ -57,7 +57,7 @@ class SitePagesController < ApplicationController
       @guessed_name = params[:name_guess] ? params[:name_guess] : ""
       @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
     end
-    binding.pry
+
     # Check user company for existence and set instance variable for matching
     if @user.company
       @correct_co = @user.company
