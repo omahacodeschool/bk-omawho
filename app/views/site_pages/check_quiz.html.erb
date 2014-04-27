@@ -40,7 +40,7 @@
         <% end %>   
       </div>
       
-      <% if @user_has_social_media %>
+      <% if @user.contact_links.length >0 %>
         <hr>
           <div>
             <p>Follow me, and introduce yourself:</p>
