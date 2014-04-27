@@ -39,20 +39,24 @@
           <p class="incorrect"><%= "You said it was #{@guessed_co}." %></p> 
         <% end %>   
       </div>
-      <hr>
-      <div>
-        <p>Follow me, and introduce yourself:</p>
-        <div id="social">
-          <ul>
-            <% @social_media.each do |social| %>
-              <% if social[1] != "" %>
-                <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
-              <% end %>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-      <hr>
+      
+      <% if @user_has_social_media %>
+        <hr>
+          <div>
+            <p>Follow me, and introduce yourself:</p>
+            <div id="social">
+              <ul>
+                <% @social_media.each do |social| %>
+                  <% if social[1] != "" %>
+                    <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <hr>
+      <% end %>
+      
     <div class="large-2 columns">
       <p></p>
     </div>

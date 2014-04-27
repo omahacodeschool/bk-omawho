@@ -90,6 +90,7 @@ input[type="radio"] {
   bottom: 5px;
   margin-bottom: 15px;
   border-bottom: 5px solid #9B2A25;
+  color: #fff;
 }
 
 .submit_div:hover {
@@ -97,12 +98,7 @@ input[type="radio"] {
   bottom: 5px;
   margin-bottom: -5px;
   border-bottom: 5px solid #9B2A25;
-}
-
-.submit_div:active, .show_another_face:active {
-  bottom: 0px;
-  margin-bottom: 0px;
-  border-bottom: 0px;
+  color: #fff;
 }
 
 .red_choice:hover {
@@ -144,6 +140,14 @@ input[type="radio"] {
   #about_page_section {
     margin-left: auto;
     margin-right: auto;
+  }
+  
+  #about_page_section p {
+    line-height: 1.5em;
+  }
+  
+  #about_page_section hr {
+    margin: 90px 0;
   }
   
   #about_page_section h1, #about_page_section h2 {

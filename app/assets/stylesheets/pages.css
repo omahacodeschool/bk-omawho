@@ -40,25 +40,13 @@ a:hover {
   text-align: center;
 }
 
-#listitemstyle ul li {
+#listitemstyle ul li, #listitemstyle .red_button {
   display: inline-block;
 }
 
-#listitemstyle ul li a {
-  display: inline-block;
-  background: #ad3d32;
-  padding: 5px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  padding: .2em 1em;
-  color: #fff;
-  transition-property: all;
-  transition-duration: 0.25s;
-}
-
-#listitemstyle ul li a:hover {
-  background: #fff;
-  color: #ad3d32;
+#listitemstyle .red_button {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #headerguy {
@@ -202,6 +190,10 @@ a:hover {
 
 /* MISCELLANEOUS */
 
+.typekit-badge {
+  display: none !important;
+}
+
 #upload_profile_photo_container{
   margin-top:-15px;
 }
@@ -249,8 +241,8 @@ a:hover {
   transition-duration: 0.25s;
 }
 
-#topnavtext2{
-  cursor:pointer;
+#topnavtext {
+  cursor: pointer;
 }
 
 #dropdown {
