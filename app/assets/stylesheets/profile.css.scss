@@ -34,6 +34,10 @@
   margin-bottom: 50px;
 }
 
+#profile_photo_before {
+  position: relative;
+}
+
 #functional_file_button {
   opacity: 0;
   cursor: pointer;
@@ -55,13 +59,13 @@
   .error-list-item{}
 }
 
-#profile_photo_preview{
+#profile_photo_preview {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 40px;
 }
 
-.center-text{
+.center-text {
   text-align:center;
 }
 
