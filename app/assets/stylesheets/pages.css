@@ -14,9 +14,6 @@ ul {
   list-style: none; 
 }
 
-ul li {
-}
-
 /* TEXT */
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,7 +25,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: #fff;
-  text-decoration: none;
+}
+
+a:hover {
+  color: #fb8971;
 }
 
 /* HEADER */
@@ -165,14 +165,6 @@ a {
 
 #footer_content p {
   padding-right: 10px;
-}
-
-#footer_content a {
-  color: #fff;
-}
-
-#footer_content a:hover {
-  text-decoration: underline;
 }
 
 .bottomtext {
