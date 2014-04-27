@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
     !new_record?
   end
   
+  #Formats image as a square
   def profile_image
     self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
   end

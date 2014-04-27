@@ -44,7 +44,7 @@
         <div id="social">
           <p><strong>Follow me, and introduce yourself:</strong></p>
           <ul>
-            <% @social_media.each do |social| %>
+            <% @user.contact_links.each do |social| %>
               <% if social[1] != "" %>
                 <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
               <% end %>
