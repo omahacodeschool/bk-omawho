@@ -47,10 +47,6 @@ input:focus, select:focus {
   text-align: center;
 }
 
-.form_height {
-  height: 787px;
-}
-
 .past_event_bar, .past_event_bar_first {
   background: #6d6d6d;
   padding: 1.5%;
@@ -67,7 +63,8 @@ input:focus, select:focus {
 
 .past_event_bar:active, .past_event_bar_first:active {
   bottom: 0px;
-  margin-bottom: 0px;
+  position: relative;
+  margin-bottom: 0px !important;
   border-bottom: 0px;
 }
 
@@ -97,6 +94,7 @@ input:focus, select:focus {
 
 .approve_button:hover, .attendance_button:hover, .more_faces_button:hover {
   position: relative;
+  color: #fff;
   bottom: 5px;
   margin-bottom: -5px;
   border-bottom: 5px solid #9B2A25;
@@ -156,6 +154,10 @@ input:focus, select:focus {
   padding: 0% 5%;
 }
 
+#submit_height {
+  height: 350px;
+}
+
 #events_container {
   padding: 20px 0 70px 0;
 }
@@ -173,12 +175,16 @@ input:focus, select:focus {
   background: #ad3d32;
   color: #fff;
   margin-top: 30px;
+  margin-bottom: 5px;
   cursor: pointer;
+  position: relative;
+  bottom: 0px;
 }
 
 #events_container input[type="submit"]:hover {
   position: relative;
-  bottom: 5px;
+  bottom: 0px;
+  margin-bottom: -5px !important;
   border-bottom: 5px solid #9B2A25;
 }
 
