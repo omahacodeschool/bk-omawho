@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find_by_username(params[:username])
+    @image = Image.new
 
     respond_to do |format|
       format.html # show.html.erb

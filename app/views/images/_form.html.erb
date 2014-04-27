@@ -3,7 +3,7 @@
     <div id="error_explanation">
       <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
-      <ul class="error-list>
+      <ul class="error-list">
       <% @image.errors.full_messages.each do |msg| %>
         <li class="error-list-item"><%= msg %></li>
       <% end %>
@@ -12,14 +12,19 @@
   <% end %>
   <div id="upload_profile_photo_container" class="row">
     <div class="field">
-      <%= f.label :file %><br />
-      <%= f.file_field :file, :id => "profile_photo_field" %>
+      <div id="functional_file_button">
+        <%= f.file_field :file, :id => "profile_photo_field" %>
+      </div>
+      <p class="red_button">Upload Image</p>
     </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-    <%= image_tag("default_pic.jpg", :alt => "Your work", :id => "profile_photo_preview", :class => "img-polaroid", :style => "width: 100%;padding-top: 20px; padding-bottom:40px;") %>
+    
+    <!-- Get image preview working later -->
+    <!-- <%= image_tag("default_pic.jpg", :alt => "Your work", :id => "profile_photo_preview", :class => "img-polaroid", :style => "width: 100%;padding-top: 20px; padding-bottom:40px;") %> -->
+    
     <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
-
+    
+    <div class="actions">
+      <%= f.submit "Save Image", :class => "red_button" %>
+    </div>
   </div>
 <% end %>

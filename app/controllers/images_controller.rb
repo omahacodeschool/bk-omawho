@@ -44,8 +44,6 @@ class ImagesController < ApplicationController
   def create
 
     @image = Image.new(params[:image])
-
-    #binding.pry
     
     respond_to do |format|
       if @image.save
@@ -85,7 +83,7 @@ class ImagesController < ApplicationController
     @image.destroy
 
     respond_to do |format|
-      format.html { redirect_to images_url }
+      format.html { redirect_to view_profile_path(current_user.username) }
       format.json { head :no_content }
     end
   end

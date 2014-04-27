@@ -3,5 +3,5 @@ $(document).ready(function(){
     if ($('input[type=checkbox]:checked').length > 3) {
       $(this).prop('checked', false)
     }
-  })
+  });
 });
