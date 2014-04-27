@@ -1,5 +1,10 @@
 /* PROFILE PAGE */
 
+#profile_container {
+  max-width: 800px !important;
+  margin: 0 auto;
+}
+
 #profile {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -24,6 +29,20 @@
   color: #fff;
 }
 
+#top_profile_form_area {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#functional_file_button {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
 #profile_edit {
   text-align: center;
   margin-bottom: 50px;
@@ -38,6 +57,8 @@
 
 #profile_photo_preview{
   width: 100%;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 .center-text{
@@ -70,8 +91,11 @@
 }
 
 .categories {
-  max-width: 800px !important;
-  margin-top: 40px !important;
+  margin-bottom: 25px !important;
+}
+
+#profile_container .categories div {
+  margin-top: 15px !important;
 }
 
 .nobg {
