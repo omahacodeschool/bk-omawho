@@ -212,7 +212,6 @@ protected
       # If just the protocol is absent, add it.
       else
         "http://#{input}"
-
       end
   end
 end
