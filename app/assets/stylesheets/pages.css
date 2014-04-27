@@ -31,6 +31,24 @@ a:hover {
   color: #fb8971;
 }
 
+.red_button {
+  background: #ad3d32;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 0;
+  position: relative;
+  transition-property: all;
+  transition-duration: 0.25s;
+  clear: both;
+}
+
+.red_button:hover {
+  background: #fff;
+  color: #ad3d32;
+}
+
 /* HEADER */
 
 #listitemstyle ul {
@@ -87,24 +105,6 @@ a:hover {
   top: 15px;
 }
 
-.red_button {
-  background: #ad3d32;
-  color: white;
-  padding: 5px 15px;
-  text-align: center;
-  text-decoration: none;
-  margin: 10px 0;
-  position: relative;
-  transition-property: all;
-  transition-duration: 0.25s;
-  clear: both;
-}
-
-.red_button:hover {
-  background: #fff;
-  color: #ad3d32;
-}
-
 #left_nav_buttons, #right_nav_buttons {
   position: relative;
   top: 30px;
@@ -125,16 +125,26 @@ a:hover {
   padding-top: 10px;
 }
 
-#mobilemenubar {
-  background: #4c6262;
-  height: 40px;
-  text-align:center;
-  color: white;
-  padding-top: 5px;
+#mobile_menu_bar {
+  text-align: center;
+  font-size: 1.5em;
 }
 
-#mobilemenubar p {
-  margin: 5px 0 0 0;
+#mobile_menu_bar p {
+  cursor: pointer;
+  background: #4c6262;
+  margin: 10px 0 0 0;
+  padding: 5px 0;
+}
+
+#mobile_menu_bar ul {
+  padding: 0;
+  margin: 0;
+}
+
+#mobile_menu_bar .red_button {
+  display: block;
+  width: 100%;
 }
 
 /* FOOTER */

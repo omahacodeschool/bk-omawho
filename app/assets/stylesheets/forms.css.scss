@@ -90,4 +90,24 @@ textarea {
   .row_1, .row_2 {
     padding: 0 5%;
   }
+  
+  #search_container {
+    width: 95% !important;
+  }
+  
+  #search_field, #search_button {
+    margin: 10px 0;
+  }
+  
+  #search_field {
+    background-color: transparent;
+    border: solid 1px #4c6262;
+    border-radius: 10px 0 0 10px;
+    color: #fff;
+  }
+  
+  #search_button {
+    background-color: #4c6262;
+    border-radius: 0 10px 10px 0;
+  }
 }
