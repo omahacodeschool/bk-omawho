@@ -44,7 +44,9 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(params[:event])
-    current_user.events << @event
+    if current_user
+      current_user.events << @event
+    end
 
     respond_to do |format|
       if @event.save
