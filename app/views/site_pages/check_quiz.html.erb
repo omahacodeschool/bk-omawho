@@ -18,49 +18,49 @@
       <div id="name_game_image">
         <%= image_tag(@profile_img, :alt => "#{@user.first_name} #{@user.last_name}", :id => "profile_photo_preview", :class => "img-polaroid") %>  
       </div>
-    <div>
-      <div>
-        <p><%= "Hi! My name is #{@user.full_name.titleize}." %></p>
-        <% if @name_guess_correct %>
-          <p class="correct"><%= "You were right!" %></p>   
-        <% elsif @guessed_name == "You didn't even guess. What's the deal?"%>
-          <p class="incorrect"><%= "#{@guessed_name}" %></p>  
-        <% else %>
-          <p class="incorrect"><%= "You said it was #{@guessed_name.downcase.titleize}." %></p>   
-        <% end %>   
-      </div>
-      <div>
-        <p><%= "I work at #{@correct_co || "__. (I haven't listed a company. Maybe I'm saving the world.)"}." %></p>
-        <% if @co_guess_correct %>
-          <p class="correct"><%= "You were right!" %></p>   
-        <% elsif !@guessed_co %>
-          <p class="incorrect"><%= "Come on, it was multiple choice. I must be doing something." %></p> 
-        <% else %>
-          <p class="incorrect"><%= "You said it was #{@guessed_co}." %></p> 
-        <% end %>   
-      </div>
+      <div id="name_game_text">
+        <div>
+          <p><%= "Hi! My name is #{@user.full_name.titleize}." %></p>
+          <% if @name_guess_correct %>
+            <p class="correct"><%= "You were right!" %></p>   
+          <% elsif @guessed_name == "You didn't even guess. What's the deal?"%>
+            <p class="incorrect"><%= "#{@guessed_name}" %></p>  
+          <% else %>
+            <p class="incorrect"><%= "You said it was #{@guessed_name.downcase.titleize}." %></p>   
+          <% end %>   
+        </div>
+        <div>
+          <p><%= "I work at #{@correct_co || "__. (I haven't listed a company. Maybe I'm saving the world.)"}." %></p>
+          <% if @co_guess_correct %>
+            <p class="correct"><%= "You were right!" %></p>   
+          <% elsif !@guessed_co %>
+            <p class="incorrect"><%= "Come on, it was multiple choice. I must be doing something." %></p> 
+          <% else %>
+            <p class="incorrect"><%= "You said it was #{@guessed_co}." %></p> 
+          <% end %>   
+        </div>
       
-      <% if @user.contact_links.length >0 %>
-        <hr>
-          <div>
-            <p>Follow me, and introduce yourself:</p>
-            <div id="social">
-              <ul>
-                <% @user.contact_links.each do |social| %>
-                  <% if social[1] != "" %>
-                    <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
+        <% if @user.contact_links.length >0 %>
+          <hr>
+            <div>
+              <p>Follow me, and introduce yourself:</p>
+              <div id="social">
+                <ul>
+                  <% @user.contact_links.each do |social| %>
+                    <% if social[1] != "" %>
+                      <li class="nobg"><a href="<%= social[1] %>" target="_blank" id="<%= social[0] %>icon" class="social_icon"></a></li>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </ul>
+                </ul>
+              </div>
             </div>
-          </div>
-        <hr>
-      <% end %>
+          <hr>
+        <% end %>
       
-    <div class="large-2 columns">
-      <p></p>
+      <div class="large-2 columns">
+        <p></p>
+      </div>
     </div>
-  </div>
   </div>
   </div>
   <div class="row">
