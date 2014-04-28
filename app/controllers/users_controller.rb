@@ -20,6 +20,13 @@ class UsersController < ApplicationController
       @filter_category = Category.find(params[:category_id])
       @users = @filter_category.users.random.limit(users_limit)
       
+      if @users.length == 0
+        flash.now.alert = "No users in #{@filter_category.name} found."
+        @filter_category = nil
+        @users = User.random.limit(users_limit)
+        
+      end
+      
     # Otherwise just choose randomly (Filter for "all" categories)
     else
       @filter_category = nil
@@ -62,6 +69,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @image = Image.find(@user.profile_image_id)
     @categories = Category.all()
+    if current_user.admin?
+      #do nothing, proceed to edit page
+    elsif @user != current_user
+      redirect_to :root
+    end
   end
 
   # POST /users
@@ -70,6 +82,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @image =  Image.find(params[:user][:profile_image_id])
     @user.images << @image 
+    @categories = Category.all()
 
     respond_to do |format|
       if @user.save

@@ -120,8 +120,6 @@ class User < ActiveRecord::Base
   def contact_links
     links = {}
     
-    #links["website"] = website if website
-    #links["company_site"] = company_site if company_site
     (links["facebook"] = facebook_url) if facebook && facebook != ""
     (links["twitter"] = twitter_url) if twitter && twitter != ""
     (links["pinterest"] = pinterest_url) if pinterest && pinterest != ""
@@ -134,7 +132,6 @@ class User < ActiveRecord::Base
     
     links
   end
-  #https://plus.google.com/+JohnClarkW
   
   def googleplus_url
     format_social_link(googleplus, "plus.google.com", "https://plus.google.com/+$USERNAME")
