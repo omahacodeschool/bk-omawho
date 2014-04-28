@@ -20,6 +20,13 @@ class UsersController < ApplicationController
       @filter_category = Category.find(params[:category_id])
       @users = @filter_category.users.random.limit(users_limit)
       
+      if @users.length == 0
+        flash.now.alert = "No users in #{@filter_category.name} found."
+        @filter_category = nil
+        @users = User.random.limit(users_limit)
+        
+      end
+      
     # Otherwise just choose randomly (Filter for "all" categories)
     else
       @filter_category = nil
