@@ -26,7 +26,7 @@
     
       <div id="categories">
         <% @user.categories.each do |c| %>
-          <%= link_to c.name, category_path(c.id), :class => "category_#{c.id} red_button", :id => "category_space" %>
+          <%= link_to c.name, category_path(c.id), :class => "category_#{c.id} red_button" %>
         <% end %>
       </div>
       
