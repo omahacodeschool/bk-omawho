@@ -11,5 +11,5 @@
     <p>End date &amp; time:</p>
     <%= f.datetime_select :end_time, {:ampm => true, :start_year => Time.now.year, :end_year => Time.now.year + 3, :default => {:hour => 12, :minute => 00}, :use_short_month => false, :order => [:month, :day, :year], :discard_hour => false}, {:class => "input"} %>
   </div>
-  <p><%= f.submit "Submit", :class => "btn" %></p>
+  <div id="submit_height"><%= f.submit "Submit", :class => "btn" %></div>
 <% end %>
