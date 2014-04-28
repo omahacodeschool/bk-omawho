@@ -48,6 +48,10 @@
   width: 100%;
 }
 
+#profile_photo_field {
+  cursor: pointer;
+}
+
 #profile_edit {
   text-align: center;
   margin-bottom: 50px;
@@ -92,6 +96,11 @@
 
 .categories {
   margin-bottom: 25px !important;
+}
+
+#categories .red_button {
+  display: inline-block;
+  margin: 10px 10px 10px 0px;
 }
 
 #profile_container .categories div {
