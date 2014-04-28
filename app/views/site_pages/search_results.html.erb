@@ -2,7 +2,6 @@
 <!-- Displays users found by name search using same format as root page -->
 <div class="row" style="max-width:none;">
   <div class="row" id="face-display">
-    <% @users_found.each do |user| %>
       <div class="large-3 columns">
         <div class="workinthathover">
           <%= link_to (image_tag((user.profile_image ? user.profile_image : "user-avatar.jpg"), :alt => "#{user.first_name} #{user.last_name}", :class => "index_image")), view_profile_path(user.username) %>

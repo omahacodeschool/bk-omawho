@@ -15,6 +15,7 @@ class SitePagesController < ApplicationController
   # form.  If no users are found, returns to users index view (root view), 
   # otherwise users are rendered on a search_results page.
   def search
+    
     @query = params[:name_query]
     @users_found = User.search_name(@query)  # User class method
     
