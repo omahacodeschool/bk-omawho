@@ -75,6 +75,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @image =  Image.find(params[:user][:profile_image_id])
     @user.images << @image 
+    @categories = Category.all()
 
     respond_to do |format|
       if @user.save
