@@ -62,6 +62,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @image = Image.find(@user.profile_image_id)
     @categories = Category.all()
+    if current_user.admin?
+      #do nothing, proceed to edit page
+    elsif @user != current_user
+      redirect_to :root
+    end
   end
 
   # POST /users
