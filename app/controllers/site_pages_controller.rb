@@ -72,7 +72,7 @@ class SitePagesController < ApplicationController
     else
       @guessed_co = params[:company]
       # If no user company, compare the guess to "No Company Specified"
-      if ((!@correct_co) && (@guessed_co == "No Company Specified"))
+      if ((!@correct_co || @correct_co == "") && (@guessed_co == "No Company Specified"))
         @co_guess_correct = true
       # Otherwise compare the guess to the user's company
       else
