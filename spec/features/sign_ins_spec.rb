@@ -23,6 +23,6 @@ describe "Sign up for free" do
     visit login_path
     click_on("Sign up for free")
   
-    expect(page).to have_content("Add your web presence and bio.")
+    expect(page).to have_content("Add your web presence and bio")
   end
 end

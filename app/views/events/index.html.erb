@@ -28,7 +28,7 @@
       <div id="event_column">
         <h3><div id="red_text">OMA</div>WHEN</h3>
         <p>Starts at <%= "#{event_time(event.start_time)}" %><br/>
-        Ends around <%= "#{event_time(event.end_time)}" %></p>
+        Ends around <%= event.end_time ? "#{event_time(event.end_time)}" : "?"%></p>
       </div>
     </div>
     <div class="large-4 columns">
