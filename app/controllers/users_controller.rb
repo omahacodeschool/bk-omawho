@@ -24,13 +24,14 @@ class UsersController < ApplicationController
         flash.now.alert = "No users in #{@filter_category.name} found."
         @filter_category = nil
         @users = User.random.limit(users_limit)
-        
+        #Rails.cache.fetch("users") { User.random.limit(users_limit)} 
       end
       
     # Otherwise just choose randomly (Filter for "all" categories)
     else
       @filter_category = nil
       @users = User.random.limit(users_limit)
+      
     end
      
     respond_to do |format|

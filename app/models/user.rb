@@ -43,7 +43,9 @@ class User < ActiveRecord::Base
   
   #Formats image as a square
   def profile_image
-    self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
+    #self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
+    Rails.cache.fetch([self, "profile_image"]) {self.profile_image_id ? Image.find(self.profile_image_id).file.square  : nil}
+    
   end
   
   # Public: Utility to get full user name.
@@ -132,6 +134,7 @@ class User < ActiveRecord::Base
     
     links
   end
+  
   
   def googleplus_url
     format_social_link(googleplus, "plus.google.com", "https://plus.google.com/+$USERNAME")
