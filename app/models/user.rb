@@ -54,6 +54,51 @@ class User < ActiveRecord::Base
     "#{first_name.strip} #{last_name.strip}"
   end
 
+  # Public: Utility to return description of where the user works.
+  #
+  #
+  # Returns a String describing the user's place of work.
+  def work_description
+    if company.nil? || company == ""
+      "I work at __. (I haven't listed a company. Maybe I'm saving the world.)"     else
+      "I work at #{company.titleize}."
+    end
+  end
+  
+  # Public: Utility to determine if a guess matches user's full name.
+  #
+  # guess - The String containing a guess for the user's full name.
+  #
+  # Returns false if guess is nil. Otherwise returns the string comparison of 
+  # the guess to the user's name.
+  def name_matches?(guess)
+    case guess
+    when nil
+      false
+    else
+      full_name.downcase == guess.downcase
+    end
+  end
+
+  # Public: Utility to determine if a guess matches user's company.
+  #
+  # guess - The String containing a guess for the user's company.
+  #
+  # Returns true if the guess and user's company is either nil or the empty 
+  # string. Otherwise returns the string comparison of the guess to the 
+  # user's company (case insensitive).  
+  def company_matches?(guess)
+    case guess
+    when nil
+      company.nil? || company == ""
+    when ""
+      company.nil? || company == ""
+    else
+      !company.nil? && company.downcase == guess.downcase
+    end
+  end
+  
+  
   # Class Method:
   # Public: Search for users by name.
   #
