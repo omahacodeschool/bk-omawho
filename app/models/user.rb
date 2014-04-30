@@ -41,7 +41,8 @@ class User < ActiveRecord::Base
     !new_record?
   end
   
-  #Formats image as a square
+  #Returns URL of profile image if it exists. Otherwise returns nil
+  #might want to change this to return a default pic if no image found or something
   def profile_image
     #self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
     Rails.cache.fetch([self, "profile_image"]) {self.profile_image_id ? Image.find(self.profile_image_id).file.square  : nil}

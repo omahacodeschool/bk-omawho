@@ -52,6 +52,7 @@ gem 'remotipart'
 gem 'quiet_assets', :group => :development
 gem 'pry', :group => :development
 gem 'nokogiri'
+gem 'rack-mini-profiler'
 
 group :development, :test do
   gem 'database_cleaner'
