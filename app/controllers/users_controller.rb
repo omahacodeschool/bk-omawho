@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, :except => [:edit, :update, :destroy]
+  skip_before_filter :require_login, :except => [:edit, :update, :destroy, :editgallery]
   # GET /users
   # GET /users.json
   def index

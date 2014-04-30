@@ -41,6 +41,10 @@
     <% end %>
   </div>
   <div id="gallery_edit" class="row">
-    <%= link_to("Edit Gallery", editgallery_path(@user), :class => "red_button") %>
+    <% if current_user %>
+      <% if current_user.admin  || current_user == @user %>
+        <%= link_to("Edit Gallery", editgallery_path(@user), :class => "red_button") %>
+      <% end %>
+    <% end %>
   </div>
 </div>
