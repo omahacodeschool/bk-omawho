@@ -25,7 +25,7 @@
       <li id="category_filter_all">
         <%= link_to "All", category_path(0), :class => "category_all red_button" %>
       </li>
-      <% Category.all.each do |c| %>               
+      <% Category.cached_all.each do |c| %>               
       <li id="category_filter_<%= c.id %>">
         <%= link_to c.name, category_path(c.id), :class => "category_#{c.id} red_button" %>
       </li>

@@ -7,4 +7,14 @@ class Category < ActiveRecord::Base
   
   validates_presence_of :name
   validates_uniqueness_of :name
+  
+  after_commit :delete_cache
+  
+  def delete_cache
+    Rails.cache.delete("categories")
+  end
+  
+  def self.cached_all
+    Rails.cache.fetch("categories") {all()}
+  end
 end

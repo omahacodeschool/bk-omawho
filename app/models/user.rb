@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :categories
   
+  after_commit :delete_profile_image_cache
+  
   #allow the password to be blank when editing a user
   def allow_blank_password
     !new_record?
@@ -47,6 +49,10 @@ class User < ActiveRecord::Base
     #self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
     Rails.cache.fetch([self, "profile_image"]) {self.profile_image_id ? Image.find(self.profile_image_id).file.square  : nil}
     
+  end
+  
+  def delete_profile_image_cache
+    Rails.cache.delete([self, "profile_image"])
   end
   
   # Public: Utility to get full user name.
