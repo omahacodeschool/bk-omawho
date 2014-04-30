@@ -24,13 +24,14 @@ class UsersController < ApplicationController
         flash.now.alert = "No users in #{@filter_category.name} found."
         @filter_category = nil
         @users = User.random.limit(users_limit)
-        
+        #Rails.cache.fetch("users") { User.random.limit(users_limit)} 
       end
       
     # Otherwise just choose randomly (Filter for "all" categories)
     else
       @filter_category = nil
       @users = User.random.limit(users_limit)
+      
     end
      
     respond_to do |format|
@@ -56,7 +57,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @image = Image.new
-    @categories = Category.all()
+    @categories = Category.cached_all()
 
     respond_to do |format|
       format.html # new.html.erb
@@ -68,7 +69,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @image = Image.find(@user.profile_image_id)
-    @categories = Category.all()
+    @categories = Category.cached_all()
     if current_user.admin?
       #do nothing, proceed to edit page
     elsif @user != current_user
@@ -81,8 +82,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @image =  Image.find(params[:user][:profile_image_id])
-    @user.images << @image 
-    @categories = Category.all()
+    #@user.images << @image 
+    @categories = Category.cached_all()
 
     respond_to do |format|
       if @user.save
@@ -101,7 +102,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @image = Image.find(@user.profile_image_id)
-    @categories = Category.all()
+    @categories = Category.cached_all()
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
