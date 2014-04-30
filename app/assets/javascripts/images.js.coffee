@@ -10,7 +10,7 @@ jQuery ->
     
   # Validation: Alert if photo is absent.
   $('#new_user').on 'submit', (e) ->
-    if ($("#profile_photo_preview").attr("src") == "/assets/default_pic.jpg")
+    if !$("#profile_image_id").val()?.length
       alert("Add your face! (Use the photo upload field at the top of the form.)")
       e.preventDefault()    
   
