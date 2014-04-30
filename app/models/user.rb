@@ -49,9 +49,10 @@ class User < ActiveRecord::Base
   # Public: Utility to get full user name.
   #
   #
-  # Returns the user first/last names concatenated into a String.
+  # Returns the user first/last names concatenated into a String. The .strip 
+  # will clean up empty/nil values in first/last names.
   def full_name
-    "#{first_name.strip} #{last_name.strip}"
+    "#{first_name.strip} #{last_name.strip}".strip
   end
 
   # Public: Utility to return description of where the user works.
@@ -92,6 +93,8 @@ class User < ActiveRecord::Base
     when nil
       company.nil? || company == ""
     when ""
+      company.nil? || company == ""
+    when "No Company Specified"
       company.nil? || company == ""
     else
       !company.nil? && company.downcase == guess.downcase

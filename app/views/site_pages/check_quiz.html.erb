@@ -23,25 +23,21 @@
         <p><%= "Hi! My name is #{@user.full_name.titleize}." %></p>
         <% if @name_guess_correct %>
           <p class="correct"><%= "You were right!" %></p>   
-        <% elsif @guessed_name == "You didn't even guess. What's the deal?"%>
-          <p class="incorrect"><%= "#{@guessed_name}" %></p>  
+        <% elsif @guessed_name == "No Name Guess" %>
+          <p class="incorrect"><%= "You didn't even guess. What's the deal?" %></p>  
         <% else %>
           <p class="incorrect"><%= "You said it was #{@guessed_name.downcase.titleize}." %></p>   
         <% end %>   
       </div>
       <div>
-        <% if !@co_guess_correct || (!@correct_co || @correct_co == "")  %>
-          <p><%= "I work at __. (I haven't listed a company. Maybe I'm saving the world.)" %></p>
-        <% else %>
-          <p><%= "I work at #{@correct_co}." %></p>
-        <% end %>
+        <p><%= "#{@user.work_description}" %></p>
         <% if @co_guess_correct %>
           <p class="correct"><%= "You were right!" %></p>   
-        <% elsif !@guessed_co %>
+        <% elsif @guessed_co ==  "No Company Guess" %>
           <p class="incorrect"><%= "Come on, it was multiple choice. I must be doing something." %></p> 
         <% else %>
           <p class="incorrect"><%= "You said it was #{@guessed_co}." %></p> 
-        <% end %>   
+        <% end %>          
       </div>
       
         <% if @user.contact_links.length >0 %>
