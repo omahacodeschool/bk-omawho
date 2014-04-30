@@ -49,15 +49,6 @@ class SitePagesController < ApplicationController
     # Get user from param id
     @user = User.find(params[:user_id])
     
-    # # Check name guess for existence and/or match to actual name
-    # if (!params[:name_guess] || params[:name_guess].nil? || params[:name_guess] == "")
-    #   @guessed_name = "You didn't even guess. What's the deal?"
-    #   @name_guess_correct = false
-    # else
-    #   @guessed_name = params[:name_guess] ? params[:name_guess] : ""
-    #   @name_guess_correct = (@guessed_name.upcase == @user.full_name.upcase)
-    # end
-
     # Check name guess for no guess or a match and clean up extra spaces
     if params[:name_guess].blank?
       @guessed_name = "No Name Guess"
@@ -75,30 +66,6 @@ class SitePagesController < ApplicationController
       @guessed_co = params[:company]
       @co_guess_correct = @user.company_matches?(@guessed_co)
     end
-    
-    
-    
-    # # Check user company for existence and set instance variable for matching
-    # if @user.company
-    #   @correct_co = @user.company
-    # else
-    #   @correct_co = nil
-    # end
-    # 
-    # # Check company guess for existence and/or match to actual company
-    # if (!params[:company])
-    #   @guessed_co = nil
-    #   @co_guess_correct = false
-    # else
-    #   @guessed_co = params[:company]
-    #   # If no user company, compare the guess to "No Company Specified"
-    #   if ((!@correct_co || @correct_co == "") && (@guessed_co == "No Company Specified"))
-    #     @co_guess_correct = true
-    #   # Otherwise compare the guess to the user's company
-    #   else
-    #     @co_guess_correct = (@guessed_co == @correct_co)  
-    #   end 
-    # end
 
     @profile_img = @user.profile_image ? @user.profile_image : "user-avatar.jpg"
   end
