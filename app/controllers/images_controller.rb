@@ -83,7 +83,7 @@ class ImagesController < ApplicationController
     @image.destroy
 
     respond_to do |format|
-      format.html { redirect_to view_profile_path(current_user.username) }
+      format.html { redirect_to view_profile_path(current_user.username), notice: 'Image was successfully deleted.' }
       format.json { head :no_content }
     end
   end

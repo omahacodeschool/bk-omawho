@@ -1,24 +1,9 @@
-<%= render :partial => '/users/profile' %>
-
-<div id="profile_edit" class="row">
-  <% if current_user %>
-    <% if current_user.admin  || current_user == @user %>
-      <%= link_to 'Edit Profile', edit_user_path(@user), :class => "red_button" %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="row" style="margin-bottom:50px;">
-  <div class="large-5 columns"><hr></div>
-  <div id ="mywork" class="large-2 columns"><strong>My Work</strong></div>
-  <div class="large-5 columns"><hr></div>
-</div>
-
-<div id="works">
+<div id="edit_works">
   <div class="row">
     <% @user.images.each do |image| %>
       <div class="large-3 columns">
         <a href="<%= image.file %>" style="width: 100%;" data-lightbox="image" data-title="<%= @user.first_name %>'s Image"><%= image_tag(image.file.square, :style => "width: 100%;") %></a>
+        <%= link_to("Delete Image", image, :method => :delete, :class => "red_button") %>
       </div>
     <% end %>
     <% if current_user  && current_user == @user %>
@@ -39,8 +24,5 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div id="gallery_edit" class="row">
-    <%= link_to("Edit Gallery", editgallery_path(@user), :class => "red_button") %>
   </div>
 </div>
