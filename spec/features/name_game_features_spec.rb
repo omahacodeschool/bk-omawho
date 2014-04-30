@@ -22,7 +22,7 @@ describe "Name Game features" do
     find(".name_game_company").click
     find('.submit_button').click
     expect(page).to have_content("You didn't even guess. What's the deal?")
-    expect(page).to have_content("PayPal")
+    expect(page).to have_content("PayPal".titleize)
   end
   
   it "shows the results of a quiz, first question wrong, second question unanswered", :js => true do
@@ -31,7 +31,7 @@ describe "Name Game features" do
     find(".name_game_company").click
     find('.submit_button').click
     expect(page).to have_content("You said it was Hootie Blowfish")
-    expect(page).to have_content("PayPal")
+    expect(page).to have_content("PayPal".titleize)
   end
   
   it "shows the results of a quiz, both questions unanswered", :js => true do

@@ -32,7 +32,7 @@
                   <li class="name_game_company gray_choice">
                     <% if (c.nil? || c == "") %>
                       <%= radio_button_tag(:company, "No Company Specified") %>
-                      <%= label_tag :company, "No company specified" %>
+                      <%= label_tag :company, "No Company Specified" %>
                     <% else %>
                       <%= radio_button_tag(:company, c) %>
                       <%= label_tag :company, c %>
