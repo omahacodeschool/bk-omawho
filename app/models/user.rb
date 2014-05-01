@@ -36,14 +36,23 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :categories
   
+  after_commit :delete_profile_image_cache
+  
   #allow the password to be blank when editing a user
   def allow_blank_password
     !new_record?
   end
   
-  #Formats image as a square
+  #Returns URL of profile image if it exists. Otherwise returns nil
+  #might want to change this to return a default pic if no image found or something
   def profile_image
-    self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
+    #self.profile_image_id ? Image.find(self.profile_image_id).file.square : nil
+    Rails.cache.fetch([self, "profile_image"]) {self.profile_image_id ? Image.find(self.profile_image_id).file.square  : nil}
+    
+  end
+  
+  def delete_profile_image_cache
+    Rails.cache.delete([self, "profile_image"])
   end
   
   # Public: Utility to get full user name.
@@ -182,6 +191,7 @@ class User < ActiveRecord::Base
     
     links
   end
+  
   
   def googleplus_url
     format_social_link(googleplus, "plus.google.com", "https://plus.google.com/+$USERNAME")
