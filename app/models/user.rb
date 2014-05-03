@@ -116,8 +116,10 @@ class User < ActiveRecord::Base
   #
   # query_str - The String containing the search query. Expectation is that the 
   #             query will hold a first name, a last name, or a first & 
-  #             last name. Added functionality for partial name searches and 
+  #             last name. 
+  #           - Added functionality for partial name searches and 
   #             companies.
+  #           - Added functionality for username searches.
   # 
   #
   # Examples
@@ -156,7 +158,7 @@ class User < ActiveRecord::Base
     # in first name, last name, or company name
     if found_users.flatten.count <= 0
       splits.each do |s|
-        found_users << User.where("LOWER(first_name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(company) LIKE ?", "%#{s.downcase}%", "%#{s.downcase}%", "%#{s.downcase}%")
+        found_users << User.where("LOWER(first_name) LIKE ? OR LOWER(last_name) LIKE ? OR LOWER(company) LIKE ? OR LOWER(username) LIKE ?", "%#{s.downcase}%", "%#{s.downcase}%", "%#{s.downcase}%", "%#{s.downcase}%")
       end
     end
         

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
 
   before(:all) do
-    User.create(email: "dw@example.com", username: "dw", first_name: "Dan", last_name: "Wells", company: "Some Place", password: "pass", profile_image_id:  1, website: "http://website_link", company_site: "http://company_site_link", facebook: "facebook_link", googleplus: "googleplus_link", dribbble: "dribbble_link", instagram: "instagram_link", tumblr: "tumblr_link")
+    User.create(email: "dw@example.com", username: "dwells", first_name: "Dan", last_name: "Wells", company: "Some Place", password: "pass", profile_image_id:  1, website: "http://website_link", company_site: "http://company_site_link", facebook: "facebook_link", googleplus: "googleplus_link", dribbble: "dribbble_link", instagram: "instagram_link", tumblr: "tumblr_link")
     User.create(email: "bs@example.com", username: "bs", first_name: "Bob", last_name: "Smith", company: "Flywheel", password: "pass", profile_image_id: 1)
     User.create(email: "bw@example.com", username: "bw", first_name: "Bob", last_name: "Wells", company: "Flywheel", password: "pass", profile_image_id: 1)
   end
@@ -37,10 +37,15 @@ describe User do
     expect(User.search_name("Fly whe")).to include(target_user)
   end  
   
-  it "find users by fuzzy search with long query string" do
+  it "finds users by fuzzy search with long query string" do
     target_user1 = User.find_by_last_name("Smith")
     target_user2 = User.find_by_company("Some Place")
     expect(User.search_name("works at Some Place with SMit as name")).to include(target_user1, target_user2)
+  end
+  
+  it "finds users by fuzzy search on username" do
+    target_user = User.find_by_username("dwells")
+    expect(User.search_name("DWell")).to include(target_user)
   end
   
 end
