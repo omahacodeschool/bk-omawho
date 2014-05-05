@@ -1,10 +1,9 @@
 <%= render :partial => '/users/profile' %>
 
 <div id="profile_edit" class="row">
-  <% if current_user %>
-    <% if current_user.admin  || current_user == @user %>
-      <%= link_to 'Edit Profile', edit_user_path(@user), :class => "red_button" %>
-    <% end %>
+  <% if current_user && ( current_user.admin  || current_user == @user ) %>
+    <%= link_to 'Edit Profile', edit_user_path(@user), :class => "red_button" %>
+    <%= link_to 'DELETE Profile', user_path(@user), :method => "delete", :class => "red_button", :data => {:confirm => "Are you sure? This action cannot be undone!"} %>
   <% end %>
 </div>
 
@@ -41,10 +40,8 @@
     <% end %>
   </div>
   <div id="gallery_edit" class="row">
-    <% if current_user %>
-      <% if current_user.admin  || current_user == @user %>
-        <%= link_to("Edit Gallery", editgallery_path(@user), :class => "red_button") %>
-      <% end %>
+    <% if current_user && ( current_user.admin  || current_user == @user ) %>
+      <%= link_to("Edit Gallery", editgallery_path(@user), :class => "red_button") %>
     <% end %>
   </div>
 </div>
