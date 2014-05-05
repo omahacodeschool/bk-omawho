@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   skip_before_filter :require_login, :except => [:new, :edit, :update, :destroy]
+  
+  # GET /events/
   def index
     if current_user && current_user.admin?
       @unapproved = Event.where('approved = ?', false).order('start_time ASC')
@@ -13,27 +15,20 @@ class EventsController < ApplicationController
     if current_user
       @user_events = current_user.events
     end
-
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render json: @events }
-    # end
   end
 
+  # GET /events/:id
   def show
     @event = Event.find(params[:id])
     @users = @event.users
   end
   
+  # GET /events/new
   def new
     @event = Event.new
-
-    # respond_to do |format|
-    #   format.html # new.html.erb
-    #   format.json { render json: @event }
-    # end
   end
 
+  # GET /events/:id/edit
   def edit    
     if current_user && current_user.admin?
       @event = Event.find(params[:id])
@@ -41,7 +36,8 @@ class EventsController < ApplicationController
       not_authenticated
     end
   end
-
+  
+  # POST /events
   def create
     @event = Event.new(params[:event])
     if current_user
@@ -51,14 +47,13 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.html { redirect_to :events, notice: 'Request to add event received.' }
-#        format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }
-#        format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
   end
 
+  # PUT /events/:id
   def update
     if current_user && current_user.admin?
       @event = Event.find(params[:id])
@@ -66,10 +61,8 @@ class EventsController < ApplicationController
       respond_to do |format|
         if @event.update_attributes(params[:event])
           format.html { redirect_to event_path(@event), notice: 'Event was successfully updated.' }
-#          format.json { head :no_content }
         else
           format.html { render action: "edit" }
-#          format.json { render json: @event.errors, status: :unprocessable_entity }
         end
       end
     else
@@ -77,20 +70,21 @@ class EventsController < ApplicationController
     end
   end
   
+  # DELETE /events/:id
   def destroy
     if current_user && current_user.admin?
       @event = Event.find(params[:id])
       @event.destroy
-
+      
       respond_to do |format|
         format.html { redirect_to events_url }
-#        format.json { head :no_content }
       end
     else
       not_authenticated
     end
   end
   
+  # POST /events/:event_id/attend
   def attend
     @event = Event.find(params[:event_id])
     
@@ -108,6 +102,7 @@ class EventsController < ApplicationController
     end
   end
   
+  # GET /past
   def past
     @past_events = Event.approved.where('end_time < ?', DateTime.now).order("end_time DESC").page(params[:page]).per_page(5)
     
@@ -117,6 +112,7 @@ class EventsController < ApplicationController
     end
   end
   
+  # POST /events/:event_id/approve
   def approve
     if current_user && current_user.admin?
       @event = Event.find(params[:event_id])
@@ -124,15 +120,12 @@ class EventsController < ApplicationController
       respond_to do |format|
         if @event.update_attribute(:approved, true)
           format.html { redirect_to :events, notice: 'Event approved.' }
-          # format.json { head :no_content }
         else
           format.html { redirect_to :events, alert: 'Error.' }
-          # format.json { render json: @event.errors, status: :unprocessable_entity }
         end
       end
     else
       not_authenticated
     end
   end
-  
 end
