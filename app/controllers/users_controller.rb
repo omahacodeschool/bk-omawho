@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, :except => [:edit, :update, :destroy]
-  
+
+  skip_before_filter :require_login, :except => [:edit, :update, :destroy, :editgallery]
+
   # GET /users
   def index
     
@@ -69,8 +70,15 @@ class UsersController < ApplicationController
     if current_user.admin?
       #do nothing, proceed to edit page
     elsif @user != current_user
+      flash.now.alert = "You must be logged in as this user."
       redirect_to :root
     end
+  end
+  
+  # GET /users/1/editgallery
+  def editgallery
+    @user = User.find(current_user.id)
+    @image = Image.new
   end
 
   # POST /users

@@ -1,7 +1,7 @@
 class SitePagesController < ApplicationController
   skip_before_filter :require_login
   def about
-    @users = User.order("RANDOM()").limit(4)
+    @users = User.random.limit(4)
   end
 
   def contact
@@ -19,7 +19,7 @@ class SitePagesController < ApplicationController
     @users_found = User.search_name(@query)  # User class method
     
     if @users_found.nil? || @users_found.count < 1
-      @users = User.order("RANDOM()").limit(12)
+      @users = User.random.limit(12)
       flash.now[:alert] = "No users matching '#{@query}' were found"
       render "users/index"
     else
@@ -32,7 +32,7 @@ class SitePagesController < ApplicationController
   # Renders name_game quiz with random user. Companies are picked
   
   def name_game
-    @user = User.order('RANDOM()').first
+    @user = User.random.first
     if @user.nil? 
       flash.now[:alert] = "No users in the database!"
       redirect_to root_path
