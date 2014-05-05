@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_filter :require_login, :except => [:destroy]
+  
+  # POST /sessions/
   def create
     user = login(params[:email], params[:password], params[:remember_me])
     if user
@@ -10,6 +12,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # DELETE /sessions/:id
   def destroy
     logout
     redirect_to root_url, :notice => "Logged out!"
