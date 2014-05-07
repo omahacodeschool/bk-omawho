@@ -41,9 +41,14 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1
+  # GET /users/:id
+  # GET /:username
   def show
-    @user = User.find_by_username(params[:username])
+    if params[:id]
+      @user = User.find(params[:id])
+    elsif params[:username]
+      @user = User.find_by_username(params[:username])
+    end
     @image = Image.new
 
     respond_to do |format|
