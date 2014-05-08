@@ -52,7 +52,6 @@ class UsersController < ApplicationController
     end
     puts @user
     if !@user
-      
       redirect_to :root, :alert => "User not found"
     else
       respond_to do |format|

@@ -27,7 +27,6 @@ Omawho::Application.routes.draw do
   
   root :to => 'users#index'
   
-  
   get 'category/:category_id' => 'users#index', :as => :category
   
   get ':username/editgallery' => 'users#editgallery', :as => :editgallery
