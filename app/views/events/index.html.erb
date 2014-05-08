@@ -51,6 +51,13 @@
         <%= "#{event.location}" %>
       </div>
     </div>
+    <% if current_user && current_user.admin? %>
+      <div class="large-12 columns">
+        <div id="admin_column">
+          <%= link_to "Edit Event", edit_event_path(event), :id => "red_text" %>
+        </div>
+      </div>
+    <% end %>
   </div>
   <% end %>
   <% end %>
@@ -123,6 +130,13 @@
         <%= "#{event.location}" %>
       </div>
     </div>
+    <% if current_user && current_user.admin? %>
+      <div class="large-12 columns">
+        <div id="admin_column">
+          <%= link_to "Edit Event", edit_event_path(event), :id => "red_text" %>
+        </div>
+      </div>
+    <% end %>
   </div>
   <% end %>
   <div class="row" id="heading_row">

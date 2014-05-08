@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :description, :link, :location, :name, :venue
+  attr_accessible :description, :link, :location, :name, :venue, :approved
   attr_accessible :cancelled, :end_time, :start_time
   
   has_and_belongs_to_many :users
