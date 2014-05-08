@@ -44,15 +44,21 @@ class UsersController < ApplicationController
   # GET /users/:id
   # GET /:username
   def show
+    @image = Image.new
     if params[:id]
       @user = User.find(params[:id])
     elsif params[:username]
-      @user = User.find_by_username(params[:username])
+      @user = User.where("username ILIKE ?", params[:username]).first
     end
-    @image = Image.new
-
-    respond_to do |format|
-      format.html # show.html.erb
+    puts @user
+    if !@user
+      
+      flash.now.alert = "User not found"
+      redirect_to :root
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+      end
     end
   end
 
