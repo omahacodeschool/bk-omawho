@@ -52,9 +52,7 @@ class UsersController < ApplicationController
     end
     puts @user
     if !@user
-      
-      flash.now.alert = "User not found"
-      redirect_to :root
+      redirect_to :root, :alert => "User not found"
     else
       respond_to do |format|
         format.html # show.html.erb
