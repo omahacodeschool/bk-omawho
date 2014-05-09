@@ -23,6 +23,7 @@ Omawho is a networking site for bringing together the creative faces in the Omah
 - Omawho is a Rails application currently being hosted through Heroku.
 - User authentication is maintained through the [Sorcery gem](https://rubygems.org/gems/sorcery/versions/0.8.5).
 - User's images in their work section are displayed using [Lightbox](http://lokeshdhakar.com/projects/lightbox2/).
+- Some events are scraped from Silicon Prairie News using [Nokogiri](http://nokogiri.org/).
 
 ## Forking
 
