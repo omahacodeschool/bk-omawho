@@ -1,7 +1,7 @@
 Omawho
 ======
 
-Omawho is a networking site for bringing together the creative faces in the Omaha, NE community. Omawho was originally created by [Sumeet Jain](https://github.com/sumeetjain). It was redesigned and is currently being maintained by these Omaha Code Schools students:
+Omawho is a networking site for bringing together the creative faces in the Omaha, NE community. Omawho was originally created by [Sumeet Jain](https://github.com/sumeetjain). It was redesigned and is currently being maintained by these Omaha Code School students:
 
 - [Cara Heacock](https://github.com/Caraheacock): Technical Manager/Front-End
 - [Kaitlyn Hova](https://github.com/kaitlynhova): Front-End
