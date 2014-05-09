@@ -13,6 +13,7 @@ Omawho is a networking site for bringing together the creative faces in the Omah
 ## Features
 
 - Sign up and add your face
+- Look up other users through the search bar by name, business, or username, or filter by category
 - Add images to your profile displaying your work
 - Submit and RVSP to events
 - Play the name game to learn more about people in the community
