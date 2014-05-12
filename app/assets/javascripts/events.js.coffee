@@ -1,17 +1,10 @@
 jQuery ->
-  $(".upcoming_event_bar").on "click", (e) ->
-    if $(this).next(".event_display").is(":visible")
-      $(this).next(".event_display").slideUp()
-    else
-      $(this).next(".event_display").slideDown()
   
-  $('.row').on 'click', '.past_event_bar', (e) ->
-    console.log("1")
-    if $(this).next(".event_display").is(":visible")
-      $(this).next(".event_display").slideUp()
-    else
-      $(this).next(".event_display").slideDown()
-
+  # toggle view of events details
+  $('.row').click '.upcoming_event_bar, .past_event_bar', (e) ->
+    $(this).next(".event_display").slideToggle()
+  
+  # add your face to events you are going to
   $(".attendance_button").on "click", (e) ->
     e.preventDefault
     $(".attendance_button").removeClass("the_one")
