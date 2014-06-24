@@ -14,11 +14,26 @@ body {
   margin: 0;
   background: #1d1e1e;
   color: #fff;
+  height:100%;
 }
 
 input:-webkit-autofill, textarea:-webkit-autofill {
     background-colorr: #fff !important;
 }
+
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 180px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+  position: relative;
+  position: relative;
+  margin-top: -125px;
+  height: 180px;
+  clear: both;}
 
 ul {
   list-style: none; 

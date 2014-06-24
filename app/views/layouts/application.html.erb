@@ -10,6 +10,8 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body class="tk-museo-sans">
+  <div id="wrap">
+    <div id="main">
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
@@ -19,7 +21,10 @@
   <%= render :partial => '/layouts/largenav' %>
   
   <%= yield %>
-  
+</div>
+</div>
+</body>  
+  <div id="footer">
   <%= render :partial => '/layouts/footer' %>
-</body>
+</div>
 </html>
